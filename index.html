@@ -212,18 +212,18 @@ svg.deps{position:absolute;top:0;left:var(--lab);pointer-events:none;z-index:2;o
 .foot{font-size:12px;color:var(--muted);padding-top:8px}
 @media (prefers-reduced-motion:no-preference){.drawer{animation:in .18s ease-out}@keyframes in{from{transform:translateX(24px);opacity:.4}}}
 
-.tree{position:relative;height:640px;margin-top:8px}.tree .tl{position:absolute;inset:0;width:100%;height:100%}
+.tree{position:relative;height:720px;margin-top:8px}.tree .tl{position:absolute;inset:0;width:100%;height:100%}
 .nd{position:absolute;display:flex;flex-direction:column;gap:3px;text-align:left;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-top:5px solid var(--nc,var(--line));border-radius:14px;padding:12px 16px;transform:translateY(-50%);font:inherit}
 .nd b{font-family:var(--f-d);font-size:30px;font-weight:600;line-height:1.05}.nd .pr{font-size:14px;line-height:1.35}.nd .who{font-size:12px;color:var(--muted)}.nd .go{font-size:12px;font-weight:700;color:var(--accent);margin-top:2px}
 .nd.br{left:50%;width:28%;min-height:128px}.nd.br:hover,.nd.um:hover{box-shadow:0 6px 22px rgba(31,42,68,.18)}
-.nd.um{left:20%;width:18%;background:var(--navy);color:#F4EFE8;border-color:var(--navy);border-top-color:var(--c-es)}.nd.um .who{color:#C9CFDD}.nd.um .go{color:#E8A670}
+.nd.um b{font-size:25px}.nd.um{left:20%;width:18%;background:var(--navy);color:#F4EFE8;border-color:var(--navy);border-top-color:var(--c-es)}.nd.um .who{color:#C9CFDD}.nd.um .go{color:#E8A670}
 .nd.dg{left:0;width:14%;border-top-color:var(--line)}.nd.dg b{font-size:22px}
 .nd.dr{left:20%;width:18%;transform:none;border-style:dashed;background:transparent;padding:8px 12px}.nd.dr .pr{font-size:12px}
 .nd.cm{left:86%;width:14%;background:var(--surface2);border-style:dashed}.nd.cm b{font-size:20px}.nd.cm .pr{font-size:12px}
 .nd .eyebrow{font-size:11px}
 .fork{position:absolute;left:39%;top:50%;transform:translate(0,-50%) rotate(-90deg);transform-origin:left center;display:none}
-.tree .fork{display:block;left:20%;width:18%;text-align:center;top:68%;transform:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--bg);padding:2px 6px;border-radius:6px;white-space:nowrap}
-.lnk{position:absolute;left:55%;width:18%;top:32.5%;transform:translateY(-50%);text-align:center;font-size:12px;color:var(--muted);background:var(--bg);padding:3px 6px;border-radius:6px}
+.tree .fork{display:block;left:20%;width:18%;text-align:center;top:67%;transform:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--bg);padding:2px 6px;border-radius:6px;white-space:nowrap}
+.lnk{position:absolute;left:55%;width:18%;top:33.6%;transform:translateY(-50%);text-align:center;font-size:12px;color:var(--muted);background:var(--bg);padding:3px 6px;border-radius:6px}
 .lnk::before{content:"";display:inline-block}
 .treem{display:none;flex-direction:column;align-items:stretch;gap:10px}.treem .nd{position:static;transform:none;width:auto}.treem .vl{align-self:center;width:3px;height:26px;background:var(--accent);border-radius:2px}
 .treem .fork{display:block;position:static;transform:none;text-align:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
@@ -239,247 +239,346 @@ svg.deps{position:absolute;top:0;left:var(--lab);pointer-events:none;z-index:2;o
 .jrm{display:none;list-style:none;margin:0;padding:0 0 0 0;position:relative}.jrm li{display:flex;gap:14px;padding-bottom:22px;position:relative}.jrm li div{display:flex;flex-direction:column;gap:3px;padding-top:4px}
 .jrm li:not(:last-child)::before{content:"";position:absolute;left:19px;top:42px;bottom:0;width:3px;background:linear-gradient(var(--b2),var(--b3));border-radius:2px}
 @media (max-width:900px){.jr{display:none}.jrm{display:block}}
+.hechos{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.hecho{display:flex;flex-direction:column;gap:4px;padding:14px 16px}.hecho b{font-family:var(--f-d);font-size:19px;font-weight:600;line-height:1.15}.hecho small{font-size:12.5px;color:var(--muted);line-height:1.35}.basegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.basegrid .card{display:flex;flex-direction:column;gap:8px;padding:18px 20px;align-items:flex-start}.basegrid b{font-family:var(--f-d);font-size:20px;font-weight:600;line-height:1.15}.basegrid p{margin:0;font-size:14px;line-height:1.45}
+.metro{height:560px}.metro .nd.dg{left:0;width:13%}.metro .nd.um{left:17%;width:16%}.metro .nd.cm{left:86%;width:14%}
+.metro .fork{left:17%;width:16%;top:68%;text-align:center}
+.ln{position:absolute;display:flex;flex-direction:column;gap:0}.ln b{font-family:var(--f-d);font-size:34px;font-weight:600;line-height:1;color:var(--ink)}.ln .eyebrow{color:var(--nc);filter:brightness(.8)}
+.lm{position:absolute;font-size:12.5px;color:var(--muted)}
+.st{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--nc,var(--ink));border:3px solid var(--bg);box-shadow:0 0 0 1.5px var(--nc,var(--ink));transform:translate(-50%,-50%);padding:0;cursor:pointer;display:inline-block;font:700 11px/1 var(--f-b,sans-serif);color:#fff;text-align:center}
+.st:hover{transform:translate(-50%,-50%) scale(1.5);z-index:3}
+.st.vir{width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-family:var(--f-d);font-size:15px;font-weight:700;color:var(--on,#fff);border-width:3px}
+.rc{position:absolute;transform:translate(-50%,-50%);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg);padding:2px 6px}
+.legm{position:absolute;left:44%;right:0;bottom:0;display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);align-items:center}.legm .st{position:static;transform:none;display:inline-flex;vertical-align:middle;width:14px;height:14px;margin-right:4px}.legm .st.vir{width:22px;height:22px;font-size:13px}.legm .lk{color:var(--accent);font-weight:600}
+.mrow{display:flex;flex-wrap:wrap;gap:6px;padding:6px 0}.mrow .st{position:static;transform:none;width:13px;height:13px;border-width:2px;cursor:default}.mrow .st.vir{width:20px;height:20px;font-size:12px}
+@media (max-width:900px){.metro{display:none}}
+.sub{font-family:var(--f-d);font-size:24px;font-weight:600;margin:10px 0 0}.dato{font-size:13.5px}.src{font-size:12px;color:var(--muted)}.src a,.fuentes a{color:var(--accent)}.bul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.45}.info.warn{background:var(--surface);border-left:4px solid var(--accent)}.card .tag{align-self:flex-start}.card.box2,.card.naming{align-items:flex-start}
+.comwrap{display:flex;flex-direction:column;gap:36px;margin-top:8px}.comwrap>div{display:flex;flex-direction:column;gap:36px}.h1s{font-size:clamp(30px,4.5vw,46px)}
+.subnav{display:flex;flex-wrap:wrap;gap:10px}.subnav button{flex:1 1 200px;text-align:left;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--navc);border-radius:12px;padding:12px 16px;min-height:56px;display:flex;flex-direction:column;gap:2px;cursor:pointer;font:inherit;color:var(--ink)}.subnav button b{font-family:var(--f-d);font-size:20px;font-weight:600}.subnav button small{font-size:12.5px;color:var(--muted)}.subnav button[aria-selected=true]{background:var(--navy);color:#fff;border-color:var(--navy);border-top-color:var(--navc)}.subnav button[aria-selected=true] small{color:#D5DAE6}.subnav button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.cban{background:var(--navy);color:#F4EFE8;border-radius:16px;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:14px;align-items:flex-start}.cban .eyebrow{color:#E8A670}.cban h1{color:#fff;font-size:clamp(28px,4.2vw,46px);max-width:24ch;text-wrap:balance}.cban p{color:#D5DAE6;max-width:62ch;margin:0}.cban .q{font-family:var(--f-d);font-style:italic;font-size:clamp(20px,2.4vw,27px);line-height:1.25;color:#F4EFE8}.cban .mini{font-size:13px}.cban .tag{background:rgba(255,255,255,.14);color:#F4EFE8}
+.num{width:30px;height:30px;border-radius:50%;background:var(--pc,var(--accent));color:#fff;font-weight:700;font-size:14px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.steps5{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.steps5.s4{grid-template-columns:repeat(4,minmax(0,1fr))}.steps5 li{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--pc,var(--accent));border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);min-width:0}.steps5 b{font-family:var(--f-d);font-size:21px;font-weight:600;line-height:1.15}.steps5 p{margin:0;font-size:14px;line-height:1.45}.steps5 small{font-size:12.5px;color:var(--muted)}
+.actor small{color:var(--muted);font-size:12.5px;margin-top:-4px}
+@media (max-width:900px){.steps5,.steps5.s4{grid-template-columns:minmax(0,1fr)}}
 </style>
 <div id="app"></div><script>
 const V='Virginia',C_='Cristina',A='Agustina',X='Por definir',N='Sin apoyo';
 const PERSONAS=[V,C_,A,X];
-const PROGRAMAS=['Transversal','IA Essentials','Dirección','Vigencia','Hands-on'];
-const FASES={1:'1 Definir',2:'2 Diseñar',3:'3 Producir',4:'4 Preparar la operación',5:'5 Salir al mercado',6:'6 Dar el piloto',7:'7 Mejorar y escalar'};
+const PROGRAMAS=['Transversal','Vigencia','Decidir','Construir'];
+const FASES={1:'1 Definir',2:'2 Diseñar',3:'3 Producir',4:'4 Preparar la operación',5:'5 Salir al mercado',6:'6 Dictar',7:'7 Mejorar y seguir'};
 const E1='Estrategia académica',E2='Desarrollo académico',E3='Producción técnica',E4='Marca y marketing',E5='Operaciones comerciales',E6='Dictado',E7='Evaluación y mejora';
 const EJES=[E1,E2,E3,E4,E5,E6,E7];
 const ESTADOS=['Pendiente','En curso','Completada','Bloqueada'];
 const PRIORIDADES=['Alta','Media','Baja'];
 const NONE=N;
 const PREP=1.5,SOP=1,APOYO=0.25;
-const DICT={'IA Essentials':'T23','Dirección':'T34','Vigencia':'T45','Hands-on':'T58'};
-const LISTO={'IA Essentials':'T22','Dirección':'T33','Vigencia':'T44','Hands-on':'T57'};
-const TR='Transversal',ES='IA Essentials',DI='Dirección',VI='Vigencia',HO='Hands-on';
+const TR='Transversal',VI='Vigencia',DE='Decidir',CO='Construir';
 const T=(id,programa,fase,eje,tarea,responsable,apoyo,inicio,duracion,horas,deps,prioridad,entregable,hito)=>({id,programa,fase,eje,tarea,responsable,apoyo,inicio,duracion,horas,deps:deps?deps.split(','):[],prioridad,entregable,hito:!!hito,estado:'Pendiente'});
 const TASKS=[
-T('T01',TR,1,E1,'Confirmar arquitectura del portafolio y orden de lanzamiento',V,A,1,2,10,'','Alta','Acta de portafolio y secuencia de lanzamiento'),
-T('T02',TR,1,E1,'Definir gobierno académico y roles del equipo',V,C_,1,2,6,'','Alta','Modelo de gobierno académico'),
-T('T03',TR,1,E4,'Definir audiencias y propuesta de valor por programa',A,V,3,2,12,'T01','Alta','Fichas de audiencia y propuesta de valor'),
-T('T04',TR,1,E5,'Supuestos de precio, tamaño de cohorte y punto de equilibrio',C_,V,3,2,12,'T01','Alta','Modelo financiero preliminar'),
-T('T05',TR,1,E1,'Confirmar disponibilidad docente por persona y semana',V,C_,3,2,4,'T02','Alta','Matriz de disponibilidad'),
-T('T06',TR,1,E1,'Hito: estrategia y portafolio aprobados',V,N,5,1,0,'T03,T04,T05','Alta','Decisión del equipo fundador',1),
-T('T07',TR,2,E1,'Ciclo de aprendizaje común, rúbricas y criterios de certificado',A,V,6,3,18,'T06','Alta','Metodología Silvora y rúbricas base'),
-T('T08',TR,5,E4,'Naming y arquitectura de marca de la oferta educativa',A,V,6,3,16,'T06','Alta','Nombres comerciales y arquitectura de marca (primera propuesta en este documento)'),
-T('T09',ES,2,E2,'Sesiones, diagnóstico de nivelación y resultados de aprendizaje',A,C_,6,3,20,'T06','Alta','Diseño de las 3 sesiones y diagnóstico'),
-T('T14',TR,4,E3,'Plataforma de aprendizaje, cuentas de IA y carpeta compartida',C_,A,6,4,20,'T06','Alta','Plataforma lista para pruebas'),
-T('T20',TR,5,E4,'Bios docentes y página del equipo docente',A,V,9,2,6,'T08','Media','Bios aprobadas por cada docente'),
-T('T13',ES,3,E2,'Presentaciones, ejercicios, biblioteca de prompts y guías',A,C_,9,5,30,'T09','Alta','Materiales de las 3 sesiones'),
-T('T17',ES,4,E5,'Aprobar precio de IA Essentials',V,C_,9,1,3,'T04,T09','Alta','Precio aprobado'),
-T('T16',ES,5,E4,'Landing y textos de IA Essentials',A,N,10,2,14,'T08,T09,T17','Alta','Landing publicada en borrador'),
-T('T15',ES,4,E3,'Prueba de plataforma y onboarding',C_,A,10,2,8,'T14','Alta','Onboarding probado'),
-T('T18',ES,4,E5,'Flujo de inscripción y pagos',C_,A,10,2,10,'T14,T17','Alta','Inscripción y cobro operativos'),
-T('T19',ES,5,E4,'Campaña de lanzamiento (mail, redes y comunidad)',A,V,12,3,20,'T16,T17,T18','Alta','Campaña en marcha'),
-T('T21',ES,5,E5,'Diagnóstico de nivelación y admisión',A,C_,13,2,8,'T09,T16','Media','Cohorte conformada'),
-T('T22',ES,4,E6,'Hito: IA Essentials listo para dictar',A,N,15,1,0,'T13,T15,T19,T21','Alta','Visto bueno del equipo fundador',1),
-T('T23',ES,6,E6,'Dictado piloto IA Essentials (3 sesiones)',A,C_,16,3,0,'T22','Alta','3 sesiones dictadas'),
-T('T24',ES,6,E7,'Medición, seguimiento a 30 días y mejoras',A,C_,19,4,14,'T23','Alta','Informe de piloto y ajustes'),
-T('T25',ES,7,E7,'Hito: revisión del piloto de IA Essentials',V,A,23,1,0,'T24','Alta','Decisión sobre segunda cohorte',1),
-T('T10',DI,2,E2,'Ajustes curriculares (cambio, comunicación y fuerza laboral) y plan de sesiones',V,A,9,4,24,'T07','Alta','Plan de 12 sesiones'),
-T('T26',DI,3,E2,'Presentaciones, casos, plantillas y rúbricas',V,C_,13,10,70,'T10','Alta','Materiales de Dirección'),
-T('T27',DI,3,E2,'Assessment de admisión y guía del proyecto final (Playbook)',C_,V,17,3,12,'T10','Media','Assessment y guía del Playbook'),
-T('T28',DI,5,E4,'Landing y mensaje para dirección',A,V,19,3,18,'T08,T10','Alta','Landing en borrador'),
-T('T29',DI,5,E4,'Alianzas y contactos corporativos (cámaras, empresas, comunidad)',V,A,19,7,30,'T08,T10','Media','Lista de aliados contactados'),
-T('T30',DI,4,E5,'Aprobar precio de Dirección y abrir admisión',V,C_,22,1,4,'T04,T28','Alta','Precio aprobado'),
-T('T31',DI,5,E4,'Campaña de captación',A,C_,23,4,22,'T28,T30','Alta','Campaña en marcha'),
-T('T32',DI,5,E5,'Revisar assessments y conformar cohorte',V,C_,23,3,14,'T27,T30','Alta','Cohorte conformada'),
-T('T33',DI,4,E6,'Hito: Dirección listo para dictar',V,N,27,1,0,'T26,T31,T32,T15','Alta','Visto bueno del equipo fundador',1),
-T('T34',DI,6,E6,'Dictado piloto Dirección (12 sesiones)',V,C_,28,12,0,'T33','Alta','12 sesiones dictadas'),
-T('T35',DI,6,E6,'Devolución semanal de prácticas y consultas',V,C_,28,12,24,'T33','Media','Devoluciones entregadas'),
-T('T36',DI,6,E7,'Medición, informe de cohorte y mejoras',V,C_,40,4,16,'T34,T35','Alta','Informe de cohorte y ajustes'),
-T('T37',DI,7,E7,'Hito: revisión del piloto de Dirección',V,N,44,1,0,'T36','Alta','Decisión sobre segunda cohorte',1),
-T('T38',VI,2,E2,'Ajustes curriculares, accesibilidad y plan de sesiones',A,V,26,5,26,'T07,T24','Alta','Plan de 10 sesiones'),
-T('T39',VI,3,E2,'Guías paso a paso, materiales accesibles y asistente demo',A,C_,31,10,56,'T38','Alta','Materiales de Vigencia'),
-T('T40',VI,5,E4,'Landing, nombre comercial y rango de edad',A,V,36,3,14,'T08,T38','Alta','Landing en borrador y rango definido'),
-T('T41',VI,5,E5,'Guion de conversación de admisión y vía de nivelación',C_,A,36,3,10,'T09,T38','Media','Guion de admisión'),
-T('T42',VI,4,E5,'Aprobar precio de Vigencia',V,C_,39,1,3,'T04,T24,T40','Alta','Precio aprobado'),
-T('T43',VI,5,E4,'Campaña y conversaciones de admisión',A,C_,40,5,24,'T40,T41,T42','Alta','Cohorte conformada'),
-T('T44',VI,4,E6,'Hito: Vigencia listo para dictar',A,N,45,1,0,'T39,T43','Alta','Visto bueno del equipo fundador',1),
-T('T45',VI,6,E6,'Dictado piloto Vigencia (10 sesiones)',A,C_,46,10,0,'T44','Alta','10 sesiones dictadas'),
-T('T46',VI,6,E6,'Acompañamiento individual y consultas entre encuentros',X,A,46,10,20,'T44','Media','Devoluciones entregadas'),
-T('T47',VI,6,E7,'Medición, informe de cohorte y mejoras',A,V,56,4,16,'T45,T46','Alta','Informe de cohorte y ajustes'),
-T('T48',VI,7,E7,'Hito: revisión del piloto de Vigencia',V,N,60,1,0,'T47','Alta','Decisión sobre segunda cohorte',1),
-T('T49',HO,2,E2,'Ajustes curriculares y definición del stack técnico',C_,A,16,4,24,'T07','Alta','Plan de 14 sesiones y stack'),
-T('T50',HO,4,E3,'Definir y contratar facilitador técnico',C_,V,34,6,12,'T49','Alta','Facilitador técnico confirmado'),
-T('T51',HO,3,E2,'Guías de laboratorio, plantillas Zapier/Make, agente de práctica y rúbricas',C_,A,40,12,90,'T49,T50','Alta','Materiales de Hands-on'),
-T('T52',HO,4,E3,'Entorno de prueba y cuentas de herramientas',C_,X,40,4,20,'T50','Alta','Entorno probado'),
-T('T53',HO,5,E4,'Landing y mensaje para Hands-on',A,C_,47,3,16,'T08,T49','Alta','Landing en borrador'),
-T('T54',HO,5,E5,'Assessment de admisión y derivación a IA Essentials',C_,A,47,3,12,'T49,T09','Media','Assessment de admisión'),
-T('T55',HO,4,E5,'Aprobar precio de Hands-on',V,C_,50,1,3,'T04,T24,T53','Alta','Precio aprobado'),
-T('T56',HO,5,E4,'Campaña de captación',A,C_,51,5,24,'T53,T54,T55','Alta','Cohorte conformada'),
-T('T57',HO,4,E6,'Hito: Hands-on listo para dictar',C_,N,56,1,0,'T51,T52,T56','Alta','Visto bueno del equipo fundador',1),
-T('T58',HO,6,E6,'Dictado piloto Hands-on (14 sesiones)',C_,A,57,14,0,'T57','Alta','14 sesiones dictadas'),
-T('T59',HO,6,E6,'Soporte técnico y devolución semanal de proyectos',X,C_,57,14,56,'T57,T50','Alta','Devoluciones entregadas'),
-T('T60',HO,6,E7,'Medición, casos documentados y mejoras',C_,A,71,4,16,'T58,T59','Alta','Informe de cohorte y ajustes'),
-T('T61',HO,7,E7,'Hito: revisión del piloto de Hands-on',V,N,75,1,0,'T60','Alta','Decisión sobre segunda cohorte',1),
-T('T62',TR,7,E1,'Revisión integral del portafolio y plan de segundas cohortes',V,A,76,3,20,'T25,T37,T48,T61','Alta','Plan de escala del portafolio'),
-T('T63',TR,7,E1,'Hito: portafolio piloteado y plan de escala aprobado',V,N,79,1,0,'T62','Alta','Decisión del equipo fundador',1)
+/* Semana 1 = lunes 16/11/2026 */
+T('T01',TR,1,E1,'Cerrar el reparto de encuentros de cada curso entre Cristina y Agustina',V,A,1,1,4,'','Alta','Reparto por encuentro acordado (hay una propuesta en este documento)'),
+T('T02',VI,1,E5,'Cerrar precio final, horario y moneda de cobro de Vigencia',V,C_,1,1,4,'','Alta','Ficha de Vigencia con precio, horario y moneda'),
+T('T03',VI,1,E1,'Definir el público de Vigencia y el rango de edad',V,A,1,1,3,'','Alta','Público definido antes de seguir abriendo inscripciones'),
+T('T04',VI,5,E4,'Convocatoria de Vigencia por redes y WhatsApp, con formulario de interés',A,V,1,1,6,'','Alta','Inscripciones confirmadas y lista de interesadas'),
+T('T05',VI,5,E5,'Conversación de bienvenida y prueba de acceso con cada inscripta',C_,A,1,2,8,'','Alta','Punto de partida de cada persona, sin puntaje ni nivel'),
+T('T06',VI,4,E3,'Enviar la bienvenida con las guías de arranque C1 y C2',C_,N,1,1,3,'','Alta','Guías enviadas antes del encuentro 1'),
+T('T07',VI,4,E3,'Plataforma de videollamada, grabaciones y carpeta compartida de Vigencia',C_,A,1,1,4,'','Alta','Sala y carpeta listas para el 25/11'),
+T('T08',VI,1,E1,'Texto final de Virginia para el encuentro 1',V,A,1,1,3,'','Alta','Apertura aprobada por Virginia'),
+T('T09',TR,1,E1,'Confirmar «Silvora Learning» como paraguas de los tres cursos',V,A,1,1,2,'','Media','Decisión sobre el nombre paraguas'),
+T('T10',TR,1,E4,'Corregir materiales: título y bio de Agustina, 26 h dictadas y «Human Value Evolution»',A,V,1,2,5,'','Media','One-pager, programas detallados y deck corregidos'),
+T('T11',VI,1,E7,'Hito: Puerta 1, 5 inscripciones confirmadas (miércoles 18/11)',C_,N,1,1,0,'','Alta','Si hay 5, Vigencia arranca el 25/11',1),
+T('T12',VI,2,E7,'Chequeo previo de planes gratuitos, enlaces y pasos de menú (Anexo I de la guía)',C_,A,2,1,3,'T06','Media','Lista del Anexo I verificada'),
+T('T13',VI,1,E7,'Hito: Puerta 2 o inicio de Vigencia (miércoles 25/11)',C_,N,2,1,0,'T11','Alta','Si no hay 5 el 25/11, pasa al 2/12; si tampoco, a febrero de 2027',1),
+T('T14',VI,6,E6,'Dictar los encuentros 1 a 4 de Vigencia (hasta el 16/12)',C_,A,2,4,16,'T06,T07,T08','Alta','Cuaderno de vigencia con las secciones 1 a 4 de cada participante'),
+T('T15',DE,1,E1,'Redefinir el precio de Construir para 28 horas',V,C_,1,1,4,'','Alta','Precio de Construir confirmado (los USD 370 eran para 16 h)'),
+T('T16',CO,1,E1,'Decidir si Construir necesita facilitador técnico y cómo se paga',V,C_,1,2,4,'','Alta','Decisión con costo incluido en el precio'),
+T('T17',DE,2,E2,'Auditar Decidir: ¿entra todo en 8 encuentros, incluido el caso para el directorio?',C_,V,2,2,10,'','Alta','Decisión: quedan 16 horas o se amplían los encuentros 4 y 7'),
+T('T18',TR,2,E2,'Diseñar el diagnóstico de entrada, en tres versiones',A,C_,1,2,10,'','Alta','Formulario de 10 a 12 minutos y devolución de una página'),
+T('T19',TR,2,E2,'Definir el proyecto hilo de Construir y el playbook de Decidir',A,V,2,2,8,'','Media','Entregables finales de ambos cursos definidos'),
+T('T20',TR,5,E4,'Landing y fichas de Construir y Decidir, con formulario de interés',A,V,2,1,10,'T15','Alta','Páginas listas para abrir la inscripción'),
+T('T21',TR,5,E5,'Hito: abre la inscripción de Construir y Decidir (1/12)',A,N,3,1,0,'T20','Alta','Inscripción abierta, early bird opcional hasta el 18/12',1),
+T('T22',TR,5,E4,'Captación de Construir y Decidir: redes, WhatsApp y comisión del 10 %',A,C_,3,12,24,'T20','Alta','Interesados por curso, con su origen'),
+T('T23',TR,4,E5,'Plataforma, carpeta compartida y cobros para Construir y Decidir',C_,A,3,3,12,'T15','Alta','Cobros y plataforma probados'),
+T('T24',TR,2,E2,'Guías de arranque A1, A2 y B',C_,A,3,3,12,'T18','Alta','Una página y un ejercicio de 20 minutos por guía'),
+T('T25',TR,1,E5,'Revisión legal: propiedad intelectual de lo generado y datos personales del diagnóstico',V,C_,3,4,6,'','Media','Criterio legal para el material y los formularios'),
+T('T26',DE,3,E3,'Guía del docente y presentaciones de Decidir (8 encuentros)',A,V,4,9,40,'T17,T19','Alta','Guía y presentaciones de los 8 encuentros'),
+T('T27',TR,5,E4,'Clase abierta de Construir y Decidir (lunes 14/12)',V,A,5,1,4,'T21','Alta','Clase dictada y contactos captados'),
+T('T28',TR,5,E5,'Cierre del early bird (viernes 18/12)',C_,N,5,1,0,'','Media','Fecha comunicada y cumplida',1),
+T('T29',VI,2,E1,'Receso de fin de año y práctica opcional (23/12 al 5/1)',C_,A,6,2,2,'T14','Media','Práctica opcional con devolución a quien la envíe'),
+T('T30',CO,3,E3,'Guía del docente y presentaciones de Construir (14 encuentros)',C_,A,6,9,56,'T16,T19','Alta','Guía y presentaciones de los 14 encuentros'),
+T('T31',VI,1,E1,'Definir qué ofrece Silvora al cerrar: constancia, grabaciones, comunidad y próximas ediciones',V,A,7,4,8,'','Alta','Cierre del encuentro 8 completo (hoy dice «a definir»)'),
+T('T32',VI,1,E1,'Texto final de Virginia para el encuentro 8',V,A,8,2,3,'','Alta','Última hora aprobada por Virginia'),
+T('T33',VI,6,E6,'Dictar los encuentros 5 a 8 de Vigencia (hasta el 27/1)',C_,A,8,4,16,'T14','Alta','Plan personal de vigencia y registro de saberes de cada participante'),
+T('T34',TR,4,E5,'Revisar feriados de 2027 y fijar el calendario de Construir y Decidir',C_,A,9,2,4,'','Media','Calendario con fechas confirmadas'),
+T('T35',TR,1,E5,'Paquete Decidir y Construir para una misma organización: oferta y precio',V,C_,9,4,10,'T15','Media','Oferta del paquete'),
+T('T36',VI,7,E7,'Línea de base final y testimonios de Vigencia',A,C_,10,2,6,'','Media','Medición final y testimonios autorizados'),
+T('T37',TR,5,E5,'Diagnósticos y conversaciones con las personas inscriptas en Construir y Decidir',C_,A,11,3,12,'T21,T18,T24','Alta','Punto de partida de cada persona y guías enviadas'),
+T('T38',VI,7,E7,'Revisar la primera cohorte de Vigencia y ajustar el material',C_,A,12,2,8,'T33','Alta','Ajustes a rúbricas, guías y encuentros'),
+T('T39',TR,5,E7,'Hito: puerta de 5 inscripciones por curso (lunes 15/2)',C_,N,14,1,0,'','Alta','Si solo un curso llega a 5, abre ese y el otro espera',1),
+T('T40',VI,7,E7,'Seguimiento a los 30 días de Vigencia',A,V,15,1,4,'T33','Media','Qué sigue usando cada participante, e invitación al siguiente curso'),
+T('T41',DE,6,E6,'Dictar Decidir, 8 encuentros (arranca la semana del 1/3)',C_,A,16,8,32,'T26,T39,T37','Alta','Caso listo para presentar de cada participante'),
+T('T42',CO,6,E6,'Dictar Construir, 14 encuentros (arranca una semana después)',C_,A,17,14,56,'T30,T39,T37','Alta','Prototipo, mapa del stack y plan de 90 días de cada participante'),
+T('T43',DE,7,E7,'Revisar Decidir y ajustar la segunda edición',V,C_,24,2,6,'T41','Alta','Ajustes y decisión sobre 16 o 20 horas'),
+T('T44',DE,7,E7,'Seguimiento a los 30 días de Decidir',A,V,27,1,4,'T41','Media','Qué sigue usando cada participante'),
+T('T45',CO,7,E7,'Revisar Construir y ajustar la segunda edición',V,C_,31,3,6,'T42','Alta','Ajustes de módulos, precio y facilitador técnico'),
+T('T46',CO,7,E7,'Seguimiento a los 30 días de Construir',A,V,34,1,4,'T42','Media','Qué sigue en uso y qué se automatizó'),
+T('T48',TR,5,E4,'Validar dolores y mensajes con 5 conversaciones por público',A,C_,1,2,10,'','Alta','Mensajes confirmados o ajustados con personas reales'),
+T('T49',TR,5,E4,'Plan de comunicación por curso: mensajes, canales y calendario',A,V,3,2,10,'T48','Alta','Plan de comunicación aprobado por las tres fundadoras'),
+T('T47',TR,7,E1,'Hito: aprendizaje de las primeras cohortes y plan de próximas ediciones',V,N,35,1,0,'T43,T45,T46','Alta','Decisión del equipo fundador',1)
 ];
-const S_=(programa,n,modulo,mod,tema,tipo,docente,apoyo,entregable)=>({programa,n,modulo,mod,tema,tipo,docente,apoyo,horas:2,entregable});
+const DICT={'Vigencia':'T14','Decidir':'T41','Construir':'T42'};
+const LISTO={'Vigencia':'T07','Decidir':'T26','Construir':'T30'};
+const S_=(programa,n,sem,mod,tema,tipo,docente,apoyo,entregable)=>({programa,n,sem,modulo:n,mod,tema,tipo,docente,apoyo,horas:2,entregable});
 const SESSIONS=[
-S_(ES,1,1,'Entender y empezar con IA','Fundamentos, modelos, planes, privacidad y primeros prompts','Apertura y taller guiado',A,N,'Entorno de IA configurado y primeras conversaciones (propuesta)'),
-S_(ES,2,2,'IA para la productividad diaria','Escribir, resumir, investigar y validar respuestas','Taller guiado',A,N,'Tres tareas resueltas con IA y biblioteca de prompts (propuesta)'),
-S_(ES,3,3,'Integrar la IA en el trabajo diario','Asistentes propios, flujos simples, uso responsable y plan personal','Taller guiado y cierre',C_,A,'Flujo personalizado y plan personal de adopción (propuesta)'),
-S_(HO,1,1,'Por qué ahora','IA y longevidad: qué cambia y qué sube de valor','Apertura',V,A,'Una lectura propia de qué parte de su trabajo cambia'),
-S_(HO,2,2,'Cómo razona un modelo y dónde falla','Límites, comparación de modelos y método para pedir','Taller guiado',A,N,'Un método propio y criterio de qué modelo para qué'),
-S_(HO,3,3,'Tu asistente y tu eficiencia personal (parte 1)','Qué delegar y cómo diseñar el asistente','Taller técnico',A,C_,'Un asistente configurado sobre una tarea semanal'),
-S_(HO,4,3,'Tu asistente y tu eficiencia personal (parte 2)','Montaje sobre un proceso real y ajuste con uso','Implementación',A,C_,'Un asistente configurado sobre una tarea semanal'),
-S_(HO,5,4,'Datos privados y uso responsable','Qué datos no cargar, propiedad intelectual y riesgo reputacional','Caso',C_,A,'Una checklist propia antes de cargar información o publicar'),
-S_(HO,6,5,'Validar y decidir con IA (parte 1)','Conversar con un reporte, dato frente a inferencia','Taller guiado',C_,A,'Una rutina de verificación y una decisión sometida a challenge'),
-S_(HO,7,5,'Validar y decidir con IA (parte 2)','Contraargumento, challenge y decisión','Discusión de casos',C_,A,'Una rutina de verificación y una decisión sometida a challenge'),
-S_(HO,8,6,'Automatizar un flujo de punta a punta (parte 1)','Mapear disparador, paso de IA, destino y excepción','Taller técnico',C_,X,'Una automatización corriendo y su cálculo de horas'),
-S_(HO,9,6,'Automatizar un flujo de punta a punta (parte 2)','Construcción en Zapier o Make, webhook y ahorro real','Implementación',C_,X,'Una automatización corriendo y su cálculo de horas'),
-S_(HO,10,7,'Diseñar y poner un agente en producción (parte 1)','Objetivo, fuentes, reglas de escalamiento y documentos','Taller técnico',C_,X,'Un agente propio funcionando sobre un proceso del equipo'),
-S_(HO,11,7,'Diseñar y poner un agente en producción (parte 2)','Pruebas con casos difíciles antes de soltarlo','Implementación',C_,X,'Un agente propio funcionando sobre un proceso del equipo'),
-S_(HO,12,8,'Controlar lo que construiste','Pruebas, fallas, versiones y cómo mostrar tu trabajo','Feedback',C_,X,'Un protocolo de prueba y la bitácora de fallas de su agente'),
-S_(HO,13,9,'Prototipos y tu stack (parte 1)','Prototipar desde lenguaje natural y combinar agentes','Taller técnico',A,X,'Un prototipo propio y el mapa documentado de su stack'),
-S_(HO,14,9,'Prototipos y tu stack (parte 2)','Mapa del stack y presentación final','Presentación final',A,C_,'Un prototipo propio y el mapa documentado de su stack'),
-S_(DI,1,1,'Por qué ahora','IA y longevidad: reconversión del talento como decisión de negocio','Apertura',V,N,'Una lectura del impacto sobre su dotación y sus capacidades críticas'),
-S_(DI,2,2,'Cómo razona un modelo y dónde falla','Límites de los modelos cuando el trabajo es de otro','Taller',A,C_,'Criterio para leer cualquier resultado que le traigan'),
-S_(DI,3,3,'Tu asistente y tu eficiencia personal (parte 1)','Qué delegar y cómo clonar tu forma de trabajar','Taller guiado',A,N,'Un asistente configurado sobre una tarea propia'),
-S_(DI,4,3,'Tu asistente y tu eficiencia personal (parte 2)','Montaje y ajuste sobre una tarea semanal','Implementación',A,N,'Un asistente configurado sobre una tarea propia'),
-S_(DI,5,4,'Datos privados, marco legal y riesgo','Datos que no salen, protección de datos y riesgo reputacional','Caso',C_,V,'Los límites escritos para su área'),
-S_(DI,6,5,'Cultura de datos: validar antes de decidir','Definiciones compartidas y dato frente a inferencia','Taller',C_,N,'Un set de preguntas para su próxima reunión de números'),
-S_(DI,7,6,'Decidir con IA (parte 1)','Contraargumento, alternativas y sesgos','Caso',V,C_,'Una decisión real sometida a challenge, documentada'),
-S_(DI,8,6,'Decidir con IA (parte 2)','Qué queda bajo decisión humana y registro de decisión','Discusión de casos',V,C_,'Una decisión real sometida a challenge, documentada'),
-S_(DI,9,7,'Cuándo IA sí y cuándo no','Reversibilidad, riesgo, costo real y agentes','Taller',C_,V,'Un marco de decisión aplicado a tres casos propios'),
-S_(DI,10,8,'Gobierno del uso en tu equipo','Política de uso, revisión de trabajo con IA y comunicación del cambio','Taller',C_,A,'Una política de uso de una página para su área'),
-S_(DI,11,9,'Evaluar propuestas y el caso hacia arriba (parte 1)','Cuestionario de evaluación de proveedores y presupuestos','Caso',V,C_,'Un cuestionario de evaluación y un caso listo para presentar'),
-S_(DI,12,9,'Evaluar propuestas y el caso hacia arriba (parte 2)','Armar y presentar el caso ante un directorio','Presentación final',V,C_,'Un cuestionario de evaluación y un caso listo para presentar'),
-S_(VI,1,1,'Por qué ahora','IA y longevidad: qué se devalúa y qué sube de valor','Apertura',V,N,'Una lectura propia de qué aporta la IA a su etapa de vida'),
-S_(VI,2,2,'Cómo razona un modelo y dónde falla','Qué hace una IA al responder y cómo pedir bien','Demostración guiada',A,N,'Un método simple para conversar con una IA y revisar lo que responde'),
-S_(VI,3,3,'Tu asistente personal (parte 1)','Qué tareas delegar y cómo diseñar el asistente','Taller guiado',A,C_,'Un asistente propio funcionando sobre algo de su vida diaria'),
-S_(VI,4,3,'Tu asistente personal (parte 2)','Armado paso a paso sobre algo propio','Taller guiado',A,C_,'Un asistente propio funcionando sobre algo de su vida diaria'),
-S_(VI,5,4,'Cuidarse en el mundo digital','Estafas, mensajes, llamadas y videos falsos; acuerdos familiares','Caso',C_,A,'Una checklist propia para verificar antes de responder, pagar o compartir'),
-S_(VI,6,5,'Salud, trámites e información confiable','Preparar una consulta o un trámite, dato frente a inferencia','Taller guiado',C_,A,'Una rutina para preguntar, contrastar y llegar mejor preparado'),
-S_(VI,7,6,'Aprender, crear y conectar','Estudio, memorias, fotos familiares y conversación con hijos y nietos','Taller',A,N,'Un proyecto personal iniciado, de aprendizaje o creación'),
-S_(VI,8,7,'Organizar tu día y tus proyectos','Una rutina semanal armada con IA en clase','Implementación',C_,A,'Una rutina semanal armada con IA y el cálculo del tiempo que libera'),
-S_(VI,9,8,'Seguir aportando: trabajo, proyectos y comunidad','Poner en valor la experiencia: perfil, mentorías, voluntariado','Taller',A,V,'Un plan propio de cómo seguir aportando valor'),
-S_(VI,10,9,'Lo que sigue: legado y vigencia','Documentar y transmitir saberes; qué significa seguir vigente','Presentación final y cierre',V,A,'Un plan personal de vigencia y un registro de saberes propios')
+S_(VI,1,2,'Por qué ahora y cómo razona un modelo','','Apertura y demo en vivo',C_,V,''),
+S_(VI,2,3,'Tu asistente y tu criterio','','Taller guiado',C_,N,''),
+S_(VI,3,4,'Cuidarse: datos, privacidad y engaños con IA','','Caso y ejercicios',A,N,''),
+S_(VI,4,5,'Validar y decidir con IA','','Taller guiado',C_,N,''),
+S_(VI,5,8,'Organizar tu trabajo y automatizar lo repetitivo','','Taller guiado',C_,N,''),
+S_(VI,6,9,'Aprender y actualizarte con IA','','Taller guiado',A,N,''),
+S_(VI,7,10,'Seguir aportando: poner en valor tu experiencia','','Taller guiado',A,N,''),
+S_(VI,8,11,'Legado y vigencia: integración y cierre','','Cierre del programa',A,V,''),
+S_(DE,1,16,'Por qué ahora y cómo razona un modelo','','Apertura',A,V,''),
+S_(DE,2,17,'Tu asistente y tu eficiencia personal','','Taller guiado',A,N,''),
+S_(DE,3,18,'Datos, marco legal y cultura de datos','','Caso',C_,N,''),
+S_(DE,4,19,'Decidir con IA','','Taller guiado',A,N,''),
+S_(DE,5,20,'Cuándo IA sí y cuándo no','','Casos',A,N,''),
+S_(DE,6,21,'Gobierno del uso en tu equipo','','Taller guiado',C_,N,''),
+S_(DE,7,22,'Evaluar propuestas','','Casos',C_,N,''),
+S_(DE,8,23,'El caso hacia arriba y cierre','','Presentación final y cierre',C_,V,''),
+S_(CO,1,17,'Por qué ahora','','Apertura',C_,V,''),
+S_(CO,2,18,'Cómo razona un modelo y dónde falla','','Taller guiado',A,N,''),
+S_(CO,3,19,'Tu asistente y tu eficiencia personal (parte 1)','','Taller guiado',C_,N,''),
+S_(CO,4,20,'Tu asistente y tu eficiencia personal (parte 2)','','Taller guiado',C_,N,''),
+S_(CO,5,21,'Datos privados y uso responsable','','Taller guiado',A,N,''),
+S_(CO,6,22,'Validar y decidir con IA (parte 1)','','Taller guiado',A,N,''),
+S_(CO,7,23,'Validar y decidir con IA (parte 2)','','Taller guiado',A,N,''),
+S_(CO,8,24,'Automatizar un flujo de punta a punta (parte 1)','','Construcción en vivo',C_,N,''),
+S_(CO,9,25,'Automatizar un flujo de punta a punta (parte 2)','','Construcción en vivo',C_,N,''),
+S_(CO,10,26,'Diseñar y poner un agente en producción (parte 1)','','Construcción en vivo',C_,N,''),
+S_(CO,11,27,'Diseñar y poner un agente en producción (parte 2)','','Construcción en vivo',C_,N,''),
+S_(CO,12,28,'Controlar lo que construiste','','Taller guiado',A,N,''),
+S_(CO,13,29,'Prototipos, tu stack y cierre (parte 1)','','Construcción en vivo',A,N,''),
+S_(CO,14,30,'Prototipos, tu stack y cierre (parte 2)','','Presentación final y cierre',A,V,'')
 ];
 const DATA={tasks:TASKS,sessions:SESSIONS,cap:{[V]:10,[C_]:12,[A]:10,[X]:0}};
-TASKS.find(t=>t.id==='T08').estado='En curso';
+TASKS.find(t=>t.id==='T04').estado='En curso';
 const BP=[
-{key:'IA Essentials',tab:'essentials',name:'IA Essentials',desc:'IA para empezar',real:'IA Essentials',verb:'Empezar',col:'--c-es',order:'Programa 1 de 4 · Puerta de entrada',
- tagline:'De conocer la IA a integrarla en tu día a día.',
- story:['Todo cambio empieza en una puerta. IA Essentials es la primera: tres encuentros para pasar de saber que la IA existe a usarla en tu trabajo y en tu vida diaria, con confianza y con criterio.','No hace falta saber nada para entrar. Salís con tu entorno armado, tus primeras tareas resueltas y un plan propio para seguir. Es el punto de partida de todo lo que Silvora enseña después.'],
- hooks:['El futuro ya empezó. Entrá con criterio.','Tres encuentros. Un antes y un después en tu día a día.','No hace falta saber nada. Hace falta empezar.'],
- why:'Un umbral es el lugar donde se cruza de un lado al otro, y eso es exactamente lo que hace el programa: te pasa de mirar la IA a usarla. Es corto, fácil de decir y funciona como primera palabra de la familia de nombres.',
- alts:[['Ahora','Retoma la firma de Silvora, "El futuro. Ahora.". Es muy directo, pero compite con el lema de la marca y se puede perder en buscadores.'],['Punto de partida','Claro y descriptivo, pero más genérico y menos propio de Silvora.']],
- facts:[['Para quién','Cualquier persona que quiera usar IA generativa con confianza, sin nivel técnico previo.','p'],['Formato','Virtual en vivo, 3 encuentros de 2 h.','p'],['Admisión','Diagnóstico de 10 minutos para saber si lo necesitás. No es obligatorio para quien ya usa IA.','p'],['Entre clases','Una preparación previa de unos 20 minutos para crear la cuenta, y un kit de repaso al final.','p'],['Te llevás','Entorno de IA configurado, biblioteca de prompts, tres tareas resueltas y un plan personal de adopción.','p']],
- classes:[
-  ['Entender y arrancar','Sesión 1',['Qué es la IA generativa y cómo "piensa" un modelo','Qué puede y qué no puede hacer: límites y respuestas inventadas','ChatGPT, Claude y Gemini: diferencias, planes gratuitos y pagos','Crear la cuenta y configurar la privacidad','Tu primer pedido bien hecho: contexto, rol, objetivo y formato'],'Un entorno de IA configurado y tus primeras conversaciones.'],
-  ['IA para tu productividad diaria','Sesión 2',['Escribir y comunicar mejor','Resumir documentos y trabajar con archivos','Investigar y chequear lo que responde la IA','Armar una presentación y ordenar ideas','Iterar: cómo mejorar una respuesta hasta que sirva'],'Tres tareas reales resueltas con IA y tu biblioteca de prompts.'],
-  ['Integrar la IA en tu trabajo','Sesión 3',['Personalizar: instrucciones y proyectos','Tu primer asistente básico','Tareas repetitivas y primeras ideas de flujo','Uso responsable: privacidad y verificación','Tu plan de adopción personal a 30 días'],'Un flujo personalizado y tu plan personal de adopción.']
- ],
- close:'Seguimiento a los 30 días para ver qué se sigue usando (propuesta).',
- next:'IA Hands-on si liderás un equipo, IA para Dirección si dirigís, IA y longevidad si querés sumar IA a tu etapa de vida.'},
-{key:'Hands-on',tab:'hands-on',name:'IA Hands-on',desc:'IA para construir con tu equipo',real:'IA Hands-on',verb:'Construir',col:'--c-ho',order:'Programa 2 de 4 · Líderes de equipo',
+{key:'Construir',tab:'construir',name:'Construir',verb:'Dominar la IA',col:'--c-ho',desc:'Curso A · 14 encuentros',order:'Curso A · Líderes de equipo y referentes',
  tagline:'Aprender IA construyendo lo que tu equipo necesita.',
- story:['Una obra se aprende con las manos. En IA Hands-on no mirás cómo otros usan la IA: armás tu asistente, tu automatización y tu agente sobre un proceso real de tu equipo.','Cada clase deja una pieza terminada. Al final tenés algo funcionando, la forma de controlarlo y el criterio para sostenerlo cuando cambie la herramienta de moda.'],
- hooks:['Aprendé IA construyendo lo que tu equipo necesita.','Te vas con algo funcionando, no con apuntes.','Cada clase deja una pieza de tu propia obra.'],
- why:'Obra significa construir y también significa "lo que hacés": el resultado es tuyo, sobre tu trabajo real. Se acerca al "aprender haciendo" del programa sin hablar de herramientas, que es lo que Silvora no quiere enseñar.',
- alts:[['Forja','Transmite fuerza y oficio, pero suena más industrial y menos humano que el resto de la familia.'],['Manos a la obra','Muy cercano y fácil de recordar, pero es una frase hecha y no funciona como nombre corto.']],
- facts:[['Para quién','Líderes de equipo y referentes que hacen el trabajo con sus manos y quieren aprender IA haciendo. No requiere programación.','c'],['Formato','Virtual en vivo, 1 encuentro por semana de 18 a 20 h, 14 semanas. Día a definir.','c'],['Grupo','Entre 15 y 20 personas.','c'],['Admisión','Assessment previo: cada participante presenta una tarea real a trabajar.','c'],['Entre clases','Una práctica semanal sobre el caso propio, con devolución.','c'],['Te llevás','Un prototipo propio y el mapa documentado de tu stack.','c']],
+ story:['Acá no mirás cómo otros usan la IA: armás tu asistente, tu automatización y tu agente sobre un proceso real de tu equipo. Cada encuentro deja una pieza terminada, y al final tenés algo funcionando, la forma de controlarlo y el mapa de tu stack.','Es el curso que sube un escalón: se conectan herramientas por webhook, se estructuran documentos para que un agente los use bien y se versiona lo que se construye. No hace falta saber programar.'],
+ hooks:['Aprendé IA construyendo lo que tu equipo necesita.','Te vas con algo funcionando, no con apuntes.','Enseñamos criterio para usar cualquier IA, no prompts que quedan viejos en meses.'],
+ facts:[['Para quién','Líderes de equipo y referentes que hacen el trabajo y quieren aprender IA haciendo. Sin experiencia técnica ni de programación.','c'],['Formato','Virtual y en vivo. 14 encuentros de 2 horas, uno por semana (28 horas).','c'],['Horario','18 a 20 h o 19 a 21 h, lunes o miércoles. Día y horario a definir.','d'],['Inicio','Marzo de 2027, con inscripción desde diciembre. En este plan arranca una semana después de Decidir, para que nadie dicte dos cursos en la misma semana.','p'],['Grupo','Hasta 15 participantes. Abre con un mínimo de 5.','c'],['Precio','A redefinir. Los USD 370 se fijaron para 16 horas; con 28 horas, 5 inscripciones no cubren los honorarios y el precio tendría que ser de al menos unos USD 500 según el documento de lanzamiento.','d'],['Quiénes dictan','Virginia abre (primera hora del encuentro 1) y cierra (última hora del encuentro 14). Las otras 26 horas se reparten entre Cristina y Agustina: 13 y 13 en la propuesta de este documento. Los documentos dicen 25 horas; 28 menos 2 son 26.','p'],['Entre encuentros','Una práctica semanal sobre el caso propio, con devolución. Es donde se construye: el encuentro sirve para mostrar, corregir y destrabar.','c']],
+ base:{t:'El esencial, adentro de este curso',p:'No hay un curso de nivelación aparte ni un costo adicional. Cada persona llega con lo que necesita:',it:[['Diagnóstico antes de empezar','Formulario de 10 a 12 minutos sobre lo que hacés, no sobre lo que creés saber, y una tarea real de tu equipo para trabajar.'],['Guía A1: primer contacto con método','Para quien usa poco la IA: entorno listo en una herramienta, un pedido con método sobre una tarea propia y la primera verificación. Una página y 20 minutos.'],['Guía A2: piezas para conectar','Para quien tuvo poca exposición a herramientas no-code: qué es un flujo, un webhook y un documento para agentes, con las cuentas abiertas.'],['Encuentros 1 y 2 como base','La tesis de Silvora y cómo razona un modelo ya funcionan como nivelación para todo el grupo, y las prácticas tienen una versión base y una ampliada.']]},
  classes:[
-  ['Por qué ahora','Módulo 1',['La convergencia que cambia cómo se trabaja: IA y longevidad a la vez','Qué capacidades se devalúan y cuáles suben de valor','Por qué esto no es una moda de productividad','Qué significa para tu rol y tu equipo'],'Una lectura propia de qué parte de tu trabajo cambia.'],
-  ['Cómo razona un modelo y dónde falla','Módulo 2',['Qué hace realmente un modelo cuando responde','Corte de conocimiento, alucinación, sesgo y parámetros de salida','ChatGPT, Claude y Gemini frente a la misma tarea','Método para pedir: contexto, rol, objetivo, formato y restricciones'],'Un método propio y criterio de qué modelo usar para qué.'],
-  ['Tu asistente, parte 1: diseñarlo','Módulo 3',['Qué tareas propias delegar y cuáles no','Clonar tu forma de trabajar: criterios de decisión','Ejemplos de lo bueno, lo malo y lo que no debe hacer'],'El diseño de tu asistente sobre un proceso recurrente.'],
-  ['Tu asistente, parte 2: montarlo','Módulo 3',['Montarlo sobre un proceso recurrente real','Probarlo y ajustarlo con uso'],'Un asistente configurado sobre una tarea semanal.'],
-  ['Datos privados y uso responsable','Módulo 4',['Qué datos no deberían entrar nunca a una herramienta de terceros, y cómo cambia según el rubro','Anonimización','Propiedad intelectual de lo generado','Transparencia con clientes y riesgo reputacional'],'Una checklist propia antes de cargar información o publicar.'],
-  ['Validar y decidir con IA, parte 1','Módulo 5',['Conversar con un reporte propio','Qué sí y qué no pedirle a un modelo sobre datos','Separar dato de inferencia','Verificar un resultado antes de usarlo'],'Una rutina de verificación.'],
-  ['Validar y decidir con IA, parte 2','Módulo 5',['Usar la IA para construir el contraargumento y no para confirmar el propio','Someter una decisión real a challenge'],'Una decisión sometida a challenge.'],
-  ['Automatizar un flujo, parte 1: mapearlo','Módulo 6',['Mapear la tarea: disparador, paso de IA, destino y excepción manual','Elegir qué automatizar primero'],'El mapa de tu flujo.'],
-  ['Automatizar un flujo, parte 2: construirlo','Módulo 6',['Construirlo en Zapier o Make','Conectar por webhook dos herramientas que no se hablan','Calcular el ahorro real'],'Una automatización corriendo y su cálculo de horas.'],
-  ['Tu agente, parte 1: diseñarlo','Módulo 7',['Objetivo, fuentes y reglas de escalamiento a un humano','Preparar y estructurar los documentos para que el agente los use bien'],'El diseño de tu agente.'],
-  ['Tu agente, parte 2: probarlo','Módulo 7',['Probarlo con casos difíciles antes de soltarlo','Dejarlo funcionando sobre un proceso del equipo'],'Un agente propio funcionando sobre un proceso del equipo.'],
-  ['Controlar lo que construiste','Módulo 8',['Cómo probarlo y cómo darte cuenta de que falló','Dónde mirar cuando se equivoca y cuándo apagarlo','Versiones y cambios','Cómo mostrar tu trabajo cuando alguien lo revisa'],'Un protocolo de prueba y la bitácora de fallas de tu agente.'],
-  ['Prototipos y tu stack, parte 1','Módulo 9',['Describir en lenguaje natural una herramienta que te falta','Llegar a una versión funcionando','Combinar dos agentes en un flujo'],'Un prototipo propio en marcha.'],
-  ['Prototipos y tu stack, parte 2 y presentación final','Módulo 9',['El mapa de tu stack: qué hace cada cosa, quién la mantiene y cuándo se revisa','Presentación final de tu caso'],'Un prototipo propio y el mapa documentado de tu stack.']
+  ['Por qué ahora','Módulo 1',['Primera hora, a cargo de Virginia: IA y longevidad a la vez, qué capacidades se devalúan y cuáles suben de valor','Segunda hora: reconversión del talento y qué significa todo esto para tu rol y tu equipo'],'Una lectura propia de qué parte de tu trabajo cambia.'],
+  ['Cómo razona un modelo y dónde falla','Módulo 2',['Qué hace un modelo cuando responde','Corte de conocimiento, alucinación, sesgo y parámetros de salida','ChatGPT, Claude y Gemini sobre la misma tarea','Método para pedir: contexto, rol, objetivo, formato y restricciones'],'Un método propio y criterio de qué modelo para qué.'],
+  ['Tu asistente y tu eficiencia personal, parte 1','Módulo 3 · 4 horas',['Qué tareas propias delegar y cuáles no','Clonar tu forma de trabajar: criterios de decisión, ejemplos de bueno y de malo, qué no debe hacer'],'La ficha de criterio de tu asistente, escrita sobre una tarea semanal.'],
+  ['Tu asistente y tu eficiencia personal, parte 2','Módulo 3 · 4 horas',['Montarlo sobre un proceso recurrente real','Probarlo y ajustarlo con uso'],'Un asistente configurado sobre una tarea semanal.'],
+  ['Datos privados y uso responsable','Módulo 4',['Qué datos no deberían entrar nunca a una herramienta de terceros y por qué cambia según el rubro','Anonimización, propiedad intelectual de lo generado y transparencia con clientes','Riesgo reputacional'],'Una checklist propia antes de cargar información o publicar.'],
+  ['Validar y decidir con IA, parte 1','Módulo 5 · 4 horas',['Conversar con un reporte propio','Qué sí y qué no pedirle a un modelo sobre datos','Separar dato de inferencia'],'Un reporte tuyo analizado, con lo que se verifica y lo que no.'],
+  ['Validar y decidir con IA, parte 2','Módulo 5 · 4 horas',['Verificar un resultado antes de usarlo','Usar la IA para construir el contraargumento y no para confirmar el propio'],'Una rutina de verificación y una decisión sometida a challenge.'],
+  ['Automatizar un flujo de punta a punta, parte 1','Módulo 6 · 4 horas',['Mapear la tarea: disparador, paso de IA, destino y excepción manual','Elegir qué conviene automatizar primero'],'El mapa de tu flujo, listo para construir.'],
+  ['Automatizar un flujo de punta a punta, parte 2','Módulo 6 · 4 horas',['Construirlo en Zapier o Make','Conectar por webhook dos herramientas que no se hablan','Calcular el ahorro real'],'Una automatización corriendo y su cálculo de horas.'],
+  ['Diseñar y poner un agente en producción, parte 1','Módulo 7 · 4 horas',['Objetivo, fuentes y reglas de escalamiento a un humano','Preparar y estructurar los documentos para que el agente los use bien'],'El diseño de tu agente y sus documentos.'],
+  ['Diseñar y poner un agente en producción, parte 2','Módulo 7 · 4 horas',['Probarlo con casos difíciles antes de soltarlo','Dejarlo funcionando sobre un proceso del equipo'],'Un agente propio funcionando sobre un proceso del equipo.'],
+  ['Controlar lo que construiste','Módulo 8',['Cómo probarlo, cómo darte cuenta de que falló y dónde mirar cuando se equivoca','Cuándo apagarlo, versiones y cambios','Cómo mostrar tu trabajo cuando alguien te lo revisa'],'Un protocolo de prueba y la bitácora de fallas de tu agente.'],
+  ['Prototipos, tu stack y cierre, parte 1','Módulo 9 · 4 horas',['Describir en lenguaje natural una herramienta que te falta y llegar a una versión funcionando','Combinar dos agentes en un flujo'],'Un prototipo propio funcionando.'],
+  ['Prototipos, tu stack y cierre, parte 2','Módulo 9 · 4 horas',['El mapa de tu stack: qué hace cada cosa, quién la mantiene y cuándo se revisa','Cada participante muestra lo que armó y recibe devolución del grupo','Última hora, a cargo de Virginia: qué significa todo esto para tu rol y tu equipo'],'El mapa documentado de tu stack y un plan de 90 días.']
  ],
- close:'Proyecto hilo: un caso real que cada participante va construyendo durante todo el programa (propuesta).',
- next:'IA para Dirección para quien aprueba y controla lo que el equipo construye. Paquete para una misma organización: IA para Dirección para la dirección e IA Hands-on para los equipos.'},
-{key:'Dirección',tab:'direccion',name:'IA para Dirección',desc:'IA para decidir y dirigir',real:'IA para Dirección',verb:'Decidir',col:'--c-di',order:'Programa 3 de 4 · Dirección y C-level',
+ close:'Cada participante muestra lo que armó y recibe devolución del grupo. La última hora la dicta Virginia.',
+ next:'Seguimiento a los 30 días (propuesta). Para una misma organización, paquete con Decidir: la dirección decide y los equipos construyen (idea tomada de la propuesta 2, a definir).',
+ note:'Cómo se parten los módulos de cuatro horas en dos encuentros es una propuesta de este documento: el programa dice que ocupan dos encuentros, pero no cuál contenido va en cada uno. Si hubiera que comprimir, los módulos 5 y 9 bajarían a un encuentro cada uno (24 horas y 12 encuentros).'},
+{key:'Decidir',tab:'decidir',name:'Decidir',verb:'Dominar la IA',col:'--c-di',desc:'Curso B · 8 encuentros',order:'Curso B · Dirección y C-level',
  tagline:'¿Cómo decidís con IA, y cómo controlás lo que otros hacen con ella?',
- story:['Cuando una IA puede responder casi todo, lo escaso deja de ser la respuesta y pasa a ser el criterio: qué preguntar, qué creer, qué aprobar y qué no delegar nunca.','IA para Dirección es para quienes juzgan, aprueban y responden por el resultado. Aprendés a decidir con IA, a poner límites por escrito y a controlar lo que otros construyen con ella. Te llevás un caso listo para presentar al directorio.'],
- hooks:['Cuando la IA responde todo, lo valioso es saber qué aprobar.','¿Cómo decidís con IA, y cómo controlás lo que otros hacen con ella?','No es aprender herramientas: es conducir la transformación.'],
- why:'"Criterio" es la palabra que más se repite en el programa y en la tesis de Silvora: lo que sube de valor en la era de la IA es el juicio humano. Es sobrio, serio y le habla a la dirección sin sonar a tecnología.',
- alts:[['Timón','Evoca conducir y rumbo, pero puede sonar a metáfora náutica y se aleja de la decisión.'],['Brújula','Orientación en la incertidumbre, aunque es un nombre muy usado en consultoría.']],
- facts:[['Para quién','C-level y dirección: quien no hace el trabajo sino que lo juzga, lo aprueba y responde por el resultado. No requiere experiencia técnica.','c'],['Formato','Virtual en vivo, 1 encuentro por semana de 18 a 20 h, 12 semanas. Día a definir.','c'],['Grupo','Entre 15 y 20 personas.','c'],['Admisión','Assessment previo: cada participante presenta una tarea real a trabajar.','c'],['Entre clases','Una práctica semanal sobre el caso propio, con devolución.','c'],['Te llevás','Un cuestionario de evaluación y un caso listo para presentar. Proyecto final propuesto: un AI Transformation Playbook.','c']],
+ story:['Cuando una IA puede responder casi todo, lo escaso deja de ser la respuesta y pasa a ser el criterio: qué preguntar, qué creer, qué aprobar y qué no delegar nunca.','Decidir es para quienes no hacen el trabajo sino que lo juzgan, lo aprueban y responden por el resultado. Se sale con los límites escritos, una política de uso para el área y un caso listo para llevar al directorio.'],
+ hooks:['Decidir con IA, y controlar lo que otros hacen con ella.','Para quien aprueba y responde por el resultado.','Ocho encuentros pensados para una agenda de dirección.'],
+ facts:[['Para quién','C-level y dirección: directores generales, gerentes de área y responsables que tienen que decidir sobre propuestas, presupuestos y equipos que ya usan IA. Sin experiencia técnica.','c'],['Formato','Virtual y en vivo. 8 encuentros de 2 horas, uno por semana (16 horas).','c'],['Horario','18 a 20 h o 19 a 21 h, lunes o miércoles. Día y horario a definir.','d'],['Inicio','Marzo de 2027, con inscripción desde diciembre.','p'],['Grupo','Hasta 15 participantes. Abre con un mínimo de 5.','c'],['Precio','USD 950, hasta 15 participantes. A confirmar.','d'],['Admisión','Diagnóstico corto y conversación previa, con una propuesta o reporte real a juzgar. Guía de arranque B incluida, sin costo adicional.','c'],['Pendiente de auditar','Ocho encuentros son un compromiso acotado para una agenda de dirección. Falta verificar con el mismo test que se usó con Construir si entra todo, incluido el caso para el directorio. Si la primera cohorte lo pide: encuentros 4 y 7 a cuatro horas, 20 horas y 10 encuentros.','d'],['Quiénes dictan','Virginia abre y cierra (2 horas). Las otras 14 horas, 7 y 7 entre Cristina y Agustina: reparto propuesto en este documento.','p']],
+ base:{t:'El esencial, adentro de este curso',p:'No hay curso de nivelación aparte ni costo adicional. Para quien dirige, el esencial se resuelve así:',it:[['Diagnóstico y conversación previa','Formulario de 10 a 12 minutos y una conversación de 15 a 20 minutos, siempre. Incluye una propuesta, presupuesto o reporte real de tu área, anonimizado, para juzgar.'],['Guía B','Las mismas tres herramientas sobre una tarea propia y un glosario de seis términos: modelo, alucinación, sesgo, agente, automatización y API. Una página y 20 minutos.'],['Encuentro 1 como base','La segunda hora explica qué significa cada límite cuando lo que tenés delante es el trabajo de otro, y por qué dos modelos responden distinto.'],['Doble nivel en las prácticas','Cada práctica semanal tiene una versión base y una ampliada, para que quien ya usa IA no repita.']]},
  classes:[
-  ['Por qué ahora','Módulo 1',['La convergencia que cambia cómo se trabaja: IA y longevidad a la vez','Qué capacidades se devalúan y cuáles suben de valor','Reconversión del talento como decisión de negocio, no como beneficio','Qué significa para tu organización y tu gente'],'Una lectura del impacto sobre tu dotación y tus capacidades críticas.'],
-  ['Cómo razona un modelo y dónde falla','Módulo 2',['Qué significa cada límite cuando tenés delante el trabajo de otro','Corte de conocimiento, alucinación y sesgo','Por qué dos modelos dan respuestas distintas al mismo pedido y qué hacer con eso'],'Criterio para leer cualquier resultado que te traigan.'],
-  ['Tu asistente y tu eficiencia, parte 1','Módulo 3',['Qué tareas propias delegar y cuáles no','Clonar tu forma de trabajar y tus criterios de decisión'],'El diseño de tu asistente.'],
-  ['Tu asistente y tu eficiencia, parte 2','Módulo 3',['Montarlo sobre algo que hacés todas las semanas','Ajustarlo con uso'],'Un asistente configurado sobre una tarea propia.'],
-  ['Datos privados, marco legal y riesgo','Módulo 4',['Qué datos no pueden salir de la organización y bajo qué condiciones, según el rubro','Habeas data y protección de datos como consecuencias de diseño','Dónde quedan los datos que carga tu equipo','Propiedad intelectual y riesgo reputacional'],'Los límites escritos para tu área.'],
-  ['Cultura de datos: validar antes de decidir','Módulo 5',['Completitud, comparabilidad y definiciones compartidas','Separar dato de inferencia en una respuesta','Qué preguntarle a quien produce el dato cuando vos no lo gestionás','Conversar con un reporte propio'],'Un set de preguntas para tu próxima reunión de números.'],
-  ['Decidir con IA, parte 1','Módulo 6',['Usar la IA para construir el contraargumento','Evaluación de alternativas','Sesgo del modelo y sesgo propio'],'Una decisión real lista para someter a challenge.'],
-  ['Decidir con IA, parte 2','Módulo 6',['Cuándo verificar y cuándo no','Qué queda siempre bajo decisión humana','El registro de decisión'],'Una decisión real sometida a challenge, documentada.'],
-  ['Cuándo IA sí y cuándo no','Módulo 7',['Reversibilidad y riesgo','Si el dato existe y si el proceso es lo bastante estable para automatizarlo','Costo real contra costo aparente','Qué problemas no son problemas de IA, y qué hace falta para sostener un agente'],'Un marco de decisión aplicado a tres casos propios.'],
-  ['Gobierno del uso en tu equipo','Módulo 8',['Qué se permite y qué no, por escrito','Cómo revisar trabajo hecho con IA y cómo auditar una automatización o un agente que armó otro','Delegar a alguien que usa IA y fijar OKRs con indicadores medibles','Cómo comunicar el cambio para que el equipo lo adopte (propuesta)'],'Una política de uso de una página para tu área.'],
-  ['Evaluar propuestas y el caso hacia arriba, parte 1','Módulo 9',['Qué preguntar antes de aprobar un proveedor o un presupuesto','Qué es nuevo y qué es una arquitectura conocida con nombre nuevo','Qué parte del proyecto es cultura y no tecnología'],'Un cuestionario de evaluación.'],
-  ['Evaluar propuestas y el caso hacia arriba, parte 2','Módulo 9',['Armar el caso: una recomendación con evidencia','Presentarlo como ante un directorio'],'Un caso listo para presentar.']
+  ['Por qué ahora y cómo razona un modelo','Módulo 1',['Primera hora, a cargo de Virginia: la convergencia de IA y longevidad, qué capacidades se devalúan y cuáles suben de valor, y la reconversión del talento como decisión de negocio','Segunda hora: qué significa cada límite cuando tenés delante el trabajo de otro (corte de conocimiento, alucinación, sesgo) y por qué dos modelos dan respuestas distintas'],'Una lectura del impacto sobre tu dotación y tus capacidades críticas, y criterio para leer cualquier resultado que te traigan.'],
+  ['Tu asistente y tu eficiencia personal','Módulo 2',['Qué tareas propias delegar y cuáles no','Clonar tu forma de trabajar y tus criterios de decisión','Montarlo sobre algo que hacés todas las semanas y ajustarlo con uso'],'Un asistente configurado sobre una tarea propia.'],
+  ['Datos, marco legal y cultura de datos','Módulo 3',['Qué datos no pueden salir de la organización y bajo qué condiciones, según el rubro','Datos personales como consecuencias de diseño, no como teoría','Propiedad intelectual y riesgo reputacional','Separar dato de inferencia y qué preguntarle a quien produce el dato'],'Los límites escritos para tu área y un set de preguntas para tu próxima reunión de números.'],
+  ['Decidir con IA','Módulo 4',['Usar la IA para construir el contraargumento','Evaluación de alternativas, sesgo del modelo y sesgo propio','Cuándo verificar y cuándo no, y qué queda siempre bajo decisión humana','Registro de decisión'],'Una decisión real sometida a challenge, documentada.'],
+  ['Cuándo IA sí y cuándo no','Módulo 5',['Reversibilidad y riesgo','Si el dato existe y si el proceso es lo bastante estable para automatizarlo','Costo real contra costo aparente','Qué problemas no son problemas de IA, y qué hace falta para sostener un agente'],'Un marco de decisión aplicado a tres casos propios.'],
+  ['Gobierno del uso en tu equipo','Módulo 6',['Qué se permite y qué no, por escrito','Qué se comparte y qué queda personal','Cómo revisar trabajo hecho con IA y cómo auditar una automatización o un agente que armó otro','Delegar a alguien que usa IA'],'Una política de uso de una página para tu área.'],
+  ['Evaluar propuestas','Módulo 7',['Qué preguntar antes de aprobar un proveedor o un presupuesto','Qué es nuevo y qué es una arquitectura conocida con nombre nuevo','Qué parte del proyecto es cultura y no tecnología'],'Un cuestionario de evaluación listo para usar.'],
+  ['El caso hacia arriba y cierre','Módulo 8',['Armar el caso: llevar una recomendación con evidencia a un directorio','Cada participante presenta el suyo y recibe devolución','Última hora, a cargo de Virginia: qué significa todo esto para tu organización y tu gente'],'Un caso listo para presentar.']
  ],
- close:'Proyecto final propuesto: AI Transformation Playbook con diagnóstico, prioridades, riesgos, caso de negocio, gobierno y plan de adopción.',
- next:'IA Hands-on para los equipos de tu organización, o el paquete conjunto con IA para Dirección.'},
-{key:'Vigencia',tab:'longevidad',name:'IA y longevidad',desc:'IA para seguir vigente',real:'IA y longevidad',verb:'Seguir vigente',col:'--c-vi',order:'Programa 4 de 4 · Generación Silver',
+ close:'Cada participante presenta su caso y recibe devolución. La última hora la dicta Virginia.',
+ next:'Seguimiento a los 30 días (propuesta). Paquete con Construir para una misma organización: la dirección hace Decidir y los equipos hacen Construir (a definir).',
+ note:''},
+{key:'Vigencia',tab:'vigencia',name:'Vigencia',verb:'Dominar la IA',col:'--c-vi',desc:'Curso C · 8 encuentros',order:'Curso C · Generación Silver',
  tagline:'Tu experiencia no se devalúa: se actualiza con IA.',
- story:['Décadas de vida y de oficio no se reinician. IA y longevidad parte de lo que ya sabés y lo pone a trabajar con IA, a tu ritmo y en un grupo chico, para no quedar afuera de las conversaciones, los trámites y las oportunidades que hoy ya pasan por la IA.','Seguir vigente no es seguir corriendo: es seguir aportando. Al final tenés un plan propio y un registro de saberes para transmitir.'],
- hooks:['Tu experiencia no se devalúa: se actualiza con IA.','Seguir vigente no es seguir corriendo.','Vivís más. Aportás más. Con IA a tu lado.'],
- why:'Es el nombre que el programa ya tiene, y es el que mejor resume la tesis de Silvora: IA y longevidad al mismo tiempo. Se mantiene para que el programa más humano de la familia conserve su identidad.',
- alts:[['Savia','La experiencia que sigue circulando. Es poético y distintivo, pero más abstracto para quien recién llega.'],['Legado vivo','Pone el foco en transmitir, aunque deja afuera a quien sigue en plena actividad.']],
- facts:[['Para quién','Personas de la generación Silver, en actividad, en transición o ya retiradas. No requiere experiencia técnica. Rango de edad a definir.','c'],['Formato','Virtual en vivo, 1 encuentro de 2 h por semana, 10 semanas. Día y horario a definir. Variante: 11 semanas con un encuentro de repaso.','c'],['Grupo','Entre 10 y 14 personas, para sostener un ritmo conversado.','c'],['Admisión','Una conversación previa, no un examen.','c'],['Entre clases','Una práctica breve y opcional sobre un tema propio, con devolución individual y espacio de consulta.','c'],['Te llevás','Un plan personal de vigencia y un registro de saberes propios para transmitir.','c']],
+ story:['Para quien lleva décadas de oficio, el riesgo no es no saber usar una herramienta: es que el entorno dé por hecho que ya no está al día. Este curso no pide empezar de cero: parte de lo que ya sabés y lo pone a trabajar con IA.','No es un curso para aprender a usar el celular: es formación profesional. Se avanza al ritmo del grupo, con un Cuaderno de vigencia propio que se completa encuentro a encuentro y termina siendo tu plan personal y tu registro de saberes.'],
+ hooks:['Tu experiencia no se devalúa: se actualiza con IA.','Seguir vigente no es seguir corriendo.','Un Cuaderno propio que al final es tu plan de vigencia.'],
+ facts:[['Para quién','Profesionales de la generación Silver, en actividad o en transición. Sin experiencia técnica ni uso previo de IA. El rango de edad está a definir.','d'],['Formato','Virtual y en vivo. 8 encuentros de 2 horas, los miércoles (16 horas), con receso de fin de año.','c'],['Primera cohorte','Miércoles 25/11/2026, si el 18/11 hay al menos 5 inscripciones. Si no, el 2/12 y, si tampoco, febrero de 2027.','c'],['Calendario','25/11, 2, 9 y 16/12; receso del 23/12 al 5/1; 6, 13, 20 y 27/1.','c'],['Grupo','Hasta 12 participantes. Abre con un mínimo de 5.','c'],['Precio','USD 700, hasta 12 participantes. A confirmar.','d'],['Admisión','Conversación de bienvenida y prueba de acceso de 10 minutos. No es examen. Guías de arranque C1 y C2 incluidas, sin costo adicional.','c'],['Quiénes dictan','Virginia abre y cierra (2 horas). Las otras 14 horas, 7 y 7 entre Cristina y Agustina: reparto propuesto en este documento.','p'],['Entre encuentros','Una práctica breve y opcional sobre el caso propio, con devolución individual.','c']],
+ base:{t:'El esencial, adentro de este curso',p:'No hay curso de nivelación aparte ni costo adicional. El primer filtro es práctico, porque el curso es virtual y en vivo:',it:[['Conversación de bienvenida','Por teléfono o videollamada, con una persona de Silvora. Sin palabras como «nivel» o «principiante». Incluye una prueba de acceso de 10 minutos.'],['Guía C1: primeros pasos digitales','Entrar al encuentro, cámara y micrófono, cuentas, contraseñas y verificación en dos pasos. Para quien tenga cualquier dificultad con el dispositivo o la videollamada.'],['Guía C2: primera conversación con una IA','Tres preguntas de la vida diaria. Para quien nunca usó una IA.'],['Encuentros 1 y 2 como base','Cómo responde una IA, la receta de cinco ingredientes y el asistente propio nivelan a todo el grupo, con una versión base y una ampliada en cada práctica.']]},
  classes:[
-  ['Por qué ahora','Módulo 1',['La convergencia de IA y longevidad: vidas más largas y activas en un mundo que cambia rápido','Qué se devalúa y qué sube de valor: la experiencia, el criterio y el trato humano','Qué es la IA y qué no, sin tecnicismos'],'Una lectura propia de qué aporta la IA a tu etapa de vida.'],
-  ['Cómo razona un modelo y dónde falla','Módulo 2',['Qué hace realmente una IA cuando responde','Por qué a veces se equivoca con total seguridad','ChatGPT, Claude y Gemini sobre la misma pregunta, para perder el miedo a probar','Cómo pedir bien: contar el contexto y decir qué querés'],'Un método simple para conversar con una IA y revisar lo que responde.'],
-  ['Tu asistente personal, parte 1','Módulo 3',['Qué tareas cotidianas conviene delegar: organizar, escribir, resumir, planificar un viaje, entender un trámite','Elegir la primera tarea de tu asistente'],'La tarea elegida para tu asistente.'],
-  ['Tu asistente personal, parte 2','Módulo 3',['Armar un asistente con tus gustos y tu forma de decir las cosas','En clase y paso a paso, con acompañamiento'],'Un asistente propio funcionando sobre algo de tu vida diaria.'],
-  ['Cuidarse en el mundo digital','Módulo 4',['Estafas, mensajes, llamadas y videos falsos hechos con IA','Cómo reconocerlos y qué hacer ante la duda','Qué datos no compartir con ninguna herramienta','Acordar con la familia una forma de verificar'],'Una checklist propia para verificar antes de responder, pagar o compartir.'],
-  ['Salud, trámites e información confiable','Módulo 5',['Usar la IA para entender un informe, preparar una consulta médica o resolver un trámite, sin reemplazar al profesional','Separar dato de inferencia','Contrastar fuentes antes de creer una respuesta'],'Una rutina para preguntar, contrastar y llegar mejor preparado a una consulta o trámite.'],
-  ['Aprender, crear y conectar','Módulo 6',['Aprender algo nuevo con una IA como compañera de estudio: idiomas, historia, música','Escribir memorias y cartas, ordenar fotos familiares','Conversar con hijos y nietos sobre tecnología sin sentirse afuera'],'Un proyecto personal iniciado, de aprendizaje o creación.'],
-  ['Organizar tu día y tus proyectos','Módulo 7',['Qué tarea que se repite cada semana conviene automatizar primero: agenda, recordatorios, listas, gastos del hogar','Una primera rutina armada en clase, con ayuda'],'Una rutina semanal armada con IA y el cálculo del tiempo que libera.'],
-  ['Seguir aportando: trabajo, proyectos y comunidad','Módulo 8',['Poner en valor la experiencia con ayuda de la IA: perfil, propuestas, consultoría, mentorías, voluntariado','Cuándo suma la IA y cuándo pesa más el criterio propio'],'Un plan propio de cómo seguir aportando valor en la etapa que viene.'],
-  ['Lo que sigue: legado y vigencia','Módulo 9',['El mapa de lo construido en el programa','Cómo documentar y transmitir la propia historia, los saberes y el criterio','Qué significa seguir vigente, no seguir corriendo'],'Un plan personal de vigencia y un registro de saberes propios para transmitir.']
+  ['Por qué ahora y cómo razona un modelo','Miércoles 25/11/2026',['Bienvenida y ronda de presentación: oficio, años de experiencia, uso previo de IA y qué querés resolver','El marco de Silvora (primera hora, a cargo de Virginia): IA y longevidad a la vez, qué se devalúa y qué sube de valor','Cómo responde una IA y por qué su seguridad no prueba nada','Ejercicio: la receta de cinco ingredientes sobre una tarea real, dos veces'],'Una lectura propia de qué parte de tu experiencia sigue siendo la ventaja y un método simple para conversar con una IA. Cuaderno: «Mi experiencia sigue siendo ventaja en...».'],
+  ['Tu asistente y tu criterio','Miércoles 2/12/2026',['El semáforo de delegación: qué delegar, qué delegar y revisar, y qué no delegar','La ficha de criterio en seis campos, y el truco de pedirle a la IA que te entreviste','Demo: armar un asistente en vivo','Ejercicio: tu asistente en cinco pasos, probado con un caso real'],'Un asistente propio funcionando sobre una tarea de tu trabajo.'],
+  ['Cuidarse: datos, privacidad y engaños con IA','Miércoles 9/12/2026',['La regla del cartel: qué datos no compartir con ninguna herramienta, y cómo anonimizar','Engaños con IA: voces, mensajes y videos falsos, cinco indicios y la palabra clave acordada','Propiedad intelectual de lo generado: cuatro cuidados prácticos','Ejercicios: anonimizar un texto, seis casos, tu checklist y tu seguridad'],'Una checklist propia para verificar antes de responder, pagar o compartir.'],
+  ['Validar y decidir con IA','Miércoles 16/12/2026',['Dato, cálculo e inferencia: qué pedirle a una IA sobre datos','Conversar con un informe y rehacer las cuentas','Contrastar con fuentes: pedir la fuente y abrirla','Ejercicios: encontrar errores, poner a prueba una conclusión propia y armar tu rutina de verificación'],'Una rutina de verificación antes de dar un número o una conclusión por buena. Cierre del año.'],
+  ['Organizar tu trabajo y automatizar lo repetitivo','Miércoles 6/1/2027',['Repaso puente después del receso','Qué conviene automatizar primero: cuatro preguntas y cuatro patrones (agenda, seguimiento, resúmenes e informes)','El mapa de rutina de seis casilleros, con la excepción incluida','Demo: una rutina semanal con herramientas gratuitas y cuánto tiempo libera'],'Una rutina semanal armada con IA y el cálculo del tiempo que libera.'],
+  ['Aprender y actualizarte con IA','Miércoles 13/1/2027',['La IA como compañera de estudio: cinco modos de pedir','Mantenerse al día sin perseguir la herramienta de moda: tres filtros y una hora por mes','Colegas de otras generaciones: qué aporta cada uno','Ejercicios: aprender un tema, plan a tres meses y mapa de aportes'],'Un plan propio de aprendizaje para los próximos tres meses.'],
+  ['Seguir aportando: poner en valor tu experiencia','Miércoles 20/1/2027',['Cuatro formas de seguir aportando: en una organización, consultoría, mentoría y proyecto propio','De «lo que hice» a «lo que resuelvo»: problema, acción, resultado','Un perfil verificado frase por frase, sin que la IA invente','Ejercicios: inventario de cinco historias, perfil, propuesta de valor y plan a 30, 60 y 90 días'],'Un plan propio de cómo seguir aportando valor en la etapa que viene.'],
+  ['Legado y vigencia: integración y cierre','Miércoles 27/1/2027',['El mapa de lo construido: las ocho secciones del Cuaderno','La ficha de saber: documentar tu criterio para que otra persona pueda continuarlo','Qué significa seguir vigente, a cargo de Virginia','Ejercicio: tu plan de vigencia en seis apartados'],'Un plan personal de vigencia y un registro de saberes propios para transmitir.']
  ],
- close:'La variante con un encuentro de repaso antes del cierre deja el programa en 11 semanas y 22 horas, si el grupo necesita más práctica.',
- next:'Seguimiento a los 30 días y comunidad Silvora de mentoría (a definir).'}
-];
-const STAGES=[
- ['IA Essentials','Entrar','¿Por dónde empiezo?','Pasás de mirar la IA a usarla.','Tu entorno armado, tus primeras tareas resueltas y un plan para seguir.'],
- ['IA Hands-on','Construir','¿Cómo hago que funcione en mi equipo?','Pasás de usarla a construir con ella.','Un asistente, una automatización, un agente y un prototipo propios, con su control.'],
- ['IA para Dirección','Decidir','¿Cómo decido y cómo controlo lo que otros hacen?','Pasás de construir a conducir y a responder por el resultado.','Límites escritos, una política de uso y un caso listo para el directorio.'],
- ['IA y longevidad','Seguir vigente','¿Cómo sigo aportando?','Pasás de seguir corriendo a seguir aportando.','Un plan personal de vigencia y un registro de saberes para transmitir.']
+ close:'El cierre de Silvora desde el encuentro 8 todavía dice «a definir». Propuesta: seguimiento a los 30 días, comunidad liviana y una invitación al siguiente curso.',
+ next:'Construir, para quien quiera sumar construcción a su experiencia (propuesta). Seguimiento a los 30 días y comunidad Silvora (a definir).',
+ note:'En el deck del encuentro 8 la parte de Virginia dura 20 minutos, y el programa dice que es la última hora. Conviene alinear una de las dos versiones.'}
 ];
 const ROUTES=[
- ['Una líder de equipo','Ejemplo ilustrativo',['IA Essentials, si necesita nivelarse','IA Hands-on: construye con su equipo','IA para Dirección: cuando pasa a responder por el resultado']],
- ['Un director o directora','Ejemplo ilustrativo',['IA para Dirección: decide y pone los límites','Su equipo hace IA Hands-on: construye dentro de esos límites','Vuelven con un mismo lenguaje']],
- ['Una persona de la generación Silver','Ejemplo ilustrativo',['IA Essentials: arranca sin miedo','IA y longevidad: pone su experiencia a trabajar','Sigue aportando y transmite sus saberes']]
+ ['Una líder de equipo','Ejemplo ilustrativo',['Construir: arma asistente, flujo y agente con su equipo','Si pasa a responder por el resultado, Decidir','Vuelve con un mismo lenguaje que su dirección']],
+ ['Un director o directora','Ejemplo ilustrativo',['Decidir: pone los límites y evalúa propuestas','Su equipo hace Construir dentro de esos límites (paquete, a definir)','Dirección y equipo comparten criterio']],
+ ['Un profesional Silver en transición','Ejemplo ilustrativo',['Vigencia: pone su experiencia a trabajar con IA','Sigue aportando con su plan de 90 días','Si quiere construir, Construir (propuesta)']]
 ];
 const TOUCH=[
- ['Descubre','Landing, contenido y comunidad cuentan la historia de Silvora.','Agustina'],
- ['Conversa','Assessment o conversación previa. Decide si necesita IA Essentials.','Cristina'],
- ['Se prepara','Onboarding, cuenta de IA y carpeta compartida.','Cristina'],
- ['Cursa','Clases semanales y una práctica sobre su caso propio.','Equipo docente'],
- ['Entrega','Presenta su proyecto final y recibe devolución.','Equipo docente'],
- ['Sigue','Seguimiento a los 30 días y medición de lo que quedó en uso.','Agustina'],
- ['Avanza','Recibe la invitación al siguiente programa de la familia.','Agustina']
+ ['Descubre','Redes, WhatsApp y clase abierta cuentan la historia de Silvora.','Agustina'],
+ ['Conversa','Formulario de 10 a 12 minutos y conversación previa. Define qué guía de arranque recibe.','Cristina'],
+ ['Se prepara','Bienvenida con la guía de arranque que le corresponde, la plataforma y la carpeta compartida.','Cristina'],
+ ['Cursa','Un encuentro semanal de 2 horas y una práctica sobre su caso propio.','Equipo docente'],
+ ['Cierra','Presenta lo que construyó, mide su línea de base final y recibe devolución.','Equipo docente'],
+ ['Sigue','Seguimiento a los 30 días de lo que quedó en uso.','Agustina'],
+ ['Avanza','Invitación al siguiente curso y a la comunidad Silvora.','Agustina']
 ];
 const ETAPAS=[
- ['Definir','Acordar el portafolio, el orden de lanzamiento, quién conduce lo académico y cuánto cuesta cada programa.'],
- ['Diseñar','Ajustar el currículo, la metodología común y el plan clase a clase de cada programa.'],
- ['Producir','Crear las presentaciones, ejercicios, casos, guías y materiales.'],
- ['Preparar la operación','Plataforma, inscripción, cobros, precios y pruebas antes de abrir.'],
- ['Salir al mercado','Nombres, landings, campañas, alianzas y admisión de cada cohorte.'],
- ['Dar el piloto','Dictar la primera cohorte de cada programa y medir qué pasa.'],
- ['Mejorar y escalar','Revisar cada piloto, ajustar y planificar las próximas cohortes.']
+ ['Definir','Cerrar lo que falta decidir: precios, público, reparto de encuentros y cierre del programa.'],
+ ['Diseñar','Diagnóstico de entrada, guías de arranque y entregables finales de cada curso.'],
+ ['Producir','Guías del docente y presentaciones de Decidir y Construir.'],
+ ['Preparar la operación','Plataforma, cobros, calendario y feriados de 2027.'],
+ ['Salir al mercado','Convocatoria, inscripción, clase abierta y puertas de 5 inscripciones.'],
+ ['Dictar','Vigencia desde el 25/11, Decidir y Construir desde marzo de 2027.'],
+ ['Mejorar y seguir','Línea de base final, seguimiento a 30 días y ajustes de cada cohorte.']
 ];
+const HECHO=[
+ ['Programa detallado de los tres cursos','Construir, Decidir y Vigencia, con módulos, formato y quiénes dictan.'],
+ ['One-pager de Dominar la IA, versión 3','Los tres cursos en una página, con el lema «El futuro. Ahora.».'],
+ ['Nivelación, assessment y lanzamiento, versión 3','Decisiones hasta el 1/11, diagnóstico en tres versiones, calendario y números del cupo mínimo.'],
+ ['Guía del docente y ocho presentaciones de Vigencia','Libreto completo de cada encuentro, con minutado, prompts y ejercicios.'],
+ ['Comparación de propuestas y recomendación','Del 12/11: mantener la base A, B y C y sumarle lo mejor de la propuesta 2.']
+];
+const FUENTES=[
+ ['deel','Trendsity para Deel, relevamiento a 218 pymes argentinas (jun a jul de 2026), en Revista Mercado','https://mercado.com.ar/talento-y-liderazgo/pymes-argentinas-crece-la-demanda-de-habilidades-en-ia-pero-falta-capacitacion-interna'],
+ ['s21','Observatorio del Futuro de Insight 21 (Universidad Siglo 21), 400 empresas argentinas, en Forbes Argentina (ago de 2026)','https://www.forbesargentina.com/liderazgo/el-apagon-diagnostico-empresas-argentinas-ia-acelera-pero-45-mide-habilidades-tiene-su-gente-n96793'],
+ ['rand','Randstad Workmonitor y Bumeran, en iProfesional (mar de 2025)','https://www.iprofesional.com/management/424746-un-tercio-de-los-argentinos-quiere-capacitarse-en-ia-que-hacen-los-empleadores'],
+ ['gallup','Gallup, estudio de 2026 con 102 CHROs, en Canadian HR Reporter (ago de 2026)','https://www.hrreporter.com/focus-areas/culture-and-engagement/half-of-chros-not-confident-managers-can-guide-ai-use-by-workers/394799'],
+ ['nitro','Nitro (Zogby y Pollfish, oct de 2025, 103 ejecutivos de EE.UU., Reino Unido y Canadá), en The Register','https://www.theregister.com/2025/11/14/execs_ai_rules_shadow_it/'],
+ ['aarp26','AARP, «Navigating the World of AI» (ene de 2026, adultos de 50 o más en EE.UU.)','https://datastories.aarp.org/2026/navigating-the-world-of-ai/'],
+ ['aarpf','AARP, preocupaciones por fraudes con IA (ago de 2024, 1.000 adultos de 50 o más en EE.UU.)','https://www.aarp.org/pri/topics/work-finances-retirement/fraud-consumer-protection/ai-fraud-concerns-older-adults/'],
+ ['aarpw','AARP, trabajadores mayores y discriminación por edad (2025, más de 3.500 personas de 50 o más en EE.UU.)','https://www.aarp.org/advocacy/older-workers-fear-age-discrimination-2025/'],
+ ['gen','Generation (oct de 2024, 2.610 empleados de más de 45 años), en HR Dive','https://www.hrdive.com/news/few-mid-career-and-older-workers-use-ai-at-work/729828/']
+];
+const COMU=[
+{key:'Vigencia',tab:'vigencia',col:'--c-vi',name:'Vigencia',quien:'Profesionales de la generación Silver, en actividad o en transición',
+ frase:'«Sé hacer mi trabajo mejor que nadie, pero siento que el mundo dio por hecho que ya no estoy al día.»',
+ dolores:[
+  ['La edad como barrera','El miedo no es a la herramienta: es a que se dé por hecho que ya no están al día. Por eso el mensaje no puede ser «actualizate o quedás afuera».','74 % de las personas de 50 o más cree que su edad puede ser una barrera para ser contratada. Casi dos tercios vio o vivió discriminación por edad en el trabajo (EE.UU.).','aarpw'],
+  ['Estafas, voces y videos falsos','Es el miedo más concreto, y el encuentro 3 lo resuelve con una checklist y una palabra clave acordada con la familia.','85 % se preocupa por los deepfakes, 84 % por la clonación de voz y 77 % cree que podría ser blanco de un fraude con IA (EE.UU.).','aarpf'],
+  ['Interés alto, confianza baja','Quieren aprender, pero dudan de lo que responde la IA. Es el público ideal para un curso que enseña a verificar, no a creer.','67 % está interesado en aprender o desarrollar habilidades con IA y 54 % se siente confiado para aprender herramientas nuevas, pero 39 % no confía en que dé información precisa (EE.UU.).','aarp26'],
+  ['Casi nadie los capacita','Aprenden solos o no aprenden. Hay un hueco real de formación pensada para su experiencia.','Solo 11 % de las personas de más de 55 años recibió capacitación en IA, frente a 30 % de las de 18 a 44. Entre los de 45 o más que la usan en el trabajo, la mayoría es autodidacta (EE.UU. y Europa).','gen']],
+ promesa:'Que la experiencia siga siendo la ventaja: salís con un asistente propio, una checklist para no caer en engaños, un plan de aprendizaje, un perfil verificado y un plan de vigencia.',
+ titulares:['Tu experiencia no se devalúa: se actualiza con IA.','Usá la IA con tranquilidad, sabiendo qué hacer y qué no.','Formación profesional, a tu ritmo y en un grupo de hasta 12.'],
+ evitar:['«Nunca es tarde» y cualquier tono de rescate: infantiliza.','«Aprender a usar el celular»: el programa dice expresamente que no lo es.','Amenazas de quedarse afuera o de que la IA les quita el trabajo.','Hablar de «adultos mayores»: son profesionales con décadas de oficio.'],
+ objeciones:[['«Ya es tarde para mí.»','Nadie empieza de cero: el curso parte de lo que ya sabés. No hace falta experiencia técnica ni haber usado una IA.'],['«Mi hijo o mi nieto me lo enseña gratis.»','Ellos te enseñan a usar la herramienta. Acá trabajás tu criterio con una tarea real tuya y un grupo de pares, con devolución individual.'],['«No confío en lo que dice.»','Es sano y es parte del programa: el encuentro 4 enseña a verificar antes de creer.'],['«Hay cursos gratis.»','Sí, de uso general. Este es profesional, de hasta 12 personas, y termina con un perfil, una propuesta de valor y un plan propios.']],
+ canales:['Perfiles de Virginia, Cristina y Agustina, y los grupos de WhatsApp donde participan (ya previsto en el documento de lanzamiento).','Una conversación de bienvenida con cada persona interesada: es admisión y también venta.','Colegas, exjefes y asociaciones profesionales, que conocen a quien está en transición.','Los primeros testimonios, con autorización, después de la primera cohorte.'],
+ alerta:'Riesgo de precio: menos de una de cada cinco personas de 50 o más pagaría de su bolsillo por soluciones de IA (EE.UU.), y el documento de comparación ya advierte la competencia gratuita. El precio de USD 700 se sostiene con el formato profesional y el resultado concreto, no con «aprender IA».'},
+{key:'Decidir',tab:'decidir',col:'--c-di',name:'Decidir',quien:'C-level y dirección, quienes juzgan, aprueban y responden por el resultado',
+ frase:'«Me traen propuestas de IA y no tengo cómo juzgarlas, y no sé qué está haciendo mi equipo con ella.»',
+ dolores:[
+  ['No saben qué sabe su gente','La dirección decide sobre capacitación sin un mapa de las habilidades del equipo, y la IA queda al final de la lista.','44,8 % de las empresas argentinas no mide las habilidades de su gente, 42,5 % no hizo diagnóstico de necesidades formativas en el último año y las habilidades de IA son el último lugar de las prioridades de capacitación (8,6 %).','s21'],
+  ['Las reglas no las cumple ni la dirección','La brecha entre lo que la dirección cree y lo que ocurre es el mejor argumento para un curso que enseña a gobernar el uso.','68 % de los ejecutivos dijo haber violado sus propias reglas de uso de IA en los últimos tres meses. 82 % cree que sus herramientas cumplen seguridad, frente a 55 % de los empleados (muestra de 103 ejecutivos, EE.UU., Reino Unido y Canadá).','nitro'],
+  ['Los mandos medios no pueden guiar','La dirección responde por algo que otros ejecutan. Decidir le da el marco para exigir y revisar.','99 % de los CHROs dice que la IA es importante para su estrategia, pero la mitad no confía en que sus gerentes puedan guiar el uso de IA de sus equipos (EE.UU.).','gallup'],
+  ['Mucha exigencia, poca formación','Piden IA al contratar y no la enseñan puertas adentro.','46 % de las pymes argentinas valora o exige IA al contratar, pero solo 36 % capacita a su gente y solo 11 % tiene un programa formal.','deel']],
+ promesa:'Que puedas decidir con IA y controlar lo que otros hacen con ella: salís con los límites escritos para tu área, una política de uso de una página, un cuestionario para evaluar propuestas y un caso listo para el directorio.',
+ titulares:['Decidir con IA, y controlar lo que otros hacen con ella.','No hace falta saber de tecnología para juzgar un proyecto de IA.','Ocho encuentros pensados para una agenda de dirección.'],
+ evitar:['Jerga técnica y demos de herramientas: la dirección no hace el trabajo, lo juzga.','Prometer ahorros o rentabilidad que el curso no mide.','Tono de capacitación para empleados: es un curso para quienes responden por el resultado.','Citar cifras de otros programas: el documento de lanzamiento ya pide no hacerlo.'],
+ objeciones:[['«Esto lo resuelve IT o el proveedor.»','La tecnología sí. La decisión, el riesgo y la responsabilidad no se delegan: de eso trata el curso.'],['«No tengo tiempo.»','Ocho encuentros de dos horas, una vez por semana, y una práctica sobre un caso tuyo.'],['«Mi equipo ya usa IA.»','Por eso: el encuentro 6 enseña a revisar lo que hicieron otros y a auditar una automatización o un agente que armó otro.'],['«USD 950 es mucho.»','Es un curso de grupo chico con devolución sobre tu caso. Hay que sostenerlo con el entregable final: un caso listo para presentar.']],
+ canales:['La red de Virginia (CEO de Silvora, ex Chief Data Officer y Head of Transformation en Santander): conversaciones directas y recomendaciones entre pares.','LinkedIn de Virginia y de Silvora, con contenido de criterio: preguntas para evaluar una propuesta, ejemplos de política de uso.','Cámaras, asociaciones y comunidades de directivos, y áreas de RR.HH. de empresas conocidas.','El paquete con Construir para una misma organización: la dirección y sus equipos (a definir).'],
+ alerta:'Conviene validar el público antes de gastar en campañas: el documento de comparación dice que casi no hay programas solo para dirección, pero ese relevamiento es de octubre y no se volvió a chequear.'},
+{key:'Construir',tab:'construir',col:'--c-ho',name:'Construir',quien:'Líderes de equipo y referentes que hacen el trabajo',
+ frase:'«Me piden que mi equipo use IA, pero nadie nos enseñó cómo, y lo que probé no se mantiene.»',
+ dolores:[
+  ['Se les exige IA y no se les enseña','Es el dolor más documentado en Argentina, y el que mejor encaja con un curso donde se construye.','46 % de las pymes argentinas valora o exige IA al contratar y solo 36 % capacita a su personal. «Muchas empresas piden saber usar IA al contratar, pero no la enseñan puertas adentro.»','deel'],
+  ['Los gerentes no tienen guía','Quien lidera un equipo es quien más influye en si la IA funciona o no, y casi nadie lo prepara.','Con un gerente que impulsa la IA, 33 % de los empleados dice que cambió cómo se trabaja; sin eso, 4 %. La mitad de los CHROs no confía en la capacidad de sus gerentes para guiar el uso (EE.UU.).','gallup'],
+  ['Cuando la empresa no acompaña, ya la usan por su cuenta','Hay una necesidad que se resuelve afuera, a veces sin reglas.','33 % de las personas trabajadoras argentinas pide capacitación en IA como la más demandada. Cerca de la mitad de los empleados usó herramientas no aprobadas y 33 % cargó datos confidenciales (EE.UU., Reino Unido y Canadá).','rand'],
+  ['Lo que se pide es práctico, no técnico','Entre quienes valoran la IA al contratar, lo más buscado es el uso diario y la automatización, no programar modelos. Eso valida el enfoque de construir sin programar.','92 % prioriza IA generativa en tareas diarias, 68 % automatización de procesos, 64 % análisis de datos y solo 11 % programación de modelos.','deel']],
+ promesa:'Que te vayas con algo funcionando: un asistente, un flujo automatizado, un agente propio, el protocolo para controlarlo y el mapa de tu stack.',
+ titulares:['Aprendé IA construyendo lo que tu equipo necesita.','Te vas con algo funcionando, no con apuntes.','Enseñamos criterio para usar cualquier IA, no prompts que quedan viejos en meses.'],
+ evitar:['Prometer que no hace falta esfuerzo: es el curso más largo y con práctica semanal.','Listas de herramientas: Silvora no enseña herramientas.','Hablar de programación: no hace falta, y asusta a quien no es técnico.','Dar un precio antes de redefinirlo: hoy el de 16 horas no cubre las 28.'],
+ objeciones:[['«No soy técnico.»','No hace falta programar. Hay una guía de arranque y una versión base y una ampliada en cada práctica.'],['«Ya uso ChatGPT.»','Usar y construir son cosas distintas: acá armás un flujo y un agente sobre un proceso real, y aprendés a probarlos y a apagarlos.'],['«Son 14 semanas.»','El encuentro sirve para mostrar y destrabar; lo que se construye es sobre tu caso, así que lo tuyo avanza mientras cursás.'],['«Prefiero un curso corto de herramientas.»','Las herramientas cambian en meses. Lo que se enseña acá sigue sirviendo cuando cambie la herramienta de moda.']],
+ canales:['Clase abierta del lunes 14/12 para Construir y Decidir, a cargo de Virginia.','LinkedIn y redes de Agustina y Cristina, con ejemplos construidos: un asistente, una automatización con su cálculo de horas.','Áreas de RR.HH. y de transformación de empresas conocidas, donde está el dolor de exigir IA y no capacitarla.','La comisión del 10 % por inscripción que cada una acerque (prevista en el documento).'],
+ alerta:'Dos cosas pendientes antes de abrir: el precio de 28 horas y si hace falta un facilitador técnico, porque ambas cambian lo que se puede prometer.'}
+];
+const REGLAS=[
+ ['Una sola tesis para los tres cursos','«La inteligencia artificial y la longevidad cambian a la vez qué capacidades generan valor y cuánto dura una carrera.» Es lo que abre cada programa y lo que distingue a Silvora de una capacitación de herramientas.'],
+ ['Cada curso habla de su dolor, no de la IA','El orden de cada mensaje: el dolor que el público reconoce, el resultado concreto que se lleva, la prueba y recién después la tesis.'],
+ ['Criterio por encima de herramienta','Nunca se vende una herramienta: se vende saber qué hacer con cualquiera. Es la diferencia que ya está decidida en los documentos.'],
+ ['Nada de miedo','Los datos de preocupación (estafas, trabajo, edad) sirven para entender al público, no para asustarlo. La marca habla de ventaja y de calma.'],
+ ['Promesas que el curso pueda cumplir','Sin cifras de empleo, ahorros ni comparaciones con otros programas. Todo lo que se promete es un entregable de los programas.']
+];
+const CAL=[
+ ['Ahora al 18/11','Vigencia','Convocatoria y conversaciones de bienvenida. Puerta 1: 5 inscripciones confirmadas.'],
+ ['25/11','Vigencia','Si hay 5, arranca. Si no, 2/12 y, si tampoco, febrero. Se comunica sin dramatizar.'],
+ ['1/12 al 18/12','Construir y Decidir','Abre la inscripción. Clase abierta el lunes 14/12. Early bird opcional hasta el 18/12.'],
+ ['Enero','Todos','Testimonios autorizados de Vigencia y contenido de criterio en redes.'],
+ ['Febrero','Construir y Decidir','Conversaciones y diagnósticos. Puerta del 15/2: 5 inscripciones por curso.'],
+ ['Marzo','Construir y Decidir','Inicio de las cohortes. Medir de dónde vino cada inscripción.']
+];
+const COMX={
+Vigencia:{
+ oport:[
+  ['Un hueco real de oferta','Casi nadie capacita en IA a profesionales de más de 55 años con una propuesta pensada para su experiencia.','Solo 11 % de las personas de más de 55 años recibió capacitación en IA (EE.UU. y Europa).','d'],
+  ['Interés que ya existe','No hay que convencerlos de que la IA importa: hay que darles un lugar donde aprender sin sentirse atrasados.','67 % de las personas de 50 o más está interesada en aprender o desarrollar habilidades con IA (EE.UU.).','d'],
+  ['La primera cohorte es la prueba','Con 5 inscripciones arranca el 25/11. De esa cohorte salen los testimonios y el boca a boca para todo lo que sigue.','Puerta 1 del plan: 5 inscripciones confirmadas al 18/11.','d'],
+  ['Las familias influyen','Hijos e hijas adultos suelen ser quienes recomiendan o regalan una formación. Hay un mensaje para ellos distinto al del profesional.','Hipótesis a validar en las conversaciones; no hay un dato propio todavía.','s']],
+ hilo:[['1. Reconocer','«Tenés décadas de oficio y, aun así, sentís que el mundo dio por hecho que ya no estás al día.»'],['2. Dar vuelta la idea','La experiencia no se devalúa: es lo que permite juzgar lo que la IA responde.'],['3. Mostrar el resultado','Un asistente propio, una checklist para no caer en engaños, un perfil verificado y un plan de vigencia.'],['4. Invitar con calma','Una conversación de bienvenida, sin compromiso, para ver si el grupo es para vos.']],
+ actores:[
+  ['Agustina Salvo','Chief Brand Officer','Convocatoria en redes y conversaciones de bienvenida con cada persona interesada.','p'],
+  ['Cristina Lippi','COO','Admisión, logística y conversación con quienes dudan por el formato o el precio.','p'],
+  ['Virginia Martini Zanetti','CEO','Primera hora de la cohorte y credibilidad profesional en conversaciones con su red.','p'],
+  ['Colegas, exjefes y asociaciones profesionales','Aliados externos (a definir)','Conocen a quien está en transición y pueden recomendar el programa.','s'],
+  ['Primera cohorte','Alumnado','Testimonios con autorización y recomendación a su círculo, a partir de enero.','p'],
+  ['Hijos e hijas adultos','Influenciadores del entorno','Reciben un mensaje propio: cómo acompañar a su familiar a seguir vigente.','s']]},
+Decidir:{
+ oport:[
+  ['Poca oferta solo para dirección','El documento de comparación encontró casi ningún programa pensado solo para quienes deciden. Ese relevamiento es de octubre y conviene volver a chequearlo.','Fuente interna de Silvora, sin actualizar desde octubre.','d'],
+  ['Las empresas no miden lo que su gente sabe','Sin diagnóstico, la dirección decide a ciegas. Decidir le da un marco para pedir y revisar.','44,8 % de las empresas argentinas no mide las habilidades de su gente y 42,5 % no hizo diagnóstico formativo el último año (Insight 21).','d'],
+  ['La brecha entre lo que se dice y lo que se hace','Incluso en la dirección se incumplen las reglas de IA. Un curso que enseña a gobernar el uso responde a eso.','68 % de los ejecutivos violó sus propias reglas de uso de IA en tres meses (EE.UU., Reino Unido y Canadá).','d'],
+  ['Una misma empresa, dos cursos','La dirección hace Decidir y sus equipos hacen Construir. Es una oportunidad de venta conjunta, aún sin definir.','Pendiente de decisión: no hay paquete ni precio acordado.','s']],
+ hilo:[['1. Reconocer','«Te traen propuestas de IA y no tenés cómo juzgarlas, y no sabés qué hace tu equipo con ella.»'],['2. Dar vuelta la idea','No hace falta saber de tecnología: hace falta criterio para decidir y para controlar.'],['3. Mostrar el resultado','Límites escritos para tu área, una política de uso de una página, un cuestionario para evaluar propuestas y un caso listo para el directorio.'],['4. Invitar con respeto a la agenda','Ocho encuentros de dos horas, una vez por semana, con una práctica sobre un caso tuyo.']],
+ actores:[
+  ['Virginia Martini Zanetti','CEO, ex Chief Data Officer y Head of Transformation en Santander','Es la voz principal: conversaciones directas y recomendaciones entre pares de dirección.','p'],
+  ['Agustina Salvo y Cristina Lippi','Fundadoras','Conversaciones con su red y contenido de criterio en LinkedIn.','p'],
+  ['Áreas de RR.HH. y de Transformación','Quien contrata la formación','Suelen ser quienes llevan la propuesta a la dirección.','s'],
+  ['Cámaras, asociaciones y comunidades de directivos','Aliados externos (a definir)','Abren el acceso a grupos de dirección con un mensaje de confianza.','s'],
+  ['Clientes de Construir','Cruce entre cursos','La dirección de una empresa que manda líderes a Construir es candidata a Decidir.','s']]},
+Construir:{
+ oport:[
+  ['Se exige IA pero no se enseña','Es el dato más fuerte y más local: las pymes piden IA al contratar y casi no capacitan.','46 % valora o exige IA al contratar, 36 % capacita y 11 % tiene un programa formal (Deel/Trendsity, Argentina).','d'],
+  ['El líder de equipo decide si la IA funciona','Quien conduce al equipo es quien más cambia el uso real, y casi nadie lo prepara.','Con un gerente que impulsa la IA, 33 % de los empleados dice que cambió cómo se trabaja; sin eso, 4 % (Gallup, EE.UU.).','d'],
+  ['Lo que se busca es práctico','Uso diario y automatización, no programar. Valida el enfoque de construir sin escribir código.','92 % prioriza IA generativa en tareas diarias, 68 % automatización y 11 % programación de modelos (Deel/Trendsity).','d'],
+  ['Vender a la organización, no solo a la persona','El comprador puede ser RR.HH. o la dirección. Hay que definir si se ofrece por persona o por equipo.','Supuesto a validar: depende de la decisión de precio.','s']],
+ hilo:[['1. Reconocer','«Te piden que tu equipo use IA, pero nadie les enseñó cómo, y lo que probaron no se mantiene.»'],['2. Dar vuelta la idea','No hace falta programar ni conocer herramientas: hace falta criterio para construir y controlar.'],['3. Mostrar el resultado','Un asistente, un flujo automatizado, un agente propio, el protocolo para controlarlo y el mapa de tu stack.'],['4. Invitar a probar','Clase abierta del lunes 14/12 y conversación de diagnóstico de 10 minutos.']],
+ actores:[
+  ['Agustina Salvo y Cristina Lippi','Fundadoras','Ejemplos construidos en LinkedIn y conversaciones con líderes de su red.','p'],
+  ['Virginia Martini Zanetti','CEO','Clase abierta del 14/12 para Construir y Decidir.','c'],
+  ['Áreas de RR.HH., Learning y Transformación','Quien contrata','Donde duele más: la empresa exige IA y no capacita.','s'],
+  ['Dirección que ya hizo Decidir','Patrocinio interno','Manda a sus líderes de equipo a Construir.','s'],
+  ['Referentes de IA dentro de empresas','Aliados internos','Detectan a quién del equipo le falta método y lo recomiendan.','s'],
+  ['Quien acerque una inscripción','Comisión del 10 %','Prevista en el documento de lanzamiento para cada inscripción que alguien acerque.','c']]}
+};
+const GEN={
+ frase:'Silvora ahora acompaña ese aprendizaje.',
+ sub:'Hasta ahora Silvora ayudaba a entender qué cambia con la IA y la longevidad. Ahora también acompaña a cada persona mientras lo aprende: con método, con su propio caso y en grupo chico.',
+ nota:'Esta idea madre es una propuesta para validar con Virginia y Cristina. No figura como frase acordada en los documentos.',
+ pilares:[['Criterio','Se enseña a juzgar y decidir con cualquier IA, no a usar una herramienta que cambia en meses.'],['Práctica con tu caso','Cada encuentro trabaja sobre algo real tuyo. Te vas con algo hecho.'],['Compañía','Grupo de hasta 12 personas, devolución individual, y seguimiento a los 30 días.']],
+ etapas:[['Descubre','Ve un contenido, una clase abierta o una recomendación.','Redes, red personal y clase abierta'],['Conversa','Habla con alguien de Silvora sobre su situación, sin compromiso.','Conversación de bienvenida'],['Se diagnostica','Completa el formulario de 10 minutos y elige curso.','Diagnóstico'],['Se inscribe','Confirma lugar y recibe la guía de arranque.','Inscripción'],['Cursa y recomienda','Termina, deja su testimonio y sigue en comunidad.','Comunidad Silvora']],
+ voz:[['Cómo suena','Calma, claridad y respeto por la trayectoria. Voseo, frases cortas, sin jerga técnica.'],['Qué mostramos','Resultados concretos que la persona se lleva y ejemplos reales construidos en los encuentros.'],['Qué no hacemos','Asustar, prometer empleo o ahorros, comparar con otros programas ni vender herramientas.']]
+};
 const fin=t=>t.inicio+t.duracion-1;
 function compute(tasks,sessions,cap){
   const byId={};tasks.forEach(t=>{byId[t.id]=t});
-  const sess=sessions.map(s=>{const d=byId[DICT[s.programa]];return Object.assign({},s,{sem:d?d.inicio+s.n-1:s.n})});
+  const sess=sessions.map(s=>Object.assign({},s));
   const lastT=Math.max.apply(null,tasks.map(fin));
   const lastS=Math.max.apply(null,sess.map(s=>s.sem));
   const weeks=Math.max(lastT,lastS)+6;
@@ -525,21 +624,21 @@ function compute(tasks,sessions,cap){
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const WK=16,ROWH=40,HEADH=48;
-const PCLS={'IA Essentials':'p-es','Hands-on':'p-ho','Dirección':'p-di','Vigencia':'p-vi','Transversal':'p-tr'};
-const PVAR={'IA Essentials':'--c-es','Hands-on':'--c-ho','Dirección':'--c-di','Vigencia':'--c-vi','Transversal':'--muted'};
-const COMM={'IA Essentials':'IA Essentials','Hands-on':'Hands-on','Dirección':'Dirección','Vigencia':'Vigencia'};
+const PCLS={'Construir':'p-ho','Decidir':'p-di','Vigencia':'p-vi','Transversal':'p-tr'};
+const PVAR={'Construir':'--c-ho','Decidir':'--c-di','Vigencia':'--c-vi','Transversal':'--muted'};
+const COMM={'Construir':'Construir','Decidir':'Decidir','Vigencia':'Vigencia'};
 const ST={'Pendiente':'p','En curso':'e','Completada':'c','Bloqueada':'b'};
-const LS='silvora-learning-v3';
-const TABS=[['paso-a-paso','Paso a paso','Plan de lanzamiento','--b3'],['essentials','IA Essentials','Para empezar','--c-es'],['hands-on','IA Hands-on','Construir con tu equipo','--c-ho'],['direccion','IA para Dirección','Decidir y dirigir','--c-di'],['longevidad','IA y longevidad','Seguir vigente','--c-vi'],['journey','Journey','La carrera completa','--accent']];
+const LS='silvora-learning-v4';
+const TABS=[['paso-a-paso','Paso a paso','Plan con fechas','--b3'],['construir','Construir','Curso A · 14 encuentros','--c-ho'],['decidir','Decidir','Curso B · 8 encuentros','--c-di'],['vigencia','Vigencia','Curso C · 8 encuentros','--c-vi'],['journey','Journey','De la primera conversación al seguimiento','--accent'],['comunicacion','Comunicación','Dolores, mensajes y canales','--b2']];
 const clone=o=>JSON.parse(JSON.stringify(o));
-function fresh(){return {tasks:clone(DATA.tasks),sessions:clone(DATA.sessions),start:''}}
-function loadState(){const b=fresh();try{const raw=localStorage.getItem(LS);if(raw){const o=JSON.parse(raw);if(o&&Array.isArray(o.tasks)&&Array.isArray(o.sessions)){b.tasks=o.tasks;b.sessions=o.sessions;b.start=o.start||''}}}catch(e){}return b}
+function fresh(){return {tasks:clone(DATA.tasks),sessions:clone(DATA.sessions),start:'2026-11-16'}}
+function loadState(){const b=fresh();try{const raw=localStorage.getItem(LS);if(raw){const o=JSON.parse(raw);if(o&&Array.isArray(o.tasks)&&Array.isArray(o.sessions)){b.tasks=o.tasks;b.sessions=o.sessions;b.start=o.start||'2026-11-16'}}}catch(e){}return b}
 let S=loadState();
 function save(){try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){}}
 const U={tab:'paso-a-paso',group:'etapa',f:{prog:'Todos',pers:'Todas',fase:'Todas',est:'Todos'},sel:null,deps:false,col:{},exp:{open:false,fmt:'tsv',msg:''}};
 let C=null;
 const CAP={}; // sin capacidades: el plan ya no se centra en horas
-function sync(){Object.keys(DICT).forEach(p=>{const t=S.tasks.find(x=>x.id===DICT[p]);if(t)t.duracion=S.sessions.filter(s=>s.programa===p).length});S.tasks.forEach(t=>{if(t.hito)t.duracion=1})}
+function sync(){S.tasks.forEach(t=>{if(t.hito)t.duracion=1})}
 function wkDate(w,end){if(!S.start)return '';const p=S.start.split('-').map(Number);if(p.length<3||p.some(isNaN))return '';const d=new Date(Date.UTC(p[0],p[1]-1,p[2]+(w-1)*7+(end?6:0)));return d.toLocaleDateString('es-UY',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})}
 const opt=(list,val)=>list.map(o=>`<option${o===val?' selected':''}>${esc(o)}</option>`).join('');
 const ini=p=>p==='Por definir'||p==='Sin apoyo'?'FT':p[0];
@@ -556,28 +655,29 @@ function header(){
 function pasoHTML(){
   const all=S.tasks,hs=all.filter(t=>t.hito),ts=all.filter(t=>!t.hito);
   const n=(a,e)=>a.filter(t=>t.estado===e).length;
-  const listos=Object.keys(LISTO).filter(p=>C.byId[LISTO[p]].estado==='Completada').length;
+  const listos=Object.keys(LISTO).filter(p=>C.byId[LISTO[p]].estado==='Completada').length;const hecho=HECHO.map(h=>`<div class="card hecho"><b>${h[0]}</b><small>${h[1]}</small></div>`).join('');
   const k=(b,l,c)=>`<div class="card kpi ${c||''}"><b>${b}</b><span>${l}</span></div>`;
-  const kp=`<div class="kpis">${k(ts.length,'Pasos')}${k(n(ts,'Completada'),'Completados')}${k(n(ts,'En curso'),'En curso')}${k(n(hs,'Completada')+' de '+hs.length,'Hitos cumplidos')}${k(listos+' de 4','Programas listos para dictar')}${C.depConf.length?k(C.depConf.length,'Pasos fuera de orden','bad'):''}</div>`;
+  const kp=`<div class="kpis">${k(ts.length,'Pasos')}${k(n(ts,'Completada'),'Completados')}${k(n(ts,'En curso'),'En curso')}${k(n(hs,'Completada')+' de '+hs.length,'Hitos cumplidos')}${k(listos+' de 3','Cursos con materiales listos')}${C.depConf.length?k(C.depConf.length,'Pasos fuera de orden','bad'):''}</div>`;
   const ready=t=>t.estado!=='Completada'&&t.deps.every(d=>C.byId[d]&&C.byId[d].estado==='Completada');
   const nx=S.tasks.filter(t=>!t.hito&&(t.estado==='En curso'||ready(t))).sort((a,b)=>(a.estado==='En curso'?0:1)-(b.estado==='En curso'?0:1)||a.inicio-b.inicio).slice(0,6);
   const nxh=nx.length?nx.map(t=>`<button class="nx ${PCLS[t.programa]}" data-act="sel" data-id="${t.id}"><span class="id">${t.id}</span><span><b>${esc(t.tarea)}</b><br><small>Listo cuando: ${esc(t.entregable)}</small></span><span class="tag ${t.estado==='En curso'?'acc':''}">${esc(t.responsable)} · sem. ${t.inicio}</span></button>`).join(''):'<p class="note">No hay pasos listos para empezar.</p>';
   const et=ETAPAS.map((e,i)=>`<div class="card et"><em>ETAPA ${i+1}</em><b>${e[0]}</b><small>${e[1]}</small></div>`).join('');
-  const per=[['Virginia','Estrategia y gobierno académico, apertura de cada programa, conducción de IA para Dirección, precios y alianzas.'],['Cristina','Plataforma, inscripción y cobros, modelo financiero, la parte técnica de IA Hands-on, datos y riesgo.'],['Agustina','Naming y marca, landings y campañas, IA Essentials, prompting y asistentes en los programas y el hilo humano de Vigencia.']].map(([p,d])=>{
+  const per=[['Virginia','Estrategia, precios y alianzas. Abre y cierra cada curso (2 horas por curso). Texto de sus encuentros y decisiones de producto.'],['Cristina','Plataforma, inscripción y cobros, modelo financiero y calendario. Dicta la parte más técnica de Construir y 7 horas de Decidir y de Vigencia.'],['Agustina','Marca, landings y campañas, diagnóstico y guías de arranque. Dicta 13 horas de Construir y 7 de Decidir y de Vigencia.']].map(([p,d])=>{
     const r=S.tasks.filter(t=>t.responsable===p).length,a=S.tasks.filter(t=>t.apoyo===p).length;
     return `<div class="card pers"><h3>${p}</h3><p>${d}</p><span class="tag" style="align-self:flex-start">${r} pasos a cargo · ${a} de apoyo</span></div>`}).join('');
   const f=U.f;
   const tools=`<div class="bar-tools"><div class="seg" role="group" aria-label="Agrupar"><button data-act="grp" data-v="etapa" aria-pressed="${U.group==='etapa'}">Por etapa</button><button data-act="grp" data-v="programa" aria-pressed="${U.group==='programa'}">Por programa</button></div>
 <div class="filters"><label class="fld">Programa<select data-fil="prog">${opt(['Todos',...PROGRAMAS],f.prog)}</select></label><label class="fld">Etapa<select data-fil="fase">${opt(['Todas',...Object.values(FASES)],f.fase)}</select></label><label class="fld">Responsable<select data-fil="pers">${opt(['Todas',...PERSONAS],f.pers)}</select></label><label class="fld">Estado<select data-fil="est">${opt(['Todos',...ESTADOS],f.est)}</select></label><label class="chk"><input type="checkbox" data-act="deps" ${U.deps?'checked':''}> Mostrar dependencias</label></div></div>`;
-  const leg=`<div class="legend"><span><i class="lg p"></i>Pendiente</span><span><i class="lg e"></i>En curso</span><span><i class="lg"></i>Completado</span><span><i class="lg d"></i>Bloqueado o fuera de orden</span><span><i class="lg m"></i>Hito</span>${['IA Essentials','Hands-on','Dirección','Vigencia'].map(p=>`<span><i class="sw" style="background:var(${PVAR[p]})"></i>${p===COMM[p]?p:p+' ('+COMM[p]+')'}</span>`).join('')}</div>`;
-  return `<section class="sec"><span class="eyebrow">Cómo lo hacemos</span><h1>Paso a paso para lanzar Silvora Learning</h1><p class="lead">Siete etapas, cuatro programas y tres personas. Cada paso tiene un responsable provisional, una semana de inicio y un criterio de "listo cuando". Las semanas son relativas: no hay fechas oficiales de lanzamiento. Podés cargar una fecha de inicio para ver fechas reales.</p>
+  const leg=`<div class="legend"><span><i class="lg p"></i>Pendiente</span><span><i class="lg e"></i>En curso</span><span><i class="lg"></i>Completado</span><span><i class="lg d"></i>Bloqueado o fuera de orden</span><span><i class="lg m"></i>Hito</span>${['Construir','Decidir','Vigencia'].map(p=>`<span><i class="sw" style="background:var(${PVAR[p]})"></i>${p===COMM[p]?p:p+' ('+COMM[p]+')'}</span>`).join('')}</div>`;
+  return `<section class="sec"><span class="eyebrow">Cómo lo hacemos</span><h1>Paso a paso para lanzar Silvora Learning</h1><p class="lead">Siete etapas, tres cursos y tres personas. La semana 1 es la del lunes 16/11/2026. Vigencia arranca el 25/11 si el 18/11 hay 5 inscripciones; Decidir y Construir arrancan en marzo de 2027. Cada paso tiene un responsable provisional y un criterio de "listo cuando".</p>
 <div class="row"><label class="fld">Fecha de inicio (opcional)<input type="date" id="start" value="${esc(S.start)}"></label><button class="btn acc" data-act="export" style="align-self:flex-end">Exportar pasos</button><button class="btn ghost" data-act="reset" style="align-self:flex-end">Restablecer plan</button></div></section>
 ${kp}
+<section class="sec"><h2>Lo que ya está hecho</h2><div class="etapas hechos">${hecho}</div></section>
 <section class="sec"><h2>Las 7 etapas</h2><div class="etapas">${et}</div></section>
 <section class="two" style="align-items:start"><div class="card next"><h3>Lo que sigue ahora</h3>${nxh}</div><div class="sec"><h3>Quién conduce qué</h3><div class="people" style="grid-template-columns:1fr">${per}</div></div></section>
-<section class="sec"><h2>El cronograma</h2>${tools}${leg}${ganttView()}<p class="note">Clic en un paso para editar responsable, semana de inicio, duración, estado y dependencias. Los cambios se guardan solo en este navegador. El orden de lanzamiento propuesto es IA Essentials, IA para Dirección, IA y longevidad e IA Hands-on, y es una decisión pendiente del equipo fundador.</p></section>`;
+<section class="sec"><h2>El cronograma</h2>${tools}${leg}${ganttView()}<p class="note">Clic en un paso para editar responsable, semana de inicio, duración, estado y dependencias. Los cambios se guardan solo en este navegador. Las puertas del 18/11, 25/11 y 15/2 vienen del documento de lanzamiento. Los repartos de horas, la semana de diferencia entre Decidir y Construir y los pasos de producción son propuestas de este plan.</p></section>`;
 }
-function headHTML(W){let mo='',wk='';for(let m=0;m<Math.ceil(W/4);m++){mo+=`<div class="mo" style="width:${4*WK}px">Mes ${m+1}${S.start?' · '+wkDate(m*4+1).replace(/ \d{4}$/,''):''}</div>`}for(let w=1;w<=W;w++)wk+=`<div class="wkc" style="width:${WK}px">${w}</div>`;
+function headHTML(W){let mo='',wk='';for(let m=0;m<Math.ceil(W/4);m++){mo+=`<div class="mo" style="width:${4*WK}px">${S.start?wkDate(m*4+1).replace(/ \d{4}$/,''):'Mes '+(m+1)}</div>`}for(let w=1;w<=W;w++)wk+=`<div class="wkc" style="width:${WK}px">${w}</div>`;
   return `<div class="ghead"><div class="grow"><div class="lab">Mes</div><div class="tl" style="width:${W*WK}px;display:flex;background-image:none">${mo}</div></div><div class="grow"><div class="lab">Paso · semana</div><div class="tl" style="width:${W*WK}px;display:flex;background-image:none">${wk}</div></div></div>`}
 function taskRow(t){
   const x=(t.inicio-1)*WK,w=t.duracion*WK-2,conf=C.depConf.some(c=>c.id===t.id),st=ST[t.estado]||'p',col=`var(${PVAR[t.programa]})`;
@@ -608,7 +708,7 @@ function ganttView(){
 function drawerHTML(){
   const t=C.byId[U.sel];if(!t)return '';
   const sel=(f,list,v,dis)=>`<select data-f="${f}"${dis?' disabled':''}>${opt(list,v)}</select>`;
-  const succ=S.tasks.filter(x=>x.deps.includes(t.id)),dictado=Object.values(DICT).includes(t.id);
+  const succ=S.tasks.filter(x=>x.deps.includes(t.id)),dictado=false;
   const fd=wkDate(t.inicio),ff=wkDate(fin(t),true),conf=C.depConf.filter(c=>c.id===t.id);
   const depTxt=t.deps.map(d=>C.byId[d]?`${d} ${esc(C.byId[d].tarea)}`:d).join('<br>')||'No depende de nada';
   return `<aside class="drawer" role="dialog" aria-label="Editar paso"><header><div><span class="eyebrow">${t.id} · ${esc(t.programa)}</span><h3 style="font-family:var(--f-d);font-size:22px;margin-top:2px">${t.hito?'Hito':'Paso'}</h3></div><button class="x" data-act="close" aria-label="Cerrar">×</button></header>
@@ -622,71 +722,97 @@ ${conf.length?`<div class="info" style="background:var(--bad-soft);color:var(--b
 <div class="info"><span><b>Etapa:</b> ${esc(FASES[t.fase])}</span><span><b>Eje:</b> ${esc(t.eje)}</span><span><b>Termina:</b> semana ${fin(t)}${fd?' · '+fd+' a '+ff:''}</span><span><b>Margen:</b> ${C.slack[t.id]} semanas${C.slack[t.id]===0?' (si se demora, se corre el final del plan)':''}</span>${dictado?'<span>La duración sale de la cantidad de clases del programa.</span>':''}<span><b>Depende de:</b><br>${depTxt}</span><span><b>Habilita:</b> ${succ.length?succ.map(x=>x.id).join(', '):'nada'}</span></div></div></aside>`;
 }
 /* ---------- Programas ---------- */
-function pillP(p,sup){return `<span class="pp${sup?' sup':''}"><i>${ini(p)}</i>${p==='Por definir'?'Facilitador técnico (a definir)':p}${sup?' · apoyo':''}</span>`}
+function pillP(p,sup,txt){return `<span class="pp${sup?' sup':''}"><i>${ini(p)}</i>${p==='Por definir'?'Facilitador técnico (a definir)':p}${txt?' · '+txt:(sup?' · apoyo':'')}</span>`}
 function progHTML(bp){
   const cls=PCLS[bp.key];
   const ss=S.sessions.filter(s=>s.programa===bp.key);
   const dt=C.byId[DICT[bp.key]];
-  const facts=bp.facts.map(f=>`<div class="fact"><dt>${f[0]}</dt><dd><span>${esc(f[1])}</span><span class="tag ${f[2]==='c'?'ok':'acc'}">${f[2]==='c'?'Información confirmada':'Propuesta'}</span></dd></div>`).join('');
+  const facts=bp.facts.map(f=>`<div class="fact"><dt>${f[0]}</dt><dd><span>${esc(f[1])}</span><span class="tag ${f[2]==='c'?'ok':'acc'}">${f[2]==='c'?'Información confirmada':f[2]==='d'?'Pendiente de decisión':'Propuesta'}</span></dd></div>`).join('');
   const hero=`<div class="hero ${cls}"><div class="l"><span class="eyebrow">${bp.order}</span><span class="verbs">${bp.verb}</span><h1>${bp.name}</h1><div class="desc">${bp.desc}</div><div class="strip4"><i style="background:var(--b1)"></i><i style="background:var(--b2)"></i><i style="background:var(--b3)"></i><i style="background:var(--b4)"></i></div><p class="tagline">${esc(bp.tagline)}</p>${bp.story.map(p=>`<p>${esc(p)}</p>`).join('')}</div><div class="r"><h3 style="color:#fff;font-family:var(--f-d);font-size:22px">El programa en breve</h3><dl style="margin:0;display:flex;flex-direction:column;gap:10px">${facts}</dl></div></div>`;
   const naming=`<div class="two ${cls}"><div class="card naming"><span class="eyebrow">En una frase</span><p class="lead">${esc(bp.tagline)}</p></div>
 <div class="card naming"><span class="eyebrow">Frases para contar la historia</span><ul class="hooks">${bp.hooks.map(h=>`<li>${esc(h)}</li>`).join('')}</ul><p class="note" style="margin-top:6px">Voseo como en los programas actuales. Decidir si el material público va en voseo o en español neutro.</p></div></div>`;
   const cards=bp.classes.map((c,i)=>{
     const s=ss[i];if(!s)return '';
-    const who=[pillP(s.docente)].concat(s.apoyo!=='Sin apoyo'?[pillP(s.apoyo,1)]:[]).join('');
-    return `<article class="card cl"><div class="n">${s.n}</div><div class="hd"><h3>${esc(c[0])}</h3><span class="tag">${esc(c[1])}</span><span class="tag acc">${esc(s.tipo)}</span></div>
+    const vtxt=s.n===1?'primera hora':'última hora';const who=[pillP(s.docente)].concat(s.apoyo==='Virginia'?[pillP(s.apoyo,1,vtxt)]:(s.apoyo!=='Sin apoyo'?[pillP(s.apoyo,1)]:[])).join('');
+    return `<article class="card cl"><div class="n">${s.n}</div><div class="hd"><h3>${esc(c[0])}</h3><span class="tag">${esc(c[1])}</span><span class="tag acc">${esc(s.tipo)}</span><span class="tag">Semana ${s.sem}${S.start?' · '+wkDate(s.sem).replace(/ \d{4}$/,''):''}</span></div>
 <div class="bd"><div><span class="lab">Qué trabajamos</span><ul>${c[2].map(b=>`<li>${esc(b)}</li>`).join('')}</ul></div><div><div class="take"><span class="lab">Te llevás</span><span>${esc(c[3])}</span></div><div class="who">${who}</div></div></div></article>`}).join('');
-  const clases=`<section class="sec ${cls}"><div><span class="eyebrow">Clase a clase</span><h2>${ss.length} clases, una por semana</h2></div><p class="lead">Cada clase dura 2 h. Cuando un tema ocupa dos clases, se muestra por partes.${dt&&S.start?' Primera clase: '+wkDate(dt.inicio)+'.':''}</p><div class="cls">${cards}</div></section>`;
+  const clases=`<section class="sec ${cls}"><div><span class="eyebrow">Clase a clase</span><h2>${ss.length} encuentros, uno por semana</h2></div><p class="lead">Cada encuentro dura 2 horas.${bp.key==='Vigencia'?' La fecha de cada encuentro viene del calendario de la primera cohorte.':' Cuando un módulo ocupa dos encuentros, se muestra por partes.'}</p>${bp.note?`<p class="note">${esc(bp.note)}</p>`:''}<div class="cls">${cards}</div></section>`;
   const end=`<div class="two ${cls}"><div class="card box2"><span class="eyebrow">Cómo cierra</span><p>${esc(bp.close)}</p></div><div class="card box2"><span class="eyebrow">Siguiente paso natural</span><p>${esc(bp.next)}</p></div></div>`;
-  return `<section class="sec">${hero}</section>${naming}${clases}${end}`;
+  const base=`<section class="sec ${cls}"><div><span class="eyebrow">Nivelación integrada</span><h2>${bp.base.t}</h2></div><p class="lead">${bp.base.p}</p><div class="basegrid">${bp.base.it.map(i=>`<div class="card"><b>${i[0]}</b><p>${esc(i[1])}</p></div>`).join('')}</div></section>`;
+  return `<section class="sec">${hero}</section>${base}${naming}${clases}${end}`;
+}
+/* ---------- Comunicación ---------- */
+function fuenteLink(k){const f=FUENTES.find(x=>x[0]===k);return f?`<a href="${f[2]}" target="_blank" rel="noopener">${esc(f[1])}</a>`:''}
+const EST={c:['ok','Información confirmada'],d:['ok','Dato con fuente'],p:['acc','Propuesta'],s:['','Supuesto a validar']};
+const stag=k=>`<span class="tag ${EST[k][0]}">${EST[k][1]}</span>`;
+function comNav(){
+  const it=[['general','Silvora acompaña','Idea madre y recorrido'],['Construir','Construir','Líderes de equipo'],['Decidir','Decidir','Dirección y C-level'],['Vigencia','Vigencia','Generación Silver']];
+  return `<div class="subnav" role="tablist" aria-label="Comunicación por curso">${it.map(t=>`<button role="tab" data-act="com" data-v="${t[0]}" aria-selected="${U.com===t[0]}" style="--navc:var(${t[0]==='general'?'--accent':'--c-'+({Construir:'ho',Decidir:'di',Vigencia:'vi'}[t[0]])})"><b>${t[1]}</b><small>${t[2]}</small></button>`).join('')}</div>`}
+function comGeneral(){
+  const hero=`<div class="cban"><span class="eyebrow">Idea madre para los tres cursos</span><h1>${esc(GEN.frase)}</h1><p>${esc(GEN.sub)}</p>${stag('p')}<p class="mini">${esc(GEN.nota)}</p></div>`;
+  const pil=`<section class="sec"><div><span class="eyebrow">Qué significa acompañar</span><h2>Tres promesas que sostienen todos los mensajes</h2></div><div class="basegrid">${GEN.pilares.map((p,i)=>`<div class="card"><span class="num">${i+1}</span><b>${esc(p[0])}</b><p>${esc(p[1])}</p>${stag('p')}</div>`).join('')}</div></section>`;
+  const voz=`<section class="sec"><div><span class="eyebrow">Voz de marca</span><h2>Cómo habla Silvora</h2></div><div class="basegrid">${GEN.voz.map(p=>`<div class="card"><b>${esc(p[0])}</b><p>${esc(p[1])}</p></div>`).join('')}</div></section>`;
+  const fun=`<section class="sec"><div><span class="eyebrow">Recorrido de comunicación</span><h2>De descubrirnos a recomendarnos</h2></div><p class="lead">Cada etapa tiene un mensaje y un lugar donde ocurre. Coincide con el journey de la participante.</p><ol class="steps5">${GEN.etapas.map((e,i)=>`<li><span class="num">${i+1}</span><b>${esc(e[0])}</b><p>${esc(e[1])}</p><small>${esc(e[2])}</small></li>`).join('')}</ol>${stag('p')}</section>`;
+  const reglas=`<section class="sec"><div><span class="eyebrow">Reglas para los tres cursos</span><h2>Lo que no cambia</h2></div><div class="basegrid">${REGLAS.map(r=>`<div class="card"><b>${esc(r[0])}</b><p>${esc(r[1])}</p>${stag('p')}</div>`).join('')}</div></section>`;
+  const act=`<section class="sec"><div><span class="eyebrow">Quién sale a ofrecerlo</span><h2>Actores en común</h2></div><div class="basegrid">${[['Las tres fundadoras','Cada una abre su propia red. Es el canal principal en los primeros meses.','p'],['Quien acerque una inscripción','Recibe la comisión del 10 % prevista en el documento de lanzamiento.','c'],['Comunidad Silvora','Personas que ya cursaron: testimonios y recomendación a su círculo.','p'],['Aliados externos','Cámaras, asociaciones y áreas de RR.HH. Hay que definir quiénes y qué se les ofrece.','s']].map(x=>`<div class="card"><b>${x[0]}</b><p>${x[1]}</p>${stag(x[2])}</div>`).join('')}</div></section>`;
+  const cal=`<section class="sec"><div><span class="eyebrow">Calendario</span><h2>Qué comunicar y cuándo</h2></div><p class="lead">Sigue las puertas de decisión y las fechas del plan.</p><div class="basegrid">${CAL.map(r=>`<div class="card"><span class="eyebrow">${esc(r[0])}</span><b>${esc(r[1])}</b><p>${esc(r[2])}</p>${stag('p')}</div>`).join('')}</div></section>`;
+  const lim=`<div class="info"><span><b>Sobre los datos:</b> la mayoría de los estudios sobre mayores de 50 y sobre dirección son de Estados Unidos y el Reino Unido. Los de Argentina son parciales. Sirven como indicio y no como medición de nuestro público. Por eso el plan suma 5 conversaciones por público antes de cerrar los mensajes.</span></div>`;
+  const fu=`<section class="sec"><div><span class="eyebrow">Fuentes</span><h2>De dónde salen los datos</h2></div><ul class="bul fuentes">${FUENTES.map(f=>`<li><a href="${f[2]}" target="_blank" rel="noopener">${esc(f[1])}</a></li>`).join('')}</ul></section>`;
+  return hero+pil+voz+fun+reglas+act+cal+lim+fu;
+}
+function comCurso(k){
+  const c=COMU.find(x=>x.key===k),x=COMX[k],cls=PCLS[k],bp=BP.find(b=>b.key===k);
+  const hero=`<div class="cban"><span class="eyebrow">${esc(bp.order)} · ${esc(c.name)}</span><h1>${esc(c.quien)}</h1><p class="q">${esc(c.frase)}</p>${stag('s')}</div>`;
+  const op=`<section class="sec"><div><span class="eyebrow">Oportunidades</span><h2>Por qué hay espacio para este curso</h2></div><div class="basegrid">${x.oport.map(o=>`<div class="card"><b>${esc(o[0])}</b><p>${esc(o[1])}</p><p class="dato">${esc(o[2])}</p>${stag(o[3])}</div>`).join('')}</div></section>`;
+  const dol=`<section class="sec"><div><span class="eyebrow">Puntos de dolor</span><h2>Qué les pasa hoy</h2></div><div class="basegrid">${c.dolores.map(d=>`<div class="card"><b>${esc(d[0])}</b><p>${esc(d[1])}</p><p class="dato">${esc(d[2])}</p>${stag('d')}<p class="src">${fuenteLink(d[3])}</p></div>`).join('')}</div></section>`;
+  const com=`<section class="sec"><div><span class="eyebrow">Cómo comunicarlo</span><h2>El mensaje, en cuatro pasos</h2></div><ol class="steps5 s4">${x.hilo.map(h=>`<li><b>${esc(h[0])}</b><p>${esc(h[1])}</p></li>`).join('')}</ol>
+<div class="two"><div class="card box2"><span class="eyebrow">Qué prometer</span><p>${esc(c.promesa)}</p>${stag('p')}</div><div class="card box2"><span class="eyebrow">Titulares posibles</span><ul class="hooks">${c.titulares.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>${stag('p')}</div></div></section>`;
+  const ac=`<section class="sec"><div><span class="eyebrow">Quién sale a ofrecerlo</span><h2>Actores y qué hace cada uno</h2></div><div class="basegrid">${x.actores.map(a=>`<div class="card actor"><b>${esc(a[0])}</b><small>${esc(a[1])}</small><p>${esc(a[2])}</p>${stag(a[3])}</div>`).join('')}</div>
+<p class="note">Canales previstos: ${c.canales.map(esc).join(' ')}</p></section>`;
+  const ev=`<section class="sec"><div class="two"><div class="card box2"><span class="eyebrow">Qué evitar</span><ul class="bul">${c.evitar.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div><div class="card box2"><span class="eyebrow">Qué tener en cuenta</span><p>${esc(c.alerta)}</p></div></div></section>`;
+  const ob=`<section class="sec"><div><span class="eyebrow">Objeciones</span><h2>Qué van a decir y cómo responder</h2></div><div class="basegrid">${c.objeciones.map(o=>`<div class="card"><b>${esc(o[0])}</b><p>${esc(o[1])}</p>${stag('p')}</div>`).join('')}</div></section>`;
+  return `<div class="${cls}">${hero}${op}${dol}${com}${ac}${ob}${ev}</div>`;
+}
+function comHTML(){
+  if(!U.com)U.com='general';
+  return `<section class="sec"><div><span class="eyebrow">Comunicación</span><h1 class="h1s">Cómo llegar a cada público</h1></div>${comNav()}</section><div class="comwrap">${U.com==='general'?comGeneral():comCurso(U.com)}</div>`;
 }
 /* ---------- Journey ---------- */
 function treeHTML(){
-  const B=[[BP[1],'Líderes de equipo','Construir con tu equipo'],[BP[2],'Dirección y C-level','Decidir y controlar'],[BP[3],'Generación Silver','Seguir aportando']];
-  const Y=[15,50,85];
-  const node=(bp,who,y,i)=>`<button class="nd br" data-act="tab" data-v="${bp.tab}" style="--nc:var(${bp.col});top:${y}%"><span class="eyebrow">${bp.verb}</span><b>${bp.name}</b><span class="pr">${bp.desc}</span><span class="who">${who} · ${bp.classes.length} clases</span><span class="go">Ver las clases</span></button>`;
-  const um=BP[0];
-  const curv=(d,col,dash)=>`<path d="${d}" fill="none" stroke="var(${col})" stroke-width="${dash?2:3}" ${dash?'stroke-dasharray="6 7" opacity=".7"':''} vector-effect="non-scaling-stroke"/>`;
-  const py=[96,320,544];
-  const svg=`<svg class="tl" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true">`+
-    curv('M140 320 L200 320','--c-es')+
-    B.map((b,i)=>curv(`M380 320 C450 320 440 ${py[i]} 500 ${py[i]}`,b[0].col)).join('')+
-    B.map((b,i)=>curv(`M380 34 C470 34 410 ${py[i]} 500 ${py[i]}`,b[0].col,1)).join('')+
-    B.map((b,i)=>curv(`M780 ${py[i]} C830 ${py[i]} 820 320 860 320`,b[0].col)).join('')+
-    curv('M640 171 L640 245','--accent',1)+`</svg>`;
-  const desk=`<div class="tree" role="group" aria-label="Diagrama del recorrido: IA Essentials se abre en tres programas">${svg}
-   <div class="nd dg" style="top:50%"><span class="eyebrow">Para entrar</span><b>Diagnóstico</b><span class="pr">10 minutos para saber si necesitás nivelarte.</span></div>
-   <button class="nd um" data-act="tab" data-v="essentials" style="--nc:var(--c-es);top:50%"><span class="eyebrow">${um.verb}</span><b>${um.name}</b><span class="pr">${um.desc}</span><span class="who">${um.classes.length} clases · para todas las personas</span><span class="go">Ver las clases</span></button>
-   <div class="nd dr" style="top:5%"><span class="eyebrow">Entrada directa</span><span class="pr">Si ya usás IA, el diagnóstico te deja pasar directo a tu camino.</span></div>
-   <div class="fork">Acá se abre en tres ↗ ↘</div>
-   ${B.map((b,i)=>node(b[0],b[1],Y[i],i)).join('')}
-   <div class="lnk">Quien lidera y pasa a dirigir</div>
-   <div class="nd cm" style="top:50%"><span class="eyebrow">Después</span><b>Comunidad Silvora</b><span class="pr">Seguimiento a los 30 días y mentoría (a definir).</span></div></div>`;
-  const mob=`<div class="treem"><div class="nd dg"><span class="eyebrow">Para entrar</span><b>Diagnóstico</b><span class="pr">10 minutos. Si ya usás IA, pasás directo a tu camino.</span></div><i class="vl"></i>
-   <button class="nd um" data-act="tab" data-v="essentials" style="--nc:var(--c-es)"><span class="eyebrow">${um.verb}</span><b>${um.name}</b><span class="pr">${um.desc}</span><span class="who">${um.classes.length} clases</span></button><i class="vl"></i><div class="fork">Acá se abre en tres</div>
-   ${B.map(b=>node(b[0],b[1],0)).join('')}<i class="vl"></i><div class="nd cm"><span class="eyebrow">Después</span><b>Comunidad Silvora</b><span class="pr">Seguimiento a los 30 días y mentoría (a definir).</span></div></div>`;
+  const L=[[BP[0],100,'Líderes de equipo','28 horas','Desde marzo de 2027'],[BP[1],280,'Dirección y C-level','16 horas','Desde marzo de 2027'],[BP[2],460,'Generación Silver','16 horas','Desde el 25/11/2026']];
+  const H=560;
+  const curv=(d,col,w,dash)=>`<path d="${d}" fill="none" stroke="var(${col})" stroke-width="${w||5}" stroke-linecap="round" ${dash?'stroke-dasharray="2 9" opacity=".8"':''} vector-effect="non-scaling-stroke"/>`;
+  const svg=`<svg class="tl" viewBox="0 0 1000 ${H}" preserveAspectRatio="none" aria-hidden="true">`+curv('M130 280 L170 280','--accent',5)+
+    L.map(l=>curv(`M330 280 C385 280 395 ${l[1]} 440 ${l[1]}`,l[0].col)+curv(`M440 ${l[1]} L800 ${l[1]}`,l[0].col)+curv(`M800 ${l[1]} C835 ${l[1]} 830 280 860 280`,l[0].col)).join('')+
+    curv('M880 120 C880 190 880 190 880 240','--accent',2,1)+`</svg>`;
+  const dots=L.map(l=>{const bp=l[0],n=bp.classes.length,rece=bp.key==='Vigencia';const slots=rece?n+1:n;let k=0;let out='';
+    for(let s=0;s<slots;s++){
+      const x=(470+s*300/(slots-1))/10,y=l[1]/H*100;
+      if(rece&&s===4){out+=`<span class="rc" style="left:${x}%;top:${y}%">receso</span>`;continue}
+      const c=bp.classes[k],v=(k===0||k===n-1);k++;
+      out+=`<button class="st${v?' vir':''}" data-act="tab" data-v="${bp.tab}" style="--nc:var(${bp.col});left:${x}%;top:${y}%" title="Encuentro ${k} · ${esc(c[0])}" aria-label="Encuentro ${k}: ${esc(c[0])}">${v?'V':''}</button>`}
+    return out}).join('');
+  const lab=L.map(l=>`<div class="ln" style="--nc:var(${l[0].col});left:44%;top:${(l[1]-86)/H*100}%"><span class="eyebrow">${l[0].order.split(' · ')[0]} · ${l[2]}</span><b>${l[0].name}</b></div><div class="lm" style="left:44%;top:${(l[1]+26)/H*100}%">${l[0].classes.length} encuentros · ${l[3]} · ${l[4]}</div>`).join('');
+  const um='<span class="eyebrow">Esencial integrado</span><b>Guía de arranque</b><span class="pr">Sin curso aparte ni costo adicional: cada curso trae la suya.</span><span class="who">A1 y A2 · B · C1 y C2</span>';
+  const desk=`<div class="tree metro" role="group" aria-label="Mapa del recorrido: el diagnóstico y la guía de arranque se abren en tres líneas, una por curso, con un punto por encuentro">${svg}
+   <div class="nd dg" style="top:50%"><span class="eyebrow">Para entrar</span><b>Diagnóstico</b><span class="pr">Formulario de 10 minutos y conversación previa.</span></div>
+   <div class="nd um" style="--nc:var(--c-es);top:50%">${um}</div>
+   <div class="fork">Acá se abre en tres</div>
+   ${lab}${dots}
+   <div class="nd cm" style="top:50%"><span class="eyebrow">Después</span><b>Comunidad Silvora</b><span class="pr">Seguimiento a los 30 días y siguiente curso (a definir).</span></div>
+   <div class="legm"><span><i class="st"></i> un encuentro</span><span><i class="st vir">V</i> Virginia abre y cierra</span><span class="lk">Decidir y Construir pueden ofrecerse juntos a una misma organización</span></div></div>`;
+  const mob=`<div class="treem"><div class="nd dg"><span class="eyebrow">Para entrar</span><b>Diagnóstico</b><span class="pr">Formulario de 10 minutos y conversación previa.</span></div><i class="vl"></i>
+   <div class="nd um" style="--nc:var(--c-es)">${um}</div><i class="vl"></i><div class="fork">Acá se abre en tres</div>
+   ${L.map(l=>`<button class="nd br" data-act="tab" data-v="${l[0].tab}" style="--nc:var(${l[0].col})"><span class="eyebrow">${l[0].order.split(' · ')[0]} · ${l[2]}</span><b>${l[0].name}</b><span class="mrow">${l[0].classes.map((c,k)=>`<i class="st${k===0||k===l[0].classes.length-1?' vir':''}" style="--nc:var(${l[0].col})">${k===0||k===l[0].classes.length-1?'V':''}</i>`).join('')}</span><span class="who">${l[0].classes.length} encuentros · ${l[3]} · ${l[4]}</span><span class="go">Ver los encuentros</span></button>`).join('')}<i class="vl"></i><div class="nd cm"><span class="eyebrow">Después</span><b>Comunidad Silvora</b><span class="pr">Seguimiento a los 30 días y siguiente curso (a definir).</span></div></div>`;
   return desk+mob;
 }
-function nameKey(){
-  const T=[[BP[0],'Un umbral es el lugar donde cruzás de un lado al otro.','Pasás de mirar la IA a usarla: armás tu entorno y resolvés tus primeras tareas.'],
-  [BP[1],'Una obra se construye con las manos y se puede mostrar.','Construís cosas reales con IA: un asistente, una automatización, un agente y un prototipo.'],
-  [BP[2],'Criterio es saber qué decidir y qué dejar pasar.','Ponés límites, escribís la política de uso y controlás lo que otros hacen con IA.'],
-  [BP[3],'Estar vigente es seguir en juego, sin que la edad sea el filtro.','Ponés tu experiencia a trabajar con IA y definís cómo seguir aportando.']];
-  return `<section class="sec"><span class="eyebrow">Cómo leer los nombres</span><h2>Cada nombre es una idea. Cada programa, lo que hacés con ella.</h2><div class="nk">${T.map(t=>`<div class="card" style="border-top:5px solid var(${t[0].col})"><b style="color:var(${t[0].col.replace('--c-','--t-')})">${t[0].name}</b><span class="tag">Es el programa ${t[0].real}</span><p class="q">${t[1]}</p><p>${t[2]}</p></div>`).join('')}</div><p class="note">Si el nombre evocador no convence, la alternativa es usar solo el nombre descriptivo (${BP.map(b=>b.real).join(', ')}). Decisión pendiente.</p></section>`;
-}
-
 function journeyHTML(){
-  const pc=['p-es','p-ho','p-di','p-vi'];
-  const stg=STAGES.map((s,i)=>`<div class="stg ${pc[i]}"><div class="dot">${i+1}</div><div class="card"><span class="eyebrow">${s[1]}</span><h3>${s[0]}</h3><p class="q">${s[2]}</p><p>${s[3]}</p><p class="note"><b>Te llevás:</b> ${s[4]}</p></div></div>`).join('');
   const routes=ROUTES.map(r=>`<div class="card route"><div><h3 style="font-family:var(--f-d);font-size:22px;font-weight:600">${r[0]}</h3><span class="tag">${r[1]}</span></div><ol>${r[2].map((x,i)=>`<li><b>${i+1}</b><span>${x}</span></li>`).join('')}</ol></div>`).join('');
-  const touch=TOUCH.map((t,i)=>`<div class="card tc"><b>${i+1}. ${t[0]}</b><span>${t[1]}</span><small>A cargo: ${t[2]} (propuesta)</small></div>`).join('');
-  return `<section class="sec"><span class="eyebrow">El journey de la carrera</span><h1>Una carrera larga, que cambia, y cuatro momentos para atravesarla</h1><p class="lead">Silvora parte de una idea: la inteligencia artificial y la longevidad cambian a la vez qué capacidades generan valor y cuánto dura una carrera. Los cuatro programas son los momentos de ese camino.</p></section>
-<section class="sec"><h2>El recorrido se abre en tres</h2><p class="lead">Todo arranca en IA Essentials. Desde ahí cada persona elige el camino que le corresponde, y quien ya usa IA puede entrar directo.</p>${treeHTML()}<p class="note">IA y longevidad también puede ser la puerta de entrada de quien ya está retirado o en transición: no depende de haber pasado por los anteriores.</p></section>
-
+  return `<section class="sec"><span class="eyebrow">El journey de la carrera</span><h1>Una sola puerta de entrada, tres caminos</h1><p class="lead">El esencial ya no es un curso aparte: está adentro de cada uno, con diagnóstico, guía de arranque y encuentros base. Desde ahí cada persona sigue el camino que le corresponde. Los recorridos cruzados y la comunidad vienen de la propuesta 2 y están sin acordar.</p></section>
+<section class="sec"><h2>El mapa del recorrido</h2><p class="lead">Un punto por cada encuentro. Tocá un punto para ver de qué trata.</p>${treeHTML()}<p class="note">Vigencia también puede abrir la puerta de quien está retirado o en transición. El orden de lanzamiento propuesto es Vigencia el 25/11/2026, y Decidir y Construir en marzo de 2027.</p></section>
 <section class="sec"><h2>Tres recorridos posibles</h2><div class="routes">${routes}</div></section>
-<section class="sec"><h2>El viaje de quien participa, dentro de cada programa</h2>${jrHTML()}<p class="note">Propuesta de puntos de contacto. Quién queda a cargo de cada uno es una decisión pendiente.</p></section>`;
+<section class="sec"><h2>El viaje de quien participa, dentro de cada curso</h2>${jrHTML()}<p class="note">Propuesta de puntos de contacto. Quién queda a cargo de cada uno es una decisión pendiente.</p></section>`;
 }
-
 function jrHTML(){
   const n=TOUCH.length,cols=['--b1','--b2','--b3','--b4'],ys=[170,310];
   const px=i=>(i+.5)/n*1000,py=i=>ys[i%2]===undefined?0:ys[i%2];
@@ -719,6 +845,7 @@ function render(){
   let body;
   if(U.tab==='paso-a-paso')body=pasoHTML();
   else if(U.tab==='journey')body=journeyHTML();
+  else if(U.tab==='comunicacion')body=comHTML();
   else body=progHTML(BP.find(b=>b.tab===U.tab));
   $('#app').innerHTML=header()+`<main class="wrap">${body}<p class="foot">Documento de trabajo para revisión interna. Nombres, responsables, plazos y orden de lanzamiento son propuestas a validar por el equipo fundador, no acuerdos confirmados.</p></main>`+drawerHTML()+exportHTML();
   const g=$('#gs');if(g&&st){g.scrollLeft=st[0];g.scrollTop=st[1]}
@@ -730,6 +857,7 @@ document.addEventListener('click',e=>{
   const el=e.target.closest('[data-act]');if(!el)return;const a=el.dataset.act;
   if(a==='mclose'&&e.target!==el)return;
   if(a==='tab')go(el.dataset.v);
+  if(a==='com'){U.com=el.dataset.v;render();window.scrollTo(0,0);return}
   else if(a==='grp'){U.group=el.dataset.v;render()}
   else if(a==='sel'){U.sel=U.sel===el.dataset.id?null:el.dataset.id;render()}
   else if(a==='close'){U.sel=null;render()}

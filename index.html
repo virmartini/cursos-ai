@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Silvora Learning</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
@@ -10,7 +11,7 @@
 --b1:#4FABA9;--b2:#C3C3C4;--b3:#C76D2E;--b4:#ECD6BD;
 --shadow:0 1px 2px rgba(31,42,68,.06),0 8px 22px rgba(31,42,68,.07);
 --f-d:'Cormorant Garamond',Georgia,'Times New Roman',serif;--f-b:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
---wk:16px;--lab:320px;
+--wk:16px;--lab:372px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
 --bg:#121A2E;--surface:#1B2640;--surface2:#243152;--line:#2F3C60;--grid:#222E4D;--ink:#F1ECE4;--muted:#A5AEC8;
@@ -182,6 +183,8 @@ h3{font-size:15px;font-weight:700}
 .mo{font-weight:600;color:var(--ink);text-align:left;padding-left:5px}
 .wkc{font-size:9.5px;font-variant-numeric:tabular-nums}
 .id{font-size:11px;color:var(--muted);flex:none;width:28px}
+.dt{font-size:11px;font-weight:600;color:var(--ink);flex:none;width:46px;text-align:right;font-variant-numeric:tabular-nums;line-height:1.15}.ghead .dt{color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:10px}
+@media (max-width:700px){:root{--lab:268px}.dt{width:40px;font-size:10.5px}}
 .nm{overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.25}
 .pdot{width:9px;height:9px;border-radius:50%;flex:none;background:var(--pc)}
 .warn{color:var(--bad);font-weight:800;flex:none;cursor:help}
@@ -272,98 +275,99 @@ const PRIORIDADES=['Alta','Media','Baja'];
 const NONE=N;
 const PREP=1.5,SOP=1,APOYO=0.25;
 const TR='Transversal',VI='Vigencia',DE='Decidir',CO='Construir';
-const T=(id,programa,fase,eje,tarea,responsable,apoyo,inicio,duracion,horas,deps,prioridad,entregable,hito)=>({id,programa,fase,eje,tarea,responsable,apoyo,inicio,duracion,horas,deps:deps?deps.split(','):[],prioridad,entregable,hito:!!hito,estado:'Pendiente'});
+/* dia = día de la semana del inicio cuando la fecha es fija (0 lunes … 6 domingo). Sin dia, la tarea empieza el lunes de su semana. */
+const T=(id,programa,fase,eje,tarea,responsable,apoyo,inicio,duracion,horas,deps,prioridad,entregable,hito,dia)=>({id,programa,fase,eje,tarea,responsable,apoyo,inicio,duracion,horas,deps:deps?deps.split(','):[],prioridad,entregable,hito:!!hito,dia:dia||0,estado:'Pendiente'});
 const TASKS=[
-/* Semana 1 = lunes 16/11/2026 */
+/* Semana 1 = semana del lunes 23/11/2026. El plan arranca el miércoles 25/11/2026 y cada semana empieza un lunes. */
 T('T01',TR,1,E1,'Cerrar el reparto de encuentros de cada curso entre Cristina y Agustina',V,A,1,1,4,'','Alta','Reparto por encuentro acordado (hay una propuesta en este documento)'),
 T('T02',VI,1,E5,'Cerrar precio final, horario y moneda de cobro de Vigencia',V,C_,1,1,4,'','Alta','Ficha de Vigencia con precio, horario y moneda'),
 T('T03',VI,1,E1,'Definir el público de Vigencia y el rango de edad',V,A,1,1,3,'','Alta','Público definido antes de seguir abriendo inscripciones'),
-T('T04',VI,5,E4,'Convocatoria de Vigencia por redes y WhatsApp, con formulario de interés',A,V,1,1,6,'','Alta','Inscripciones confirmadas y lista de interesadas'),
-T('T05',VI,5,E5,'Conversación de bienvenida y prueba de acceso con cada inscripta',C_,A,1,2,8,'','Alta','Punto de partida de cada persona, sin puntaje ni nivel'),
-T('T06',VI,4,E3,'Enviar la bienvenida con las guías de arranque C1 y C2',C_,N,1,1,3,'','Alta','Guías enviadas antes del encuentro 1'),
-T('T07',VI,4,E3,'Plataforma de videollamada, grabaciones y carpeta compartida de Vigencia',C_,A,1,1,4,'','Alta','Sala y carpeta listas para el 25/11'),
-T('T08',VI,1,E1,'Texto final de Virginia para el encuentro 1',V,A,1,1,3,'','Alta','Apertura aprobada por Virginia'),
+T('T04',VI,5,E4,'Convocatoria de Vigencia por redes y WhatsApp, con formulario de interés',A,V,1,11,6,'','Alta','Inscripciones confirmadas y lista de interesadas'),
+T('T05',VI,5,E5,'Conversación de bienvenida y prueba de acceso con cada inscripto',C_,A,11,3,8,'','Alta','Punto de partida de cada persona, sin puntaje ni nivel'),
+T('T06',VI,4,E3,'Enviar la bienvenida con las guías de arranque C1 y C2',C_,N,12,1,3,'','Alta','Guías enviadas antes del encuentro 1'),
+T('T07',VI,4,E3,'Plataforma de videollamada, grabaciones y carpeta compartida de Vigencia',C_,A,11,1,4,'','Alta','Sala y carpeta listas para el 17/2'),
+T('T08',VI,1,E1,'Texto final de Virginia para el encuentro 1',V,A,10,1,3,'','Alta','Apertura aprobada por Virginia'),
 T('T09',TR,1,E1,'Confirmar «Silvora Learning» como paraguas de los tres cursos',V,A,1,1,2,'','Media','Decisión sobre el nombre paraguas'),
-T('T10',TR,1,E4,'Corregir materiales: título y bio de Agustina, 26 h dictadas y «Human Value Evolution»',A,V,1,2,5,'','Media','One-pager, programas detallados y deck corregidos'),
-T('T11',VI,1,E7,'Hito: Puerta 1, 5 inscripciones confirmadas (miércoles 18/11)',C_,N,1,1,0,'','Alta','Si hay 5, Vigencia arranca el 25/11',1),
-T('T12',VI,2,E7,'Chequeo previo de planes gratuitos, enlaces y pasos de menú (Anexo I de la guía)',C_,A,2,1,3,'T06','Media','Lista del Anexo I verificada'),
-T('T13',VI,1,E7,'Hito: Puerta 2 o inicio de Vigencia (miércoles 25/11)',C_,N,2,1,0,'T11','Alta','Si no hay 5 el 25/11, pasa al 2/12; si tampoco, a febrero de 2027',1),
-T('T14',VI,6,E6,'Dictar los encuentros 1 a 4 de Vigencia (hasta el 16/12)',C_,A,2,4,16,'T06,T07,T08','Alta','Cuaderno de vigencia con las secciones 1 a 4 de cada participante'),
+T('T10',TR,1,E4,'Corregir materiales: título y bio de Agustina, 26 h dictadas y «Human Value Evolution»',A,V,1,1,5,'','Media','One-pager, programas detallados y deck corregidos'),
+T('T11',VI,1,E7,'Hito: Puerta 1, 5 inscripciones confirmadas (miércoles 10/2)',C_,N,12,1,0,'','Alta','Si hay 5, Vigencia arranca el 17/2, la semana posterior al Carnaval',1,2),
+T('T12',VI,2,E7,'Chequeo previo de planes gratuitos, enlaces y pasos de menú (Anexo I de la guía)',C_,A,13,1,3,'T06','Media','Lista del Anexo I verificada'),
+T('T13',VI,1,E7,'Hito: Puerta 2 o inicio de Vigencia (miércoles 17/2)',C_,N,13,1,0,'T11','Alta','Si no hay 5 el 17/2, pasa al 24/2; si tampoco, se define una nueva fecha',1,2),
+T('T14',VI,6,E6,'Dictar los encuentros 1 a 5 de Vigencia (del 17/2 al 17/3)',C_,A,13,5,20,'T06,T07,T08','Alta','Cuaderno de vigencia con las secciones 1 a 5 de cada participante',0,2),
 T('T15',DE,1,E1,'Redefinir el precio de Construir para 28 horas',V,C_,1,1,4,'','Alta','Precio de Construir confirmado (los USD 370 eran para 16 h)'),
-T('T16',CO,1,E1,'Decidir si Construir necesita facilitador técnico y cómo se paga',V,C_,1,2,4,'','Alta','Decisión con costo incluido en el precio'),
-T('T17',DE,2,E2,'Auditar Decidir: ¿entra todo en 8 encuentros, incluido el caso para el directorio?',C_,V,2,2,10,'','Alta','Decisión: quedan 16 horas o se amplían los encuentros 4 y 7'),
-T('T18',TR,2,E2,'Diseñar el diagnóstico de entrada, en tres versiones',A,C_,1,2,10,'','Alta','Formulario de 10 a 12 minutos y devolución de una página'),
-T('T19',TR,2,E2,'Definir el proyecto hilo de Construir y el playbook de Decidir',A,V,2,2,8,'','Media','Entregables finales de ambos cursos definidos'),
+T('T16',CO,1,E1,'Decidir si Construir necesita facilitador técnico y cómo se paga',V,C_,1,1,4,'','Alta','Decisión con costo incluido en el precio'),
+T('T17',DE,2,E2,'Auditar Decidir: ¿entra todo en 8 encuentros, incluido el caso para el directorio?',C_,V,1,2,10,'','Alta','Decisión: quedan 16 horas o se amplían los encuentros 4 y 7'),
+T('T18',TR,2,E2,'Diseñar el diagnóstico de entrada, en tres versiones',A,C_,1,1,10,'','Alta','Formulario de 10 a 12 minutos y devolución de una página'),
+T('T19',TR,2,E2,'Definir el proyecto hilo de Construir y el playbook de Decidir',A,V,1,2,8,'','Media','Entregables finales de ambos cursos definidos'),
 T('T20',TR,5,E4,'Landing y fichas de Construir y Decidir, con formulario de interés',A,V,2,1,10,'T15','Alta','Páginas listas para abrir la inscripción'),
-T('T21',TR,5,E5,'Hito: abre la inscripción de Construir y Decidir (1/12)',A,N,3,1,0,'T20','Alta','Inscripción abierta, early bird opcional hasta el 18/12',1),
-T('T22',TR,5,E4,'Captación de Construir y Decidir: redes, WhatsApp y comisión del 10 %',A,C_,3,12,24,'T20','Alta','Interesados por curso, con su origen'),
-T('T23',TR,4,E5,'Plataforma, carpeta compartida y cobros para Construir y Decidir',C_,A,3,3,12,'T15','Alta','Cobros y plataforma probados'),
-T('T24',TR,2,E2,'Guías de arranque A1, A2 y B',C_,A,3,3,12,'T18','Alta','Una página y un ejercicio de 20 minutos por guía'),
-T('T25',TR,1,E5,'Revisión legal: propiedad intelectual de lo generado y datos personales del diagnóstico',V,C_,3,4,6,'','Media','Criterio legal para el material y los formularios'),
-T('T26',DE,3,E3,'Guía del docente y presentaciones de Decidir (8 encuentros)',A,V,4,9,40,'T17,T19','Alta','Guía y presentaciones de los 8 encuentros'),
-T('T27',TR,5,E4,'Clase abierta de Construir y Decidir (lunes 14/12)',V,A,5,1,4,'T21','Alta','Clase dictada y contactos captados'),
-T('T28',TR,5,E5,'Cierre del early bird (viernes 18/12)',C_,N,5,1,0,'','Media','Fecha comunicada y cumplida',1),
-T('T29',VI,2,E1,'Receso de fin de año y práctica opcional (23/12 al 5/1)',C_,A,6,2,2,'T14','Media','Práctica opcional con devolución a quien la envíe'),
-T('T30',CO,3,E3,'Guía del docente y presentaciones de Construir (14 encuentros)',C_,A,6,9,56,'T16,T19','Alta','Guía y presentaciones de los 14 encuentros'),
-T('T31',VI,1,E1,'Definir qué ofrece Silvora al cerrar: constancia, grabaciones, comunidad y próximas ediciones',V,A,7,4,8,'','Alta','Cierre del encuentro 8 completo (hoy dice «a definir»)'),
-T('T32',VI,1,E1,'Texto final de Virginia para el encuentro 8',V,A,8,2,3,'','Alta','Última hora aprobada por Virginia'),
-T('T33',VI,6,E6,'Dictar los encuentros 5 a 8 de Vigencia (hasta el 27/1)',C_,A,8,4,16,'T14','Alta','Plan personal de vigencia y registro de saberes de cada participante'),
-T('T34',TR,4,E5,'Revisar feriados de 2027 y fijar el calendario de Construir y Decidir',C_,A,9,2,4,'','Media','Calendario con fechas confirmadas'),
-T('T35',TR,1,E5,'Paquete Decidir y Construir para una misma organización: oferta y precio',V,C_,9,4,10,'T15','Media','Oferta del paquete'),
-T('T36',VI,7,E7,'Línea de base final y testimonios de Vigencia',A,C_,10,2,6,'','Media','Medición final y testimonios autorizados'),
-T('T37',TR,5,E5,'Diagnósticos y conversaciones con las personas inscriptas en Construir y Decidir',C_,A,11,3,12,'T21,T18,T24','Alta','Punto de partida de cada persona y guías enviadas'),
-T('T38',VI,7,E7,'Revisar la primera cohorte de Vigencia y ajustar el material',C_,A,12,2,8,'T33','Alta','Ajustes a rúbricas, guías y encuentros'),
-T('T39',TR,5,E7,'Hito: puerta de 5 inscripciones por curso (lunes 15/2)',C_,N,14,1,0,'','Alta','Si solo un curso llega a 5, abre ese y el otro espera',1),
-T('T40',VI,7,E7,'Seguimiento a los 30 días de Vigencia',A,V,15,1,4,'T33','Media','Qué sigue usando cada participante, e invitación al siguiente curso'),
-T('T41',DE,6,E6,'Dictar Decidir, 8 encuentros (arranca la semana del 1/3)',C_,A,16,8,32,'T26,T39,T37','Alta','Caso listo para presentar de cada participante'),
-T('T42',CO,6,E6,'Dictar Construir, 14 encuentros (arranca una semana después)',C_,A,17,14,56,'T30,T39,T37','Alta','Prototipo, mapa del stack y plan de 90 días de cada participante'),
-T('T43',DE,7,E7,'Revisar Decidir y ajustar la segunda edición',V,C_,24,2,6,'T41','Alta','Ajustes y decisión sobre 16 o 20 horas'),
-T('T44',DE,7,E7,'Seguimiento a los 30 días de Decidir',A,V,27,1,4,'T41','Media','Qué sigue usando cada participante'),
-T('T45',CO,7,E7,'Revisar Construir y ajustar la segunda edición',V,C_,31,3,6,'T42','Alta','Ajustes de módulos, precio y facilitador técnico'),
-T('T46',CO,7,E7,'Seguimiento a los 30 días de Construir',A,V,34,1,4,'T42','Media','Qué sigue en uso y qué se automatizó'),
-T('T48',TR,5,E4,'Validar dolores y mensajes con 5 conversaciones por público',A,C_,1,2,10,'','Alta','Mensajes confirmados o ajustados con personas reales'),
-T('T49',TR,5,E4,'Plan de comunicación por curso: mensajes, canales y calendario',A,V,3,2,10,'T48','Alta','Plan de comunicación aprobado por las tres fundadoras'),
-T('T47',TR,7,E1,'Hito: aprendizaje de las primeras cohortes y plan de próximas ediciones',V,N,35,1,0,'T43,T45,T46','Alta','Decisión del equipo fundador',1)
+T('T21',TR,5,E5,'Hito: abre la inscripción de Construir y Decidir (7/12)',A,N,3,1,0,'T20','Alta','Inscripción abierta, early bird opcional hasta el 18/12',1,0),
+T('T22',TR,5,E4,'Captación de Construir y Decidir: redes, WhatsApp y comisión del 10 %',A,C_,3,11,24,'T20','Alta','Interesados por curso, con su origen'),
+T('T23',TR,4,E5,'Plataforma, carpeta compartida y cobros para Construir y Decidir',C_,A,2,3,12,'T15','Alta','Cobros y plataforma probados'),
+T('T24',TR,2,E2,'Guías de arranque A1, A2 y B',C_,A,2,3,12,'T18','Alta','Una página y un ejercicio de 20 minutos por guía'),
+T('T25',TR,1,E5,'Revisión legal: propiedad intelectual de lo generado y datos personales del diagnóstico',V,C_,2,4,6,'','Media','Criterio legal para el material y los formularios'),
+T('T26',DE,3,E3,'Guía del docente y presentaciones de Decidir (8 encuentros)',A,V,3,9,40,'T17,T19','Alta','Guía y presentaciones de los 8 encuentros'),
+T('T27',TR,5,E4,'Clase abierta de Construir y Decidir (lunes 14/12)',V,A,4,1,4,'T21','Alta','Clase dictada y contactos captados',0,0),
+T('T28',TR,5,E5,'Cierre del early bird (viernes 18/12)',C_,N,4,1,0,'','Media','Fecha comunicada y cumplida',1,4),
+T('T29',VI,2,E1,'Receso de la Semana de Turismo y práctica opcional (22/3 al 28/3)',C_,A,18,1,2,'T14','Media','Práctica opcional con devolución a quien la envíe'),
+T('T30',CO,3,E3,'Guía del docente y presentaciones de Construir (14 encuentros)',C_,A,5,9,56,'T16,T19','Alta','Guía y presentaciones de los 14 encuentros'),
+T('T31',VI,1,E1,'Definir qué ofrece Silvora al cerrar: constancia, grabaciones, comunidad y próximas ediciones',V,A,17,4,8,'','Alta','Cierre del encuentro 8 completo (hoy dice «a definir»)'),
+T('T32',VI,1,E1,'Texto final de Virginia para el encuentro 8',V,A,18,2,3,'','Alta','Última hora aprobada por Virginia'),
+T('T33',VI,6,E6,'Dictar los encuentros 6 a 8 de Vigencia (del 31/3 al 14/4)',C_,A,19,3,12,'T14','Alta','Plan personal de vigencia y registro de saberes de cada participante',0,2),
+T('T34',TR,4,E5,'Revisar feriados de 2027 y fijar el calendario de Construir y Decidir',C_,A,8,2,4,'','Media','Calendario con fechas confirmadas'),
+T('T35',TR,1,E5,'Paquete Decidir y Construir para una misma organización: oferta y precio',V,C_,8,4,10,'T15','Media','Oferta del paquete'),
+T('T36',VI,7,E7,'Línea de base final y testimonios de Vigencia',A,C_,20,2,6,'','Media','Medición final y testimonios autorizados'),
+T('T37',TR,5,E5,'Diagnósticos y conversaciones con los inscriptos en Construir y Decidir',C_,A,10,3,12,'T21,T18,T24','Alta','Punto de partida de cada persona y guías enviadas'),
+T('T38',VI,7,E7,'Revisar la primera cohorte de Vigencia y ajustar el material',C_,A,22,2,8,'T33','Alta','Ajustes a rúbricas, guías y encuentros'),
+T('T39',TR,5,E7,'Hito: puerta de 5 inscripciones por curso (lunes 15/2)',C_,N,13,1,0,'','Alta','Si solo un curso llega a 5, abre ese y el otro espera',1,0),
+T('T40',VI,7,E7,'Seguimiento a los 30 días de Vigencia',A,V,25,1,4,'T33','Media','Qué sigue usando cada participante, e invitación al siguiente curso'),
+T('T41',DE,6,E6,'Dictar Decidir, 8 encuentros (arranca la semana del 1/3)',C_,A,15,8,32,'T26,T39,T37','Alta','Caso listo para presentar de cada participante',0,0),
+T('T42',CO,6,E6,'Dictar Construir, 14 encuentros (arranca una semana después)',C_,A,16,14,56,'T30,T39,T37','Alta','Prototipo, mapa del stack y plan de 90 días de cada participante'),
+T('T43',DE,7,E7,'Revisar Decidir y ajustar la segunda edición',V,C_,23,2,6,'T41','Alta','Ajustes y decisión sobre 16 o 20 horas'),
+T('T44',DE,7,E7,'Seguimiento a los 30 días de Decidir',A,V,26,1,4,'T41','Media','Qué sigue usando cada participante'),
+T('T45',CO,7,E7,'Revisar Construir y ajustar la segunda edición',V,C_,30,3,6,'T42','Alta','Ajustes de módulos, precio y facilitador técnico'),
+T('T46',CO,7,E7,'Seguimiento a los 30 días de Construir',A,V,33,1,4,'T42','Media','Qué sigue en uso y qué se automatizó'),
+T('T48',TR,5,E4,'Validar dolores y mensajes con 5 conversaciones por público',A,C_,1,1,10,'','Alta','Mensajes confirmados o ajustados con personas reales'),
+T('T49',TR,5,E4,'Plan de comunicación por curso: mensajes, canales y calendario',A,V,2,2,10,'T48','Alta','Plan de comunicación aprobado por las tres fundadoras'),
+T('T47',TR,7,E1,'Hito: aprendizaje de las primeras cohortes y plan de próximas ediciones',V,N,34,1,0,'T43,T45,T46','Alta','Decisión del equipo fundador',1)
 ];
 const DICT={'Vigencia':'T14','Decidir':'T41','Construir':'T42'};
 const LISTO={'Vigencia':'T07','Decidir':'T26','Construir':'T30'};
 const S_=(programa,n,sem,mod,tema,tipo,docente,apoyo,entregable)=>({programa,n,sem,modulo:n,mod,tema,tipo,docente,apoyo,horas:2,entregable});
 const SESSIONS=[
-S_(VI,1,2,'Por qué ahora y cómo razona un modelo','','Apertura y demo en vivo',C_,V,''),
-S_(VI,2,3,'Tu asistente y tu criterio','','Taller guiado',C_,N,''),
-S_(VI,3,4,'Cuidarse: datos, privacidad y engaños con IA','','Caso y ejercicios',A,N,''),
-S_(VI,4,5,'Validar y decidir con IA','','Taller guiado',C_,N,''),
-S_(VI,5,8,'Organizar tu trabajo y automatizar lo repetitivo','','Taller guiado',C_,N,''),
-S_(VI,6,9,'Aprender y actualizarte con IA','','Taller guiado',A,N,''),
-S_(VI,7,10,'Seguir aportando: poner en valor tu experiencia','','Taller guiado',A,N,''),
-S_(VI,8,11,'Legado y vigencia: integración y cierre','','Cierre del programa',A,V,''),
-S_(DE,1,16,'Por qué ahora y cómo razona un modelo','','Apertura',A,V,''),
-S_(DE,2,17,'Tu asistente y tu eficiencia personal','','Taller guiado',A,N,''),
-S_(DE,3,18,'Datos, marco legal y cultura de datos','','Caso',C_,N,''),
-S_(DE,4,19,'Decidir con IA','','Taller guiado',A,N,''),
-S_(DE,5,20,'Cuándo IA sí y cuándo no','','Casos',A,N,''),
-S_(DE,6,21,'Gobierno del uso en tu equipo','','Taller guiado',C_,N,''),
-S_(DE,7,22,'Evaluar propuestas','','Casos',C_,N,''),
-S_(DE,8,23,'El caso hacia arriba y cierre','','Presentación final y cierre',C_,V,''),
-S_(CO,1,17,'Por qué ahora','','Apertura',C_,V,''),
-S_(CO,2,18,'Cómo razona un modelo y dónde falla','','Taller guiado',A,N,''),
-S_(CO,3,19,'Tu asistente y tu eficiencia personal (parte 1)','','Taller guiado',C_,N,''),
-S_(CO,4,20,'Tu asistente y tu eficiencia personal (parte 2)','','Taller guiado',C_,N,''),
-S_(CO,5,21,'Datos privados y uso responsable','','Taller guiado',A,N,''),
-S_(CO,6,22,'Validar y decidir con IA (parte 1)','','Taller guiado',A,N,''),
-S_(CO,7,23,'Validar y decidir con IA (parte 2)','','Taller guiado',A,N,''),
-S_(CO,8,24,'Automatizar un flujo de punta a punta (parte 1)','','Construcción en vivo',C_,N,''),
-S_(CO,9,25,'Automatizar un flujo de punta a punta (parte 2)','','Construcción en vivo',C_,N,''),
-S_(CO,10,26,'Diseñar y poner un agente en producción (parte 1)','','Construcción en vivo',C_,N,''),
-S_(CO,11,27,'Diseñar y poner un agente en producción (parte 2)','','Construcción en vivo',C_,N,''),
-S_(CO,12,28,'Controlar lo que construiste','','Taller guiado',A,N,''),
-S_(CO,13,29,'Prototipos, tu stack y cierre (parte 1)','','Construcción en vivo',A,N,''),
-S_(CO,14,30,'Prototipos, tu stack y cierre (parte 2)','','Presentación final y cierre',A,V,'')
+S_(VI,1,13,'Por qué ahora y cómo razona un modelo','','Apertura y demo en vivo',C_,V,''),
+S_(VI,2,14,'Tu asistente y tu criterio','','Taller guiado',C_,N,''),
+S_(VI,3,15,'Cuidarse: datos, privacidad y engaños con IA','','Caso y ejercicios',A,N,''),
+S_(VI,4,16,'Validar y decidir con IA','','Taller guiado',C_,N,''),
+S_(VI,5,17,'Organizar tu trabajo y automatizar lo repetitivo','','Taller guiado',C_,N,''),
+S_(VI,6,19,'Aprender y actualizarte con IA','','Taller guiado',A,N,''),
+S_(VI,7,20,'Seguir aportando: poner en valor tu experiencia','','Taller guiado',A,N,''),
+S_(VI,8,21,'Legado y vigencia: integración y cierre','','Cierre del programa',A,V,''),
+S_(DE,1,15,'Por qué ahora y cómo razona un modelo','','Apertura',A,V,''),
+S_(DE,2,16,'Tu asistente y tu eficiencia personal','','Taller guiado',A,N,''),
+S_(DE,3,17,'Datos, marco legal y cultura de datos','','Caso',C_,N,''),
+S_(DE,4,18,'Decidir con IA','','Taller guiado',A,N,''),
+S_(DE,5,19,'Cuándo IA sí y cuándo no','','Casos',A,N,''),
+S_(DE,6,20,'Gobierno del uso en tu equipo','','Taller guiado',C_,N,''),
+S_(DE,7,21,'Evaluar propuestas','','Casos',C_,N,''),
+S_(DE,8,22,'El caso hacia arriba y cierre','','Presentación final y cierre',C_,V,''),
+S_(CO,1,16,'Por qué ahora','','Apertura',C_,V,''),
+S_(CO,2,17,'Cómo razona un modelo y dónde falla','','Taller guiado',A,N,''),
+S_(CO,3,18,'Tu asistente y tu eficiencia personal (parte 1)','','Taller guiado',C_,N,''),
+S_(CO,4,19,'Tu asistente y tu eficiencia personal (parte 2)','','Taller guiado',C_,N,''),
+S_(CO,5,20,'Datos privados y uso responsable','','Taller guiado',A,N,''),
+S_(CO,6,21,'Validar y decidir con IA (parte 1)','','Taller guiado',A,N,''),
+S_(CO,7,22,'Validar y decidir con IA (parte 2)','','Taller guiado',A,N,''),
+S_(CO,8,23,'Automatizar un flujo de punta a punta (parte 1)','','Construcción en vivo',C_,N,''),
+S_(CO,9,24,'Automatizar un flujo de punta a punta (parte 2)','','Construcción en vivo',C_,N,''),
+S_(CO,10,25,'Diseñar y poner un agente en producción (parte 1)','','Construcción en vivo',C_,N,''),
+S_(CO,11,26,'Diseñar y poner un agente en producción (parte 2)','','Construcción en vivo',C_,N,''),
+S_(CO,12,27,'Controlar lo que construiste','','Taller guiado',A,N,''),
+S_(CO,13,28,'Prototipos, tu stack y cierre (parte 1)','','Construcción en vivo',A,N,''),
+S_(CO,14,29,'Prototipos, tu stack y cierre (parte 2)','','Presentación final y cierre',A,V,'')
 ];
 const DATA={tasks:TASKS,sessions:SESSIONS,cap:{[V]:10,[C_]:12,[A]:10,[X]:0}};
 TASKS.find(t=>t.id==='T04').estado='En curso';
 const BP=[
-{key:'Construir',tab:'construir',name:'Construir',verb:'Dominar la IA',col:'--c-ho',desc:'Curso A · 14 encuentros',order:'Curso A · Líderes de equipo y referentes',
+{key:'Construir',tab:'construir',name:'Construir',verb:'Dominar la IA',col:'--c-ho',desc:'14 encuentros',order:'Líderes de equipo y referentes',
  tagline:'Aprender IA construyendo lo que tu equipo necesita.',
  story:['Acá no mirás cómo otros usan la IA: armás tu asistente, tu automatización y tu agente sobre un proceso real de tu equipo. Cada encuentro deja una pieza terminada, y al final tenés algo funcionando, la forma de controlarlo y el mapa de tu stack.','Es el curso que sube un escalón: se conectan herramientas por webhook, se estructuran documentos para que un agente los use bien y se versiona lo que se construye. No hace falta saber programar.'],
  hooks:['Aprendé IA construyendo lo que tu equipo necesita.','Te vas con algo funcionando, no con apuntes.','Enseñamos criterio para usar cualquier IA, no prompts que quedan viejos en meses.'],
@@ -388,7 +392,7 @@ const BP=[
  close:'Cada participante muestra lo que armó y recibe devolución del grupo. La última hora la dicta Virginia.',
  next:'Seguimiento a los 30 días (propuesta). Para una misma organización, paquete con Decidir: la dirección decide y los equipos construyen (idea tomada de la propuesta 2, a definir).',
  note:'Cómo se parten los módulos de cuatro horas en dos encuentros es una propuesta de este documento: el programa dice que ocupan dos encuentros, pero no cuál contenido va en cada uno. Si hubiera que comprimir, los módulos 5 y 9 bajarían a un encuentro cada uno (24 horas y 12 encuentros).'},
-{key:'Decidir',tab:'decidir',name:'Decidir',verb:'Dominar la IA',col:'--c-di',desc:'Curso B · 8 encuentros',order:'Curso B · Dirección y C-level',
+{key:'Decidir',tab:'decidir',name:'Decidir',verb:'Dominar la IA',col:'--c-di',desc:'8 encuentros',order:'Dirección y C-level',
  tagline:'¿Cómo decidís con IA, y cómo controlás lo que otros hacen con ella?',
  story:['Cuando una IA puede responder casi todo, lo escaso deja de ser la respuesta y pasa a ser el criterio: qué preguntar, qué creer, qué aprobar y qué no delegar nunca.','Decidir es para quienes no hacen el trabajo sino que lo juzgan, lo aprueban y responden por el resultado. Se sale con los límites escritos, una política de uso para el área y un caso listo para llevar al directorio.'],
  hooks:['Decidir con IA, y controlar lo que otros hacen con ella.','Para quien aprueba y responde por el resultado.','Ocho encuentros pensados para una agenda de dirección.'],
@@ -407,21 +411,21 @@ const BP=[
  close:'Cada participante presenta su caso y recibe devolución. La última hora la dicta Virginia.',
  next:'Seguimiento a los 30 días (propuesta). Paquete con Construir para una misma organización: la dirección hace Decidir y los equipos hacen Construir (a definir).',
  note:''},
-{key:'Vigencia',tab:'vigencia',name:'Vigencia',verb:'Dominar la IA',col:'--c-vi',desc:'Curso C · 8 encuentros',order:'Curso C · Generación Silver',
+{key:'Vigencia',tab:'vigencia',name:'Vigencia',verb:'Dominar la IA',col:'--c-vi',desc:'8 encuentros',order:'Generación Silver',
  tagline:'Tu experiencia no se devalúa: se actualiza con IA.',
  story:['Para quien lleva décadas de oficio, el riesgo no es no saber usar una herramienta: es que el entorno dé por hecho que ya no está al día. Este curso no pide empezar de cero: parte de lo que ya sabés y lo pone a trabajar con IA.','No es un curso para aprender a usar el celular: es formación profesional. Se avanza al ritmo del grupo, con un Cuaderno de vigencia propio que se completa encuentro a encuentro y termina siendo tu plan personal y tu registro de saberes.'],
  hooks:['Tu experiencia no se devalúa: se actualiza con IA.','Seguir vigente no es seguir corriendo.','Un Cuaderno propio que al final es tu plan de vigencia.'],
- facts:[['Para quién','Profesionales de la generación Silver, en actividad o en transición. Sin experiencia técnica ni uso previo de IA. El rango de edad está a definir.','d'],['Formato','Virtual y en vivo. 8 encuentros de 2 horas, los miércoles (16 horas), con receso de fin de año.','c'],['Primera cohorte','Miércoles 25/11/2026, si el 18/11 hay al menos 5 inscripciones. Si no, el 2/12 y, si tampoco, febrero de 2027.','c'],['Calendario','25/11, 2, 9 y 16/12; receso del 23/12 al 5/1; 6, 13, 20 y 27/1.','c'],['Grupo','Hasta 12 participantes. Abre con un mínimo de 5.','c'],['Precio','USD 700, hasta 12 participantes. A confirmar.','d'],['Admisión','Conversación de bienvenida y prueba de acceso de 10 minutos. No es examen. Guías de arranque C1 y C2 incluidas, sin costo adicional.','c'],['Quiénes dictan','Virginia abre y cierra (2 horas). Las otras 14 horas, 7 y 7 entre Cristina y Agustina: reparto propuesto en este documento.','p'],['Entre encuentros','Una práctica breve y opcional sobre el caso propio, con devolución individual.','c']],
+ facts:[['Para quién','Profesionales de la generación Silver, en actividad o en transición. Sin experiencia técnica ni uso previo de IA. El rango de edad está a definir.','d'],['Formato','Virtual y en vivo. 8 encuentros de 2 horas, los miércoles (16 horas), con receso en la Semana de Turismo.','c'],['Primera cohorte','Miércoles 17/2/2027, la semana posterior al Carnaval, si el 10/2 hay al menos 5 inscripciones. Si no, el 24/2 y, si tampoco, se define una nueva fecha.','c'],['Calendario','17/2, 24/2, 3/3, 10/3 y 17/3; receso del 22/3 al 28/3 (Semana de Turismo); 31/3, 7/4 y 14/4.','p'],['Grupo','Hasta 12 participantes. Abre con un mínimo de 5.','c'],['Precio','USD 700, hasta 12 participantes. A confirmar.','d'],['Admisión','Conversación de bienvenida y prueba de acceso de 10 minutos. No es examen. Guías de arranque C1 y C2 incluidas, sin costo adicional.','c'],['Quiénes dictan','Virginia abre y cierra (2 horas). Las otras 14 horas, 7 y 7 entre Cristina y Agustina: reparto propuesto en este documento.','p'],['Entre encuentros','Una práctica breve y opcional sobre el caso propio, con devolución individual.','c']],
  base:{t:'El esencial, adentro de este curso',p:'No hay curso de nivelación aparte ni costo adicional. El primer filtro es práctico, porque el curso es virtual y en vivo:',it:[['Conversación de bienvenida','Por teléfono o videollamada, con una persona de Silvora. Sin palabras como «nivel» o «principiante». Incluye una prueba de acceso de 10 minutos.'],['Guía C1: primeros pasos digitales','Entrar al encuentro, cámara y micrófono, cuentas, contraseñas y verificación en dos pasos. Para quien tenga cualquier dificultad con el dispositivo o la videollamada.'],['Guía C2: primera conversación con una IA','Tres preguntas de la vida diaria. Para quien nunca usó una IA.'],['Encuentros 1 y 2 como base','Cómo responde una IA, la receta de cinco ingredientes y el asistente propio nivelan a todo el grupo, con una versión base y una ampliada en cada práctica.']]},
  classes:[
-  ['Por qué ahora y cómo razona un modelo','Miércoles 25/11/2026',['Bienvenida y ronda de presentación: oficio, años de experiencia, uso previo de IA y qué querés resolver','El marco de Silvora (primera hora, a cargo de Virginia): IA y longevidad a la vez, qué se devalúa y qué sube de valor','Cómo responde una IA y por qué su seguridad no prueba nada','Ejercicio: la receta de cinco ingredientes sobre una tarea real, dos veces'],'Una lectura propia de qué parte de tu experiencia sigue siendo la ventaja y un método simple para conversar con una IA. Cuaderno: «Mi experiencia sigue siendo ventaja en...».'],
-  ['Tu asistente y tu criterio','Miércoles 2/12/2026',['El semáforo de delegación: qué delegar, qué delegar y revisar, y qué no delegar','La ficha de criterio en seis campos, y el truco de pedirle a la IA que te entreviste','Demo: armar un asistente en vivo','Ejercicio: tu asistente en cinco pasos, probado con un caso real'],'Un asistente propio funcionando sobre una tarea de tu trabajo.'],
-  ['Cuidarse: datos, privacidad y engaños con IA','Miércoles 9/12/2026',['La regla del cartel: qué datos no compartir con ninguna herramienta, y cómo anonimizar','Engaños con IA: voces, mensajes y videos falsos, cinco indicios y la palabra clave acordada','Propiedad intelectual de lo generado: cuatro cuidados prácticos','Ejercicios: anonimizar un texto, seis casos, tu checklist y tu seguridad'],'Una checklist propia para verificar antes de responder, pagar o compartir.'],
-  ['Validar y decidir con IA','Miércoles 16/12/2026',['Dato, cálculo e inferencia: qué pedirle a una IA sobre datos','Conversar con un informe y rehacer las cuentas','Contrastar con fuentes: pedir la fuente y abrirla','Ejercicios: encontrar errores, poner a prueba una conclusión propia y armar tu rutina de verificación'],'Una rutina de verificación antes de dar un número o una conclusión por buena. Cierre del año.'],
-  ['Organizar tu trabajo y automatizar lo repetitivo','Miércoles 6/1/2027',['Repaso puente después del receso','Qué conviene automatizar primero: cuatro preguntas y cuatro patrones (agenda, seguimiento, resúmenes e informes)','El mapa de rutina de seis casilleros, con la excepción incluida','Demo: una rutina semanal con herramientas gratuitas y cuánto tiempo libera'],'Una rutina semanal armada con IA y el cálculo del tiempo que libera.'],
-  ['Aprender y actualizarte con IA','Miércoles 13/1/2027',['La IA como compañera de estudio: cinco modos de pedir','Mantenerse al día sin perseguir la herramienta de moda: tres filtros y una hora por mes','Colegas de otras generaciones: qué aporta cada uno','Ejercicios: aprender un tema, plan a tres meses y mapa de aportes'],'Un plan propio de aprendizaje para los próximos tres meses.'],
-  ['Seguir aportando: poner en valor tu experiencia','Miércoles 20/1/2027',['Cuatro formas de seguir aportando: en una organización, consultoría, mentoría y proyecto propio','De «lo que hice» a «lo que resuelvo»: problema, acción, resultado','Un perfil verificado frase por frase, sin que la IA invente','Ejercicios: inventario de cinco historias, perfil, propuesta de valor y plan a 30, 60 y 90 días'],'Un plan propio de cómo seguir aportando valor en la etapa que viene.'],
-  ['Legado y vigencia: integración y cierre','Miércoles 27/1/2027',['El mapa de lo construido: las ocho secciones del Cuaderno','La ficha de saber: documentar tu criterio para que otra persona pueda continuarlo','Qué significa seguir vigente, a cargo de Virginia','Ejercicio: tu plan de vigencia en seis apartados'],'Un plan personal de vigencia y un registro de saberes propios para transmitir.']
+  ['Por qué ahora y cómo razona un modelo','Miércoles 17/2/2027',['Bienvenida y ronda de presentación: oficio, años de experiencia, uso previo de IA y qué querés resolver','El marco de Silvora (primera hora, a cargo de Virginia): IA y longevidad a la vez, qué se devalúa y qué sube de valor','Cómo responde una IA y por qué su seguridad no prueba nada','Ejercicio: la receta de cinco ingredientes sobre una tarea real, dos veces'],'Una lectura propia de qué parte de tu experiencia sigue siendo la ventaja y un método simple para conversar con una IA. Cuaderno: «Mi experiencia sigue siendo ventaja en...».'],
+  ['Tu asistente y tu criterio','Miércoles 24/2/2027',['El semáforo de delegación: qué delegar, qué delegar y revisar, y qué no delegar','La ficha de criterio en seis campos, y el truco de pedirle a la IA que te entreviste','Demo: armar un asistente en vivo','Ejercicio: tu asistente en cinco pasos, probado con un caso real'],'Un asistente propio funcionando sobre una tarea de tu trabajo.'],
+  ['Cuidarse: datos, privacidad y engaños con IA','Miércoles 3/3/2027',['La regla del cartel: qué datos no compartir con ninguna herramienta, y cómo anonimizar','Engaños con IA: voces, mensajes y videos falsos, cinco indicios y la palabra clave acordada','Propiedad intelectual de lo generado: cuatro cuidados prácticos','Ejercicios: anonimizar un texto, seis casos, tu checklist y tu seguridad'],'Una checklist propia para verificar antes de responder, pagar o compartir.'],
+  ['Validar y decidir con IA','Miércoles 10/3/2027',['Dato, cálculo e inferencia: qué pedirle a una IA sobre datos','Conversar con un informe y rehacer las cuentas','Contrastar con fuentes: pedir la fuente y abrirla','Ejercicios: encontrar errores, poner a prueba una conclusión propia y armar tu rutina de verificación'],'Una rutina de verificación antes de dar un número o una conclusión por buena.'],
+  ['Organizar tu trabajo y automatizar lo repetitivo','Miércoles 17/3/2027',['Qué conviene automatizar primero: cuatro preguntas y cuatro patrones (agenda, seguimiento, resúmenes e informes)','El mapa de rutina de seis casilleros, con la excepción incluida','Demo: una rutina semanal con herramientas gratuitas y cuánto tiempo libera'],'Una rutina semanal armada con IA y el cálculo del tiempo que libera.'],
+  ['Aprender y actualizarte con IA','Miércoles 31/3/2027',['Repaso puente después del receso','La IA como compañera de estudio: cinco modos de pedir','Mantenerse al día sin perseguir la herramienta de moda: tres filtros y una hora por mes','Colegas de otras generaciones: qué aporta cada uno','Ejercicios: aprender un tema, plan a tres meses y mapa de aportes'],'Un plan propio de aprendizaje para los próximos tres meses.'],
+  ['Seguir aportando: poner en valor tu experiencia','Miércoles 7/4/2027',['Cuatro formas de seguir aportando: en una organización, consultoría, mentoría y proyecto propio','De «lo que hice» a «lo que resuelvo»: problema, acción, resultado','Un perfil verificado frase por frase, sin que la IA invente','Ejercicios: inventario de cinco historias, perfil, propuesta de valor y plan a 30, 60 y 90 días'],'Un plan propio de cómo seguir aportando valor en la etapa que viene.'],
+  ['Legado y vigencia: integración y cierre','Miércoles 14/4/2027',['El mapa de lo construido: las ocho secciones del Cuaderno','La ficha de saber: documentar tu criterio para que otra persona pueda continuarlo','Qué significa seguir vigente, a cargo de Virginia','Ejercicio: tu plan de vigencia en seis apartados'],'Un plan personal de vigencia y un registro de saberes propios para transmitir.']
  ],
  close:'El cierre de Silvora desde el encuentro 8 todavía dice «a definir». Propuesta: seguimiento a los 30 días, comunidad liviana y una invitación al siguiente curso.',
  next:'Construir, para quien quiera sumar construcción a su experiencia (propuesta). Seguimiento a los 30 días y comunidad Silvora (a definir).',
@@ -447,7 +451,7 @@ const ETAPAS=[
  ['Producir','Guías del docente y presentaciones de Decidir y Construir.'],
  ['Preparar la operación','Plataforma, cobros, calendario y feriados de 2027.'],
  ['Salir al mercado','Convocatoria, inscripción, clase abierta y puertas de 5 inscripciones.'],
- ['Dictar','Vigencia desde el 25/11, Decidir y Construir desde marzo de 2027.'],
+ ['Dictar','Vigencia desde el 17/2/2027, Decidir y Construir desde marzo de 2027.'],
  ['Mejorar y seguir','Línea de base final, seguimiento a 30 días y ajustes de cada cohorte.']
 ];
 const HECHO=[
@@ -455,7 +459,7 @@ const HECHO=[
  ['One-pager de Dominar la IA, versión 3','Los tres cursos en una página, con el lema «El futuro. Ahora.».'],
  ['Nivelación, assessment y lanzamiento, versión 3','Decisiones hasta el 1/11, diagnóstico en tres versiones, calendario y números del cupo mínimo.'],
  ['Guía del docente y ocho presentaciones de Vigencia','Libreto completo de cada encuentro, con minutado, prompts y ejercicios.'],
- ['Comparación de propuestas y recomendación','Del 12/11: mantener la base A, B y C y sumarle lo mejor de la propuesta 2.']
+ ['Comparación de propuestas y recomendación','Del 12/11: mantener la base de los tres cursos y sumarle lo mejor de la propuesta 2.']
 ];
 const FUENTES=[
  ['deel','Trendsity para Deel, relevamiento a 218 pymes argentinas (jun a jul de 2026), en Revista Mercado','https://mercado.com.ar/talento-y-liderazgo/pymes-argentinas-crece-la-demanda-de-habilidades-en-ia-pero-falta-capacitacion-interna'],
@@ -517,19 +521,20 @@ const REGLAS=[
  ['Promesas que el curso pueda cumplir','Sin cifras de empleo, ahorros ni comparaciones con otros programas. Todo lo que se promete es un entregable de los programas.']
 ];
 const CAL=[
- ['Ahora al 18/11','Vigencia','Convocatoria y conversaciones de bienvenida. Puerta 1: 5 inscripciones confirmadas.'],
- ['25/11','Vigencia','Si hay 5, arranca. Si no, 2/12 y, si tampoco, febrero. Se comunica sin dramatizar.'],
- ['1/12 al 18/12','Construir y Decidir','Abre la inscripción. Clase abierta el lunes 14/12. Early bird opcional hasta el 18/12.'],
- ['Enero','Todos','Testimonios autorizados de Vigencia y contenido de criterio en redes.'],
+ ['Ahora al 10/2','Vigencia','Convocatoria y conversaciones de bienvenida. Puerta 1: 5 inscripciones confirmadas.'],
+ ['7/12 al 18/12','Construir y Decidir','Abre la inscripción el 7/12. Clase abierta el lunes 14/12. Early bird opcional hasta el 18/12.'],
+ ['Enero','Todos','Contenido de criterio en redes y sigue la convocatoria de Vigencia.'],
  ['Febrero','Construir y Decidir','Conversaciones y diagnósticos. Puerta del 15/2: 5 inscripciones por curso.'],
- ['Marzo','Construir y Decidir','Inicio de las cohortes. Medir de dónde vino cada inscripción.']
+ ['17/2','Vigencia','Si hay 5, arranca, la semana posterior al Carnaval. Si no, 24/2 y, si tampoco, se define una nueva fecha. Se comunica sin dramatizar.'],
+ ['Marzo','Construir y Decidir','Inicio de las cohortes. Medir de dónde vino cada inscripción.'],
+ ['Abril','Vigencia','Termina la primera cohorte el 14/4: testimonios autorizados y contenido de criterio en redes.']
 ];
 const COMX={
 Vigencia:{
  oport:[
   ['Un hueco real de oferta','Casi nadie capacita en IA a profesionales de más de 55 años con una propuesta pensada para su experiencia.','Solo 11 % de las personas de más de 55 años recibió capacitación en IA (EE.UU. y Europa).','d'],
   ['Interés que ya existe','No hay que convencerlos de que la IA importa: hay que darles un lugar donde aprender sin sentirse atrasados.','67 % de las personas de 50 o más está interesada en aprender o desarrollar habilidades con IA (EE.UU.).','d'],
-  ['La primera cohorte es la prueba','Con 5 inscripciones arranca el 25/11. De esa cohorte salen los testimonios y el boca a boca para todo lo que sigue.','Puerta 1 del plan: 5 inscripciones confirmadas al 18/11.','d'],
+  ['La primera cohorte es la prueba','Con 5 inscripciones arranca el 17/2, la semana posterior al Carnaval. De esa cohorte salen los testimonios y el boca a boca para todo lo que sigue.','Puerta 1 del plan: 5 inscripciones confirmadas al 10/2.','d'],
   ['Las familias influyen','Hijos e hijas adultos suelen ser quienes recomiendan o regalan una formación. Hay un mensaje para ellos distinto al del profesional.','Hipótesis a validar en las conversaciones; no hay un dato propio todavía.','s']],
  hilo:[['1. Reconocer','«Tenés décadas de oficio y, aun así, sentís que el mundo dio por hecho que ya no estás al día.»'],['2. Dar vuelta la idea','La experiencia no se devalúa: es lo que permite juzgar lo que la IA responde.'],['3. Mostrar el resultado','Un asistente propio, una checklist para no caer en engaños, un perfil verificado y un plan de vigencia.'],['4. Invitar con calma','Una conversación de bienvenida, sin compromiso, para ver si el grupo es para vos.']],
  actores:[
@@ -537,7 +542,7 @@ Vigencia:{
   ['Cristina Lippi','COO','Admisión, logística y conversación con quienes dudan por el formato o el precio.','p'],
   ['Virginia Martini Zanetti','CEO','Primera hora de la cohorte y credibilidad profesional en conversaciones con su red.','p'],
   ['Colegas, exjefes y asociaciones profesionales','Aliados externos (a definir)','Conocen a quien está en transición y pueden recomendar el programa.','s'],
-  ['Primera cohorte','Alumnado','Testimonios con autorización y recomendación a su círculo, a partir de enero.','p'],
+  ['Primera cohorte','Alumnado','Testimonios con autorización y recomendación a su círculo, a partir de abril.','p'],
   ['Hijos e hijas adultos','Influenciadores del entorno','Reciben un mensaje propio: cómo acompañar a su familiar a seguir vigente.','s']]},
 Decidir:{
  oport:[
@@ -628,18 +633,28 @@ const PCLS={'Construir':'p-ho','Decidir':'p-di','Vigencia':'p-vi','Transversal':
 const PVAR={'Construir':'--c-ho','Decidir':'--c-di','Vigencia':'--c-vi','Transversal':'--muted'};
 const COMM={'Construir':'Construir','Decidir':'Decidir','Vigencia':'Vigencia'};
 const ST={'Pendiente':'p','En curso':'e','Completada':'c','Bloqueada':'b'};
-const LS='silvora-learning-v4';
-const TABS=[['paso-a-paso','Paso a paso','Plan con fechas','--b3'],['construir','Construir','Curso A · 14 encuentros','--c-ho'],['decidir','Decidir','Curso B · 8 encuentros','--c-di'],['vigencia','Vigencia','Curso C · 8 encuentros','--c-vi'],['journey','Journey','De la primera conversación al seguimiento','--accent'],['comunicacion','Comunicación','Dolores, mensajes y canales','--b2']];
+const LS='silvora-learning-v5';
+const START='2026-11-25'; // el plan arranca el miércoles 25/11/2026
+const TABS=[['paso-a-paso','Paso a paso','Plan con fechas','--b3'],['construir','Construir','14 encuentros','--c-ho'],['decidir','Decidir','8 encuentros','--c-di'],['vigencia','Vigencia','8 encuentros','--c-vi'],['journey','Journey','De la primera conversación al seguimiento','--accent'],['comunicacion','Comunicación','Dolores, mensajes y canales','--b2']];
 const clone=o=>JSON.parse(JSON.stringify(o));
-function fresh(){return {tasks:clone(DATA.tasks),sessions:clone(DATA.sessions),start:'2026-11-16'}}
-function loadState(){const b=fresh();try{const raw=localStorage.getItem(LS);if(raw){const o=JSON.parse(raw);if(o&&Array.isArray(o.tasks)&&Array.isArray(o.sessions)){b.tasks=o.tasks;b.sessions=o.sessions;b.start=o.start||'2026-11-16'}}}catch(e){}return b}
+function fresh(){return {tasks:clone(DATA.tasks),sessions:clone(DATA.sessions),start:START}}
+function loadState(){const b=fresh();try{const raw=localStorage.getItem(LS);if(raw){const o=JSON.parse(raw);if(o&&Array.isArray(o.tasks)&&Array.isArray(o.sessions)){b.tasks=o.tasks;b.sessions=o.sessions;b.start=o.start||START}}}catch(e){}return b}
 let S=loadState();
 function save(){try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){}}
 const U={tab:'paso-a-paso',group:'etapa',f:{prog:'Todos',pers:'Todas',fase:'Todas',est:'Todos'},sel:null,deps:false,col:{},exp:{open:false,fmt:'tsv',msg:''}};
 let C=null;
 const CAP={}; // sin capacidades: el plan ya no se centra en horas
 function sync(){S.tasks.forEach(t=>{if(t.hito)t.duracion=1})}
-function wkDate(w,end){if(!S.start)return '';const p=S.start.split('-').map(Number);if(p.length<3||p.some(isNaN))return '';const d=new Date(Date.UTC(p[0],p[1]-1,p[2]+(w-1)*7+(end?6:0)));return d.toLocaleDateString('es-UY',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})}
+const DAY=864e5;
+function startMs(){if(!S.start)return null;const p=S.start.split('-').map(Number);if(p.length<3||p.some(isNaN))return null;return Date.UTC(p[0],p[1]-1,p[2])}
+/* Lunes de la semana que contiene la fecha de inicio: la semana 1 */
+function baseMonday(){const b=startMs();if(b===null)return null;return b-((new Date(b).getUTCDay()+6)%7)*DAY}
+const fmtD=ms=>new Date(ms).toLocaleDateString('es-UY',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
+/* Fecha de inicio (o de fin) de la semana w. La semana 1 empieza el día de inicio del plan, no el lunes anterior. */
+function wkDate(w,end){const b=baseMonday();if(b===null)return '';let ms=b+(w-1)*7*DAY+(end?6*DAY:0);if(!end)ms=Math.max(ms,startMs());return fmtD(ms)}
+/* Fecha en que empieza una tarea: el lunes de su semana, o el día fijado (dia) cuando la fecha es fija */
+function taskStart(t){const b=baseMonday();if(b===null)return '';return fmtD(Math.max(b+(t.inicio-1)*7*DAY+(t.dia||0)*DAY,startMs()))}
+const noYear=d=>d.replace(/ \d{4}$/,'');
 const opt=(list,val)=>list.map(o=>`<option${o===val?' selected':''}>${esc(o)}</option>`).join('');
 const ini=p=>p==='Por definir'||p==='Sin apoyo'?'FT':p[0];
 function passes(t){const f=U.f;return (f.prog==='Todos'||t.programa===f.prog)&&(f.pers==='Todas'||t.responsable===f.pers||t.apoyo===f.pers)&&(f.fase==='Todas'||FASES[t.fase]===f.fase)&&(f.est==='Todos'||t.estado===f.est)}
@@ -660,7 +675,7 @@ function pasoHTML(){
   const kp=`<div class="kpis">${k(ts.length,'Pasos')}${k(n(ts,'Completada'),'Completados')}${k(n(ts,'En curso'),'En curso')}${k(n(hs,'Completada')+' de '+hs.length,'Hitos cumplidos')}${k(listos+' de 3','Cursos con materiales listos')}${C.depConf.length?k(C.depConf.length,'Pasos fuera de orden','bad'):''}</div>`;
   const ready=t=>t.estado!=='Completada'&&t.deps.every(d=>C.byId[d]&&C.byId[d].estado==='Completada');
   const nx=S.tasks.filter(t=>!t.hito&&(t.estado==='En curso'||ready(t))).sort((a,b)=>(a.estado==='En curso'?0:1)-(b.estado==='En curso'?0:1)||a.inicio-b.inicio).slice(0,6);
-  const nxh=nx.length?nx.map(t=>`<button class="nx ${PCLS[t.programa]}" data-act="sel" data-id="${t.id}"><span class="id">${t.id}</span><span><b>${esc(t.tarea)}</b><br><small>Listo cuando: ${esc(t.entregable)}</small></span><span class="tag ${t.estado==='En curso'?'acc':''}">${esc(t.responsable)} · sem. ${t.inicio}</span></button>`).join(''):'<p class="note">No hay pasos listos para empezar.</p>';
+  const nxh=nx.length?nx.map(t=>`<button class="nx ${PCLS[t.programa]}" data-act="sel" data-id="${t.id}"><span class="id">${t.id}</span><span><b>${esc(t.tarea)}</b><br><small>Listo cuando: ${esc(t.entregable)}</small></span><span class="tag ${t.estado==='En curso'?'acc':''}">${esc(t.responsable)} · empieza ${noYear(taskStart(t))}</span></button>`).join(''):'<p class="note">No hay pasos listos para empezar.</p>';
   const et=ETAPAS.map((e,i)=>`<div class="card et"><em>ETAPA ${i+1}</em><b>${e[0]}</b><small>${e[1]}</small></div>`).join('');
   const per=[['Virginia','Estrategia, precios y alianzas. Abre y cierra cada curso (2 horas por curso). Texto de sus encuentros y decisiones de producto.'],['Cristina','Plataforma, inscripción y cobros, modelo financiero y calendario. Dicta la parte más técnica de Construir y 7 horas de Decidir y de Vigencia.'],['Agustina','Marca, landings y campañas, diagnóstico y guías de arranque. Dicta 13 horas de Construir y 7 de Decidir y de Vigencia.']].map(([p,d])=>{
     const r=S.tasks.filter(t=>t.responsable===p).length,a=S.tasks.filter(t=>t.apoyo===p).length;
@@ -669,22 +684,22 @@ function pasoHTML(){
   const tools=`<div class="bar-tools"><div class="seg" role="group" aria-label="Agrupar"><button data-act="grp" data-v="etapa" aria-pressed="${U.group==='etapa'}">Por etapa</button><button data-act="grp" data-v="programa" aria-pressed="${U.group==='programa'}">Por programa</button></div>
 <div class="filters"><label class="fld">Programa<select data-fil="prog">${opt(['Todos',...PROGRAMAS],f.prog)}</select></label><label class="fld">Etapa<select data-fil="fase">${opt(['Todas',...Object.values(FASES)],f.fase)}</select></label><label class="fld">Responsable<select data-fil="pers">${opt(['Todas',...PERSONAS],f.pers)}</select></label><label class="fld">Estado<select data-fil="est">${opt(['Todos',...ESTADOS],f.est)}</select></label><label class="chk"><input type="checkbox" data-act="deps" ${U.deps?'checked':''}> Mostrar dependencias</label></div></div>`;
   const leg=`<div class="legend"><span><i class="lg p"></i>Pendiente</span><span><i class="lg e"></i>En curso</span><span><i class="lg"></i>Completado</span><span><i class="lg d"></i>Bloqueado o fuera de orden</span><span><i class="lg m"></i>Hito</span>${['Construir','Decidir','Vigencia'].map(p=>`<span><i class="sw" style="background:var(${PVAR[p]})"></i>${p===COMM[p]?p:p+' ('+COMM[p]+')'}</span>`).join('')}</div>`;
-  return `<section class="sec"><span class="eyebrow">Cómo lo hacemos</span><h1>Paso a paso para lanzar Silvora Learning</h1><p class="lead">Siete etapas, tres cursos y tres personas. La semana 1 es la del lunes 16/11/2026. Vigencia arranca el 25/11 si el 18/11 hay 5 inscripciones; Decidir y Construir arrancan en marzo de 2027. Cada paso tiene un responsable provisional y un criterio de "listo cuando".</p>
+  return `<section class="sec"><span class="eyebrow">Cómo lo hacemos</span><h1>Paso a paso para lanzar Silvora Learning</h1><p class="lead">Siete etapas, tres cursos y tres personas. La semana 1 es la del lunes 23/11/2026 y el plan arranca mañana, miércoles 25/11. Vigencia arranca el 17/2/2027, la semana posterior al Carnaval, si el 10/2 hay 5 inscripciones; Decidir y Construir arrancan en marzo de 2027. Cada paso tiene un responsable provisional y un criterio de "listo cuando".</p>
 <div class="row"><label class="fld">Fecha de inicio (opcional)<input type="date" id="start" value="${esc(S.start)}"></label><button class="btn acc" data-act="export" style="align-self:flex-end">Exportar pasos</button><button class="btn ghost" data-act="reset" style="align-self:flex-end">Restablecer plan</button></div></section>
 ${kp}
 <section class="sec"><h2>Lo que ya está hecho</h2><div class="etapas hechos">${hecho}</div></section>
 <section class="sec"><h2>Las 7 etapas</h2><div class="etapas">${et}</div></section>
 <section class="two" style="align-items:start"><div class="card next"><h3>Lo que sigue ahora</h3>${nxh}</div><div class="sec"><h3>Quién conduce qué</h3><div class="people" style="grid-template-columns:1fr">${per}</div></div></section>
-<section class="sec"><h2>El cronograma</h2>${tools}${leg}${ganttView()}<p class="note">Clic en un paso para editar responsable, semana de inicio, duración, estado y dependencias. Los cambios se guardan solo en este navegador. Las puertas del 18/11, 25/11 y 15/2 vienen del documento de lanzamiento. Los repartos de horas, la semana de diferencia entre Decidir y Construir y los pasos de producción son propuestas de este plan.</p></section>`;
+<section class="sec"><h2>El cronograma</h2>${tools}${leg}${ganttView()}<p class="note">Clic en un paso para editar responsable, semana de inicio, duración, estado y dependencias. Los cambios se guardan solo en este navegador. La puerta del 15/2 viene del documento de lanzamiento; las de Vigencia (10/2 y 17/2) salen de su nuevo inicio. Cada paso muestra la fecha en que empieza. Los repartos de horas, la semana de diferencia entre Decidir y Construir y los pasos de producción son propuestas de este plan.</p></section>`;
 }
 function headHTML(W){let mo='',wk='';for(let m=0;m<Math.ceil(W/4);m++){mo+=`<div class="mo" style="width:${4*WK}px">${S.start?wkDate(m*4+1).replace(/ \d{4}$/,''):'Mes '+(m+1)}</div>`}for(let w=1;w<=W;w++)wk+=`<div class="wkc" style="width:${WK}px">${w}</div>`;
-  return `<div class="ghead"><div class="grow"><div class="lab">Mes</div><div class="tl" style="width:${W*WK}px;display:flex;background-image:none">${mo}</div></div><div class="grow"><div class="lab">Paso · semana</div><div class="tl" style="width:${W*WK}px;display:flex;background-image:none">${wk}</div></div></div>`}
+  return `<div class="ghead"><div class="grow"><div class="lab">Mes</div><div class="tl" style="width:${W*WK}px;display:flex;background-image:none">${mo}</div></div><div class="grow"><div class="lab"><span style="flex:1">Paso · semana</span><span class="dt">Empieza</span></div><div class="tl" style="width:${W*WK}px;display:flex;background-image:none">${wk}</div></div></div>`}
 function taskRow(t){
   const x=(t.inicio-1)*WK,w=t.duracion*WK-2,conf=C.depConf.some(c=>c.id===t.id),st=ST[t.estado]||'p',col=`var(${PVAR[t.programa]})`;
-  const bar=t.hito?`<span class="ms st-${st}" style="left:${x+WK/2-7}px" title="${esc(t.tarea)}"></span>`:`<span class="bar st-${st}${conf?' conf':''}" style="left:${x}px;width:${w}px;--bc:${col}" title="${esc(t.tarea)} · semanas ${t.inicio} a ${fin(t)}"></span>`;
+  const bar=t.hito?`<span class="ms st-${st}" style="left:${x+WK/2-7}px" title="${esc(t.tarea)}"></span>`:`<span class="bar st-${st}${conf?' conf':''}" style="left:${x}px;width:${w}px;--bc:${col}" title="${esc(t.tarea)} · empieza el ${taskStart(t)} · semanas ${t.inicio} a ${fin(t)}"></span>`;
   const own=`<span class="own" style="left:${x+(t.hito?WK+4:w+5)}px">${esc(t.responsable)}</span>`;
   const sel=U.sel===t.id?' sel':(U.sel&&C.byId[U.sel]&&(C.byId[U.sel].deps.includes(t.id)||t.deps.includes(U.sel))?' rel':'');
-  return {h:ROWH,id:t.id,html:`<div class="grow task${sel}" data-act="sel" data-id="${t.id}" style="--rh:${ROWH}px"><div class="lab ${PCLS[t.programa]}"><span class="pdot"></span><span class="id">${t.id}</span><span class="nm" title="${esc(t.tarea)}">${esc(t.tarea)}</span>${conf?'<span class="warn" title="Empieza antes de que termine un paso previo">!</span>':''}<span class="pill" title="${esc(t.responsable)}">${ini(t.responsable)}</span></div><div class="tl" style="width:__W__px">${bar}${own}</div></div>`};
+  return {h:ROWH,id:t.id,html:`<div class="grow task${sel}" data-act="sel" data-id="${t.id}" style="--rh:${ROWH}px"><div class="lab ${PCLS[t.programa]}"><span class="pdot"></span><span class="id">${t.id}</span><span class="nm" title="${esc(t.tarea)}">${esc(t.tarea)}</span><span class="dt" title="Empieza el ${taskStart(t)}">${noYear(taskStart(t))}</span>${conf?'<span class="warn" title="Empieza antes de que termine un paso previo">!</span>':''}<span class="pill" title="${esc(t.responsable)}">${ini(t.responsable)}</span></div><div class="tl" style="width:__W__px">${bar}${own}</div></div>`};
 }
 function groupRow(key,label,cls,items){
   const mn=Math.min(...items.map(t=>t.inicio)),mx=Math.max(...items.map(fin));
@@ -709,7 +724,7 @@ function drawerHTML(){
   const t=C.byId[U.sel];if(!t)return '';
   const sel=(f,list,v,dis)=>`<select data-f="${f}"${dis?' disabled':''}>${opt(list,v)}</select>`;
   const succ=S.tasks.filter(x=>x.deps.includes(t.id)),dictado=false;
-  const fd=wkDate(t.inicio),ff=wkDate(fin(t),true),conf=C.depConf.filter(c=>c.id===t.id);
+  const fd=taskStart(t),ff=wkDate(fin(t),true),conf=C.depConf.filter(c=>c.id===t.id);
   const depTxt=t.deps.map(d=>C.byId[d]?`${d} ${esc(C.byId[d].tarea)}`:d).join('<br>')||'No depende de nada';
   return `<aside class="drawer" role="dialog" aria-label="Editar paso"><header><div><span class="eyebrow">${t.id} · ${esc(t.programa)}</span><h3 style="font-family:var(--f-d);font-size:22px;margin-top:2px">${t.hito?'Hito':'Paso'}</h3></div><button class="x" data-act="close" aria-label="Cerrar">×</button></header>
 <div class="body"><label class="fld">Qué hay que hacer<input id="f-tarea" data-f="tarea" value="${esc(t.tarea)}"></label>
@@ -719,7 +734,7 @@ function drawerHTML(){
 <div class="two"><label class="fld">Estado${sel('estado',ESTADOS,t.estado)}</label><label class="fld">Prioridad${sel('prioridad',PRIORIDADES,t.prioridad)}</label></div>
 <label class="fld">Depende de (IDs separados por coma)<input data-f="deps" value="${esc(t.deps.join(', '))}"></label>
 ${conf.length?`<div class="info" style="background:var(--bad-soft);color:var(--bad)">Está fuera de orden: empieza en la semana ${t.inicio} pero ${conf.map(c=>c.dep+' termina en la semana '+fin(C.byId[c.dep])).join(', ')}. Tiene que empezar después.</div>`:''}
-<div class="info"><span><b>Etapa:</b> ${esc(FASES[t.fase])}</span><span><b>Eje:</b> ${esc(t.eje)}</span><span><b>Termina:</b> semana ${fin(t)}${fd?' · '+fd+' a '+ff:''}</span><span><b>Margen:</b> ${C.slack[t.id]} semanas${C.slack[t.id]===0?' (si se demora, se corre el final del plan)':''}</span>${dictado?'<span>La duración sale de la cantidad de clases del programa.</span>':''}<span><b>Depende de:</b><br>${depTxt}</span><span><b>Habilita:</b> ${succ.length?succ.map(x=>x.id).join(', '):'nada'}</span></div></div></aside>`;
+<div class="info"><span><b>Empieza:</b> semana ${t.inicio}${fd?' · '+fd:''}</span><span><b>Etapa:</b> ${esc(FASES[t.fase])}</span><span><b>Eje:</b> ${esc(t.eje)}</span><span><b>Termina:</b> semana ${fin(t)}${ff?' · '+ff:''}</span><span><b>Margen:</b> ${C.slack[t.id]} semanas${C.slack[t.id]===0?' (si se demora, se corre el final del plan)':''}</span>${dictado?'<span>La duración sale de la cantidad de clases del programa.</span>':''}<span><b>Depende de:</b><br>${depTxt}</span><span><b>Habilita:</b> ${succ.length?succ.map(x=>x.id).join(', '):'nada'}</span></div></div></aside>`;
 }
 /* ---------- Programas ---------- */
 function pillP(p,sup,txt){return `<span class="pp${sup?' sup':''}"><i>${ini(p)}</i>${p==='Por definir'?'Facilitador técnico (a definir)':p}${txt?' · '+txt:(sup?' · apoyo':'')}</span>`}
@@ -779,7 +794,7 @@ function comHTML(){
 }
 /* ---------- Journey ---------- */
 function treeHTML(){
-  const L=[[BP[0],100,'Líderes de equipo','28 horas','Desde marzo de 2027'],[BP[1],280,'Dirección y C-level','16 horas','Desde marzo de 2027'],[BP[2],460,'Generación Silver','16 horas','Desde el 25/11/2026']];
+  const L=[[BP[0],100,'Líderes de equipo','28 horas','Desde marzo de 2027'],[BP[1],280,'Dirección y C-level','16 horas','Desde marzo de 2027'],[BP[2],460,'Generación Silver','16 horas','Desde el 17/2/2027']];
   const H=560;
   const curv=(d,col,w,dash)=>`<path d="${d}" fill="none" stroke="var(${col})" stroke-width="${w||5}" stroke-linecap="round" ${dash?'stroke-dasharray="2 9" opacity=".8"':''} vector-effect="non-scaling-stroke"/>`;
   const svg=`<svg class="tl" viewBox="0 0 1000 ${H}" preserveAspectRatio="none" aria-hidden="true">`+curv('M130 280 L170 280','--accent',5)+
@@ -788,11 +803,11 @@ function treeHTML(){
   const dots=L.map(l=>{const bp=l[0],n=bp.classes.length,rece=bp.key==='Vigencia';const slots=rece?n+1:n;let k=0;let out='';
     for(let s=0;s<slots;s++){
       const x=(470+s*300/(slots-1))/10,y=l[1]/H*100;
-      if(rece&&s===4){out+=`<span class="rc" style="left:${x}%;top:${y}%">receso</span>`;continue}
+      if(rece&&s===5){out+=`<span class="rc" style="left:${x}%;top:${y}%">receso</span>`;continue}
       const c=bp.classes[k],v=(k===0||k===n-1);k++;
       out+=`<button class="st${v?' vir':''}" data-act="tab" data-v="${bp.tab}" style="--nc:var(${bp.col});left:${x}%;top:${y}%" title="Encuentro ${k} · ${esc(c[0])}" aria-label="Encuentro ${k}: ${esc(c[0])}">${v?'V':''}</button>`}
     return out}).join('');
-  const lab=L.map(l=>`<div class="ln" style="--nc:var(${l[0].col});left:44%;top:${(l[1]-86)/H*100}%"><span class="eyebrow">${l[0].order.split(' · ')[0]} · ${l[2]}</span><b>${l[0].name}</b></div><div class="lm" style="left:44%;top:${(l[1]+26)/H*100}%">${l[0].classes.length} encuentros · ${l[3]} · ${l[4]}</div>`).join('');
+  const lab=L.map(l=>`<div class="ln" style="--nc:var(${l[0].col});left:44%;top:${(l[1]-86)/H*100}%"><span class="eyebrow">${l[2]}</span><b>${l[0].name}</b></div><div class="lm" style="left:44%;top:${(l[1]+26)/H*100}%">${l[0].classes.length} encuentros · ${l[3]} · ${l[4]}</div>`).join('');
   const um='<span class="eyebrow">Esencial integrado</span><b>Guía de arranque</b><span class="pr">Sin curso aparte ni costo adicional: cada curso trae la suya.</span><span class="who">A1 y A2 · B · C1 y C2</span>';
   const desk=`<div class="tree metro" role="group" aria-label="Mapa del recorrido: el diagnóstico y la guía de arranque se abren en tres líneas, una por curso, con un punto por encuentro">${svg}
    <div class="nd dg" style="top:50%"><span class="eyebrow">Para entrar</span><b>Diagnóstico</b><span class="pr">Formulario de 10 minutos y conversación previa.</span></div>
@@ -803,13 +818,13 @@ function treeHTML(){
    <div class="legm"><span><i class="st"></i> un encuentro</span><span><i class="st vir">V</i> Virginia abre y cierra</span><span class="lk">Decidir y Construir pueden ofrecerse juntos a una misma organización</span></div></div>`;
   const mob=`<div class="treem"><div class="nd dg"><span class="eyebrow">Para entrar</span><b>Diagnóstico</b><span class="pr">Formulario de 10 minutos y conversación previa.</span></div><i class="vl"></i>
    <div class="nd um" style="--nc:var(--c-es)">${um}</div><i class="vl"></i><div class="fork">Acá se abre en tres</div>
-   ${L.map(l=>`<button class="nd br" data-act="tab" data-v="${l[0].tab}" style="--nc:var(${l[0].col})"><span class="eyebrow">${l[0].order.split(' · ')[0]} · ${l[2]}</span><b>${l[0].name}</b><span class="mrow">${l[0].classes.map((c,k)=>`<i class="st${k===0||k===l[0].classes.length-1?' vir':''}" style="--nc:var(${l[0].col})">${k===0||k===l[0].classes.length-1?'V':''}</i>`).join('')}</span><span class="who">${l[0].classes.length} encuentros · ${l[3]} · ${l[4]}</span><span class="go">Ver los encuentros</span></button>`).join('')}<i class="vl"></i><div class="nd cm"><span class="eyebrow">Después</span><b>Comunidad Silvora</b><span class="pr">Seguimiento a los 30 días y siguiente curso (a definir).</span></div></div>`;
+   ${L.map(l=>`<button class="nd br" data-act="tab" data-v="${l[0].tab}" style="--nc:var(${l[0].col})"><span class="eyebrow">${l[2]}</span><b>${l[0].name}</b><span class="mrow">${l[0].classes.map((c,k)=>`<i class="st${k===0||k===l[0].classes.length-1?' vir':''}" style="--nc:var(${l[0].col})">${k===0||k===l[0].classes.length-1?'V':''}</i>`).join('')}</span><span class="who">${l[0].classes.length} encuentros · ${l[3]} · ${l[4]}</span><span class="go">Ver los encuentros</span></button>`).join('')}<i class="vl"></i><div class="nd cm"><span class="eyebrow">Después</span><b>Comunidad Silvora</b><span class="pr">Seguimiento a los 30 días y siguiente curso (a definir).</span></div></div>`;
   return desk+mob;
 }
 function journeyHTML(){
   const routes=ROUTES.map(r=>`<div class="card route"><div><h3 style="font-family:var(--f-d);font-size:22px;font-weight:600">${r[0]}</h3><span class="tag">${r[1]}</span></div><ol>${r[2].map((x,i)=>`<li><b>${i+1}</b><span>${x}</span></li>`).join('')}</ol></div>`).join('');
   return `<section class="sec"><span class="eyebrow">El journey de la carrera</span><h1>Una sola puerta de entrada, tres caminos</h1><p class="lead">El esencial ya no es un curso aparte: está adentro de cada uno, con diagnóstico, guía de arranque y encuentros base. Desde ahí cada persona sigue el camino que le corresponde. Los recorridos cruzados y la comunidad vienen de la propuesta 2 y están sin acordar.</p></section>
-<section class="sec"><h2>El mapa del recorrido</h2><p class="lead">Un punto por cada encuentro. Tocá un punto para ver de qué trata.</p>${treeHTML()}<p class="note">Vigencia también puede abrir la puerta de quien está retirado o en transición. El orden de lanzamiento propuesto es Vigencia el 25/11/2026, y Decidir y Construir en marzo de 2027.</p></section>
+<section class="sec"><h2>El mapa del recorrido</h2><p class="lead">Un punto por cada encuentro. Tocá un punto para ver de qué trata.</p>${treeHTML()}<p class="note">Vigencia también puede abrir la puerta de quien está retirado o en transición. El orden de lanzamiento propuesto es Vigencia el 17/2/2027, la semana posterior al Carnaval, y Decidir y Construir en marzo de 2027.</p></section>
 <section class="sec"><h2>Tres recorridos posibles</h2><div class="routes">${routes}</div></section>
 <section class="sec"><h2>El viaje de quien participa, dentro de cada curso</h2>${jrHTML()}<p class="note">Propuesta de puntos de contacto. Quién queda a cargo de cada uno es una decisión pendiente.</p></section>`;
 }
@@ -828,7 +843,7 @@ function jrHTML(){
 /* ---------- Exportar ---------- */
 function expText(){
   const h=['ID','Programa','Etapa','Eje de trabajo','Paso','Responsable (provisional)','Apoyo','Semana inicio','Semana fin','Duración (semanas)','Fecha inicio','Fecha fin','Depende de','Prioridad','Estado','Listo cuando','Hito'];
-  const rows=[h].concat(S.tasks.map(t=>[t.id,t.programa,FASES[t.fase],t.eje,t.tarea,t.responsable,t.apoyo,t.inicio,fin(t),t.duracion,wkDate(t.inicio),wkDate(fin(t),true),t.deps.join(' '),t.prioridad,t.estado,t.entregable,t.hito?'Sí':'No']));
+  const rows=[h].concat(S.tasks.map(t=>[t.id,t.programa,FASES[t.fase],t.eje,t.tarea,t.responsable,t.apoyo,t.inicio,fin(t),t.duracion,taskStart(t),wkDate(fin(t),true),t.deps.join(' '),t.prioridad,t.estado,t.entregable,t.hito?'Sí':'No']));
   if(U.exp.fmt==='tsv')return rows.map(r=>r.map(c=>String(c).replace(/[\t\n\r]+/g,' ')).join('\t')).join('\n');
   return rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
 }
